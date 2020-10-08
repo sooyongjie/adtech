@@ -21,6 +21,7 @@ if ($result->num_rows > 0)
 
     header("Location: dashboard.html"); 
     exit();
+    // use exit() to pause
 }
 else echo "Please try again."; //Fail
 
