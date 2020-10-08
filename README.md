@@ -1,4 +1,4 @@
 # AdTech
 CSCI334 Software Design
 
-[Node.js](https://nodejs.org/)
+[Database](https://github.com/sooyongjie/adtech/blob/main/adtech.sql)
