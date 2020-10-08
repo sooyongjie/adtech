@@ -1,0 +1,83 @@
+body {
+  height: 100vh;
+  display: flex;
+  background: #f5f5f5;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+}
+
+nav {
+  width: 18%;
+  padding: 35px 50px 50px 25px;
+  background-color: #3639A4;
+  color: white;
+}
+
+nav h1 {
+  margin-bottom: 80px;
+  font-size: 32px;
+}
+
+nav h1 span {
+  color: #76e9f0;
+}
+
+nav .button {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .button.active {
+  color: white;
+}
+
+nav .button .button-l {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  margin: 35px 50px 25px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .new-requests {
+  height: auto;
+  width: 90%;
+  margin-top: 20px;
+  padding: 20px 5% 40px 5%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.02);
+}
+
+.container .new-requests table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.container .new-requests table th {
+  padding: 10px 0 10px 0;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  font-weight: 500;
+}
+
+.container .new-requests table td {
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid #eee;
+}
+/*# sourceMappingURL=dashboard.css.map */
