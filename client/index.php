@@ -15,16 +15,14 @@
 </head>
 
 <body>
-    <nav>
-        <h1>Ad<span>tech</span></h1>
-        <p class="user">Soo Yong Jie</p>
-    </nav>
+    <?php include_once("nav.php") ?>
+
     <div class="container">
-        <div class="button" onclick="location.href='new-request.html'">
+        <div class="button" onclick="location.href='new-request.php'">
             <i class="fal fa-sticky-note fa-2x"></i>
             <p>Service Request</p>
         </div>
-        <div class="button" onclick="location.href='requests.html'">
+        <div class="button" onclick="location.href='requests.php'">
             <i class="fal fa-history fa-2x"></i>
             <p>Service Request</p>
         </div>

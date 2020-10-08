@@ -16,14 +16,7 @@
 </head>
 
 <body>
-    <nav>
-        <div class="back" onclick="location.href='client.html'">
-            <i class="fas fa-arrow-left fa-xs"></i>
-            <span>Back</span>
-        </div>
-        <p class="user">Soo Yong Jie</p>
-        <h1 onclick="location.href=">Ad<span>tech</span></h1>
-    </nav>
+    <?php include_once("nav-back-button.php") ?>
     <div class="container">
         <form action="">
             <!-- <div class="form-header" onclick="location.href='client.html'">
