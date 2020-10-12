@@ -1,1 +1,49 @@
-/* No CSS *//*# sourceMappingURL=client-landing-page.css.map */
+.container {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+}
+
+.container .button {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  animation: scale-down-center 0.3s ease-out both;
+}
+
+.container .button:hover {
+  animation: scale-up-center 0.3s ease-out both;
+}
+
+.container .button:active,
+.container .button:focus {
+  animation: scale-down-center 0.1s ease-out both;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.033);
+  }
+}
+
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1.033);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*# sourceMappingURL=client-landing-page.css.map */

@@ -1,1 +1,87 @@
-/* No CSS *//*# sourceMappingURL=login.css.map */
+body {
+  margin: 0;
+}
+
+.container {
+  height: 90vh;
+  width: 80vw;
+  margin: 0 10vw 0 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-img {
+  width: 40vw;
+}
+
+.welcome-img img {
+  width: 100%;
+}
+
+.form {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+}
+
+.form form {
+  width: 70%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form form h1 {
+  margin-bottom: 40px;
+}
+
+.form form label,
+.form form a {
+  font-weight: 500;
+}
+
+.form form label {
+  color: #222222;
+}
+
+.form form input {
+  height: 40px;
+  margin: 12px 0 24px 0;
+  padding: 0 8px 0 8px;
+  border-radius: 8px;
+  background: #f5f6f8;
+  text-align: left;
+}
+
+.form form .password {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form form .password a {
+  font-size: 12px;
+  color: #1b6fad;
+}
+
+.form form button {
+  height: 35px;
+  width: 80px;
+  border-radius: 4px;
+  background: #feea89;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  transition: 0.2s;
+}
+
+.form form button:hover {
+  background: #ffe771;
+}
+
+.form form button:active, .form form button:focus {
+  background: #ffdc2b;
+}
+/*# sourceMappingURL=login.css.map */
