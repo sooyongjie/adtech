@@ -19,7 +19,7 @@ if ($result->num_rows > 0)
     $_SESSION["name"] = $row["name"];
     $_SESSION["logged"] = $row["uid"];
 
-    header("Location: dashboard.html"); 
+    header("Location: dashboard.php"); 
     exit();
     // use exit() to pause
 }

@@ -12,7 +12,7 @@ h2 {
 nav {
   width: 18%;
   padding: 35px 50px 50px 25px;
-  background-color: #3639A4;
+  background-color: #3639a4;
   color: white;
 }
 
@@ -69,6 +69,7 @@ nav .button .button-l {
 }
 
 .container .new-requests table th {
+  width: 180px;
   padding: 10px 0 10px 0;
   color: #666;
   border-bottom: 1px solid #ccc;
@@ -79,5 +80,9 @@ nav .button .button-l {
 .container .new-requests table td {
   padding: 15px 0 15px 0;
   border-bottom: 1px solid #eee;
+}
+
+.container table .tr-button-heading {
+  width: 0px;
 }
 /*# sourceMappingURL=dashboard.css.map */
