@@ -81,7 +81,8 @@ body {
   background: #ffe771;
 }
 
-.form form button:active, .form form button:focus {
+.form form button:active,
+.form form button:focus {
   background: #ffdc2b;
 }
 /*# sourceMappingURL=login.css.map */

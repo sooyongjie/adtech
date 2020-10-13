@@ -10,7 +10,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
 </head>
 
 <body>
@@ -44,7 +44,7 @@
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td>
-                            <form action="get-request" method="POST">
+                            <form action="get-request.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
                                 <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
                             </form>

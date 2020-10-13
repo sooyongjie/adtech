@@ -10,7 +10,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
 </head>
 
 <body>

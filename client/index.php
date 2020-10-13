@@ -10,8 +10,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/client.css" />
-    <link rel="stylesheet" type="text/css" href="../css/client-landing-page.css" />
+    <link rel="stylesheet" type="text/css" href="../css/client/client.css" />
+    <link rel="stylesheet" type="text/css" href="../css/client/client-landing-page.css" />
 </head>
 
 <body>
