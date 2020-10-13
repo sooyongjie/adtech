@@ -1,0 +1,67 @@
+.container .content {
+  padding: 32px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .content h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3639a4;
+}
+
+.container .content .row {
+  display: grid;
+}
+
+.container .content .row.c4 {
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+}
+
+.container .content .row.c2 {
+  grid-template-columns: repeat(2, minmax(250px, max-content));
+  grid-template-rows: auto auto;
+}
+
+.container .content label {
+  margin-top: 15px;
+  color: #888;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.container .content input {
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.container .content input.editable {
+  margin: 5px 0 5px 0;
+  padding: 8px 0 8px 0;
+  color: #222;
+  border-bottom: 1px solid #ccc;
+}
+
+.container .content input.editable:focus {
+  border-color: #3639a4;
+}
+
+.container .content input.readonly {
+  padding: 6px 0 6px 0;
+}
+
+.container .content input[name="status"] {
+  width: fit-content;
+}
+
+.container .content button {
+  width: 70px;
+  margin: 20px 0 20px 0;
+  padding: 8px 0 8px 0;
+  border-radius: 4px;
+  color: white;
+  background: #3639a4;
+  font-size: 12px;
+}
+/*# sourceMappingURL=request-edit.css.map */

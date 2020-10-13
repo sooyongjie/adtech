@@ -15,12 +15,12 @@
 
 <body>
     <?php
-        $file = "dashboard.php";
-        include_once("nav.php");
+    $file = "dashboard.php";
+    include_once("nav.php");
     ?>
     <div class="container">
         <h2>New Requests</h2>
-        <div action="request-load.php" class="new-requests">
+        <div action="request-load.php" class="content new-requests">
             <table>
                 <tr>
                     <th>Request ID</th>
@@ -37,17 +37,19 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr>
-                        <td><?php echo $row['reqID'] ?></td>
+                    <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
-                        <td>
-                            <form action="get-request.php" method="POST">
+                        <td class="submit-btn">
+                            <form action="request-edit.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
-                            </form>
+                                <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                    <i class="fas fa-arrow-circle-right "></i>
+                                </button>
+                            </form> 
                         </td>
                     </tr>
                     <?php
@@ -63,5 +65,5 @@
     </div>
     </div>
 </body>
-
+<script src="js/dashboard.js"></script>
 </html>

@@ -19,7 +19,7 @@
     include_once("nav.php");
     ?>
     <div class="container">
-        <h2>New Requests</h2>
+        <h2>Feedback</h2>
         <div action="request-load.php" class="new-requests">
             <table>
                 <tr>
@@ -44,7 +44,7 @@
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td>
-                            <form action="get-request" method="POST">
+                            <form action="request-edit.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
                                 <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
                             </form>

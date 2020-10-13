@@ -1,10 +1,10 @@
 <nav>
     <h1>Ad<span>tech</span></h1>
     <?php
-    if(basename($file, ".php") == "dashboard") {
+    if($file == "dashboard.php") {
         ?>
-        <div class="button active">
-            <div class="button-l" onclick="location.href='dashboard.php'">
+        <div class="button active" onclick="location.href='dashboard.php'">
+            <div class="button-l">
                 <i class="fas fa-clipboard-list fa-lg "></i>
                 <p>Requests</p>
             </div>
@@ -15,18 +15,18 @@
         <?php
     } else {
         ?>
-        <div class="button">
-            <div class="button-l" onclick="location.href='dashboard.php'">
+        <div class="button" onclick="location.href='dashboard.php'">
+            <div class="button-l">
                 <i class="fas fa-clipboard-list fa-lg "></i>
                 <p>Requests</p>
             </div>
         </div>
         <?php
     }
-    if(basename($file, ".php") == "feedback") {
+    if($file == "feedback.php") {
     ?>
-    <div class="button">
-        <div class="button-l" onclick="location.href='feedback.php'">
+    <div class="button active" onclick="location.href='feedback.php'">
+        <div class="button-l">
             <i class="fas fa-comment-alt"></i>
             <p>Feedback</p>
         </div>
@@ -37,18 +37,18 @@
     <?php
     } else {
         ?>
-        <div class="button">
-            <div class="button-l" onclick="location.href='feedback.php'">
+        <div class="button" onclick="location.href='feedback.php'">
+            <div class="button-l">
                 <i class="fas fa-comment-alt"></i>
                 <p>Feedback</p>
             </div>
         </div>
         <?php
     }
-    if(basename($file, ".php") == "report") {
+    if($file == "report.php") {
         ?>
-        <div class="button">
-            <div class="button-l" onclick="location.href='report.php'">
+        <div class="button active" onclick="location.href='report.php'">
+            <div class="button-l">
                 <i class="fas fa-chart-bar"></i>
                 <p>Report</p>
             </div>
@@ -59,8 +59,8 @@
         <?php
         } else {
             ?>
-            <div class="button">
-                <div class="button-l" onclick="location.href='report.php'">
+            <div class="button" onclick="location.href='report.php'">
+                <div class="button-l">
                     <i class="fas fa-chart-bar"></i>
                     <p>Report</p>
                 </div>
