@@ -9,8 +9,18 @@ h2 {
   font-weight: 500;
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3639a4;
+}
+
 td {
   cursor: default;
+}
+
+td a {
+  border-bottom: 1px solid #444;
 }
 
 nav {
@@ -82,33 +92,35 @@ nav .button .button-l {
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.02);
 }
 
-.container .new-requests table {
+table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 16px;
 }
 
-.container .new-requests table th {
+table th {
+  padding-bottom: 10px;
   color: #666;
   border-bottom: 1px solid #ccc;
   text-align: left;
   font-weight: 500;
 }
 
-.container .new-requests table td {
+table td {
+  height: 40px;
   border-bottom: 1px solid #eee;
 }
 
-.container .new-requests table td.submit-btn {
+table td.submit-btn {
   width: 100px;
 }
 
-.container .new-requests table td form {
+table td form {
   width: 10px;
 }
 
-.container .new-requests table td button {
+table td button {
   width: 100px;
   margin-left: -25px;
   padding: 15px 0px 15px 0px;
@@ -118,7 +130,7 @@ nav .button .button-l {
   cursor: pointer;
 }
 
-.container .new-requests table td button .fas {
+table td button .fas {
   font-size: 20px;
 }
 /*# sourceMappingURL=dashboard.css.map */

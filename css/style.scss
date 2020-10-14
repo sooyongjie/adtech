@@ -11,6 +11,10 @@ p {
   margin: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -36,4 +40,3 @@ button {
 button:focus {
   outline: none;
 }
-/*# sourceMappingURL=style.css.map */

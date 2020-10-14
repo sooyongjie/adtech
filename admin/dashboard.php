@@ -17,36 +17,38 @@
     <?php
     $file = "dashboard.php";
     include_once("nav.php");
+    // unset($_SESSION['reqID']);
     ?>
     <div class="container">
         <h2>Pending Requests</h2>
-        <div class="content new-requests">
-            <table>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                    <th class="tr-button-heading"></th>
-                </tr>
+        <div class="content">
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` WHERE status = 'Pending'";
             $result = $db->query($query);
-            if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) { ?>
+                <table>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th class="tr-button-heading"></th>
+                    </tr>
+                <?php
                 while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
-                            <form action="request-edit.php" method="POST">
+                            <form action="request-view.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
                                     <i class="fas fa-arrow-circle-right "></i>
                                 </button>
                             </form> 
@@ -56,7 +58,7 @@
                 }
             } else {
                 ?>
-                    <p>No subjects are taught by you.</p>
+                    <p>There are no pending requests.</p>
                 <?php
             }
             ?>
@@ -65,32 +67,33 @@
         <!-- Ongoing requests -->
         <h2>Ongoing Requests</h2>
         <div class="content new-requests">
-            <table>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                    <th class="tr-button-heading"></th>
-                </tr>
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` WHERE status <> 'Pending' AND status <> 'Completed'";
             $result = $db->query($query);
-            if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) { ?>
+                <table>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th class="tr-button-heading"></th>
+                    </tr>
+                <?php
                 while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <tr class="<?php echo "ongoing-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
-                            <form action="request-edit.php" method="POST">
+                            <form action="request-view.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                <button type="submit" id="<?php echo "ongoing-".$row['reqID'] ?>">
                                     <i class="fas fa-arrow-circle-right "></i>
                                 </button>
                             </form> 
@@ -100,7 +103,7 @@
                 }
             } else {
                 ?>
-                    <p>No subjects are taught by you.</p>
+                    <p>There are no ongoing request.</p>
                 <?php
             }
             ?>
@@ -109,32 +112,33 @@
         <!-- All requests -->
         <h2>All Requests</h2>
         <div class="content new-requests">
-            <table>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                    <th class="tr-button-heading"></th>
-                </tr>
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request`";
             $result = $db->query($query);
-            if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) { ?>
+                <table>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th class="tr-button-heading"></th>
+                    </tr>
+                <?php
                 while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <tr class="<?php echo "all-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
-                            <form action="request-edit.php" method="POST">
+                            <form action="request-view.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                <button type="submit" id="<?php echo "all-".$row['reqID'] ?>">
                                     <i class="fas fa-arrow-circle-right "></i>
                                 </button>
                             </form> 
@@ -144,7 +148,7 @@
                 }
             } else {
                 ?>
-                    <p>No subjects are taught by you.</p>
+                    <p>There are no request.</p>
                 <?php
             }
             ?>

@@ -38,7 +38,12 @@
                     ?>
                     <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['feedbackNo'] ?></td>
-                        <td><?php echo $row['reqID'] ?></td>
+                        <td>
+                            <form action="request-view.php" method="post" id="<?php echo $row['reqID'] ?>">
+                                <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                            </form>
+                            <a onclick="document.getElementById('<?php echo $row['reqID'] ?>').submit()"><?php echo '#'.$row['reqID'] ?></a>
+                        </td>
                         <td><?php echo $row['feedbackComment'] ?></td>
                         <td><?php echo $row['feedbackRating'] ?></td>
                         <td class="submit-btn">

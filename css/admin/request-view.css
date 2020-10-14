@@ -3,12 +3,6 @@
   flex-direction: column;
 }
 
-.container .content h3 {
-  font-size: 20px;
-  font-weight: 500;
-  color: #3639a4;
-}
-
 .container .content .row {
   display: grid;
 }
@@ -55,12 +49,17 @@
 }
 
 .container .content button {
-  width: 70px;
+  width: max-content;
   margin: 20px 0 20px 0;
-  padding: 8px 0 8px 0;
+  padding: 8px 12px 8px 12px;
   border-radius: 4px;
   color: white;
   background: #3639a4;
   font-size: 12px;
 }
-/*# sourceMappingURL=request-edit.css.map */
+
+.container .content .form-status {
+  display: flex;
+  flex-direction: column;
+}
+/*# sourceMappingURL=request-view.css.map */

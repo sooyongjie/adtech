@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2020 at 10:59 AM
+-- Generation Time: Oct 14, 2020 at 12:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -43,9 +43,9 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `employee` (
-  `uid` varchar(100) NOT NULL,
+  `empID` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `user_type` varchar(100) NOT NULL,
+  `type` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,8 +53,10 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`uid`, `password`, `user_type`, `name`) VALUES
-('1', 'poop', '1', 'Soo Yong Jie');
+INSERT INTO `employee` (`empID`, `password`, `type`, `name`) VALUES
+('1', 'poop', '1', 'Soo Yong Jie'),
+('2', 'poop', '2', 'Project Manager'),
+('3', 'poop', '3', 'Cork');
 
 -- --------------------------------------------------------
 
@@ -68,6 +70,13 @@ CREATE TABLE `feedback` (
   `feedbackRating` int(1) NOT NULL,
   `reqID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedbackNo`, `feedbackComment`, `feedbackRating`, `reqID`) VALUES
+(10001, 'Doesn\'t smell like burnt plastic anymore', 5, 10001);
 
 -- --------------------------------------------------------
 
@@ -90,13 +99,22 @@ CREATE TABLE `report` (
 CREATE TABLE `request` (
   `reqID` int(100) NOT NULL,
   `uid` int(100) NOT NULL,
-  `empID` int(100) NOT NULL,
+  `empID` int(100) DEFAULT NULL,
   `category` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
   `dateOfCreation` datetime(6) NOT NULL,
-  `dateOfCompletion` datetime(6) NOT NULL
+  `dateOfCompletion` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`reqID`, `uid`, `empID`, `category`, `status`, `description`, `dateOfCreation`, `dateOfCompletion`) VALUES
+(10001, 1, 3, 'Slowdown', 'Assigned', 'Slow like tortoise slow', '2020-10-12 13:17:06.000000', '0000-00-00 00:00:00.000000'),
+(10002, 1, NULL, 'Epic', 'Pending', 'No', '2020-10-13 18:00:36.000000', NULL),
+(10003, 1, NULL, 'General', 'Pending', 'Can\'t turn on', '2020-10-14 17:47:40.000000', NULL);
 
 -- --------------------------------------------------------
 

@@ -1,23 +1,20 @@
 <?php
 session_start();
-?>
-<?php
 
 include_once("../db_connect.php");
 
-$username = $_POST['uid'];
-$password = $_POST['password'];
 // $username = '1';
 // $password = "poop";
 
-$query = "SELECT * FROM employee WHERE uid = '". $username ."' AND password = '". $password ."'";
+$query = "SELECT * FROM employee WHERE empID = '".$_POST['empID']."' AND password = '".$_POST['password']."'";
 $result = $db->query($query);
 
-if ($result->num_rows > 0)
+if ($result->num_rows == 1)
 {
     $row = $result->fetch_assoc();
     $_SESSION["name"] = $row["name"];
-    $_SESSION["logged"] = $row["uid"];
+    $_SESSION["empID"] = $row["empID"];
+    $_SESSION["type"] = $row["type"];
 
     header("Location: dashboard.php"); 
     exit();
