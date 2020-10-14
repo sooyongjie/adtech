@@ -50,12 +50,12 @@ session_start();
         <?php
     }
     // Employee
-    if($file == "employee.php") {
+    if($file == "employees.php") {
         ?>
-        <div class="button active" onclick="location.href='employee.php'">
+        <div class="button active" onclick="location.href='employees.php'">
             <div class="button-l">
                 <i class="fas fa-users"></i>
-                <p>Employee</p>
+                <p>Employees</p>
             </div>
             <div class="button-r">
                 <i class="fas fa-angle-right"></i>
@@ -64,10 +64,10 @@ session_start();
         <?php
         } else {
             ?>
-            <div class="button" onclick="location.href='employee.php'">
+            <div class="button" onclick="location.href='employees.php'">
                 <div class="button-l">
                     <i class="fas fa-users"></i>
-                    <p>Employee</p>
+                    <p>Employees</p>
                 </div>
             </div>
             <?php
