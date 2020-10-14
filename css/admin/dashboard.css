@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   background: #f5f5f5;
 }
@@ -14,10 +14,13 @@ td {
 }
 
 nav {
-  width: 18%;
+  min-height: 100vh;
+  width: 15%;
   padding: 35px 50px 50px 25px;
   background-color: #3639a4;
   color: white;
+  overflow: hidden;
+  position: fixed;
 }
 
 nav h1 {
@@ -56,8 +59,8 @@ nav .button .button-l {
 }
 
 .container {
-  width: 80%;
-  margin: 35px 50px 25px 50px;
+  width: 85%;
+  margin: 40px 9% 0 25%;
   display: flex;
   flex-direction: column;
 }
@@ -71,9 +74,9 @@ nav .button .button-l {
 
 .container .content {
   height: auto;
-  width: 90%;
-  margin-top: 20px;
-  padding: 20px 40px 40px 40px;
+  width: 100%;
+  margin: 20px 0 48px 0;
+  padding: 24px 32px 32px 32px;
   background: white;
   border-radius: 12px;
   box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.02);
@@ -87,7 +90,6 @@ nav .button .button-l {
 }
 
 .container .new-requests table th {
-  padding: 10px 0 10px 0;
   color: #666;
   border-bottom: 1px solid #ccc;
   text-align: left;
@@ -117,6 +119,6 @@ nav .button .button-l {
 }
 
 .container .new-requests table td button .fas {
-  font-size: 24px;
+  font-size: 20px;
 }
 /*# sourceMappingURL=dashboard.css.map */

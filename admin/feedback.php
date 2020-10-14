@@ -20,34 +20,34 @@
     ?>
     <div class="container">
         <h2>Feedback</h2>
-        <div action="request-load.php" class="new-requests">
+        <div class="content new-requests">
             <table>
                 <tr>
+                    <th>Feedback#</th>
                     <th>Request ID</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
+                    <th>Comments</th>
+                    <th>Rating</th>
                     <th class="tr-button-heading"></th>
                 </tr>
             <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM `request`";
+            $query = "SELECT * FROM `feedback`";
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     ?>
-                    <tr>
+                    <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                        <td><?php echo '#'.$row['feedbackNo'] ?></td>
                         <td><?php echo $row['reqID'] ?></td>
-                        <td><?php echo $row['category'] ?></td>
-                        <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo $row['status'] ?></td>
-                        <td>
+                        <td><?php echo $row['feedbackComment'] ?></td>
+                        <td><?php echo $row['feedbackRating'] ?></td>
+                        <td class="submit-btn">
                             <form action="request-edit.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
-                            </form>
+                                <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                    <i class="fas fa-arrow-circle-right "></i>
+                                </button>
+                            </form> 
                         </td>
                     </tr>
                     <?php
@@ -60,8 +60,6 @@
             ?>
             </table>
         </div>
-    </div>
-    </div>
 </body>
 
 </html>
