@@ -43,9 +43,17 @@
                             <label for="">Employee ID</label>
                             <label for="">Current Jobs</label>
                             <p><?php echo $row['empID'] ?></p>
-                            <p><?php echo $row['name'] ?></p>
+                            <p><?php echo $row['empName'] ?></p>
                             <p><?php echo $row['type'] ?></p>
-                            <p><?php echo "[tba]" ?></p>
+                            <p>
+                            <?php
+                            $query2 = "SELECT COUNT(`status`) AS CurrentJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
+                            $result2 = $db->query($query2);
+                            if($row2 = $result2->fetch_assoc()) {
+                                echo $row2['CurrentJobs'];
+                            }
+                            ?>
+                            </p>
                         </div>
                     </div>
                     <?php

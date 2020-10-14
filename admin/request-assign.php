@@ -18,9 +18,6 @@
     <?php
     $file = "dashboard.php";
     include_once("nav.php");
-    if(!isset($_SESSION['reqID'])) {
-        $_SESSION['reqID'] = $_POST['reqID'];
-    }
     ?>
     <div class="container">
         <div class="back" onclick="location.href='request-view.php'">
@@ -36,12 +33,13 @@
                 </tr>
                 <?php
                 include_once("../db_connect.php");
-                $query = "SELECT * FROM `employee` WHERE `type` <> '1' AND `type` <> '2'";
+                $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
+                WHERE status <> 'Pending' AND status <> 'Completed'";
                 $result = $db->query($query);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) { ?>
                     <tr class="<?php echo "pending-".$row['empID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
-                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['empName'] ?></td>
                         <td class="submit-btn">
                             <form action="request-assign-update.php" method="post">
                                 <input type="hidden" name="empID" value="<?php echo $row['empID'] ?>">

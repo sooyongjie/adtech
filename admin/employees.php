@@ -40,9 +40,17 @@
                     ?>
                     <tr class="<?php echo "pending-".$row['empID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['empID'] ?></td>
-                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['empName'] ?></td>
                         <td><?php echo $row['type'] ?></td>
-                        <td><?php echo "[tba]" ?></td>
+                        <td>
+                            <?php
+                            $query2 = "SELECT COUNT(`status`) AS NumberOfJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
+                            $result2 = $db->query($query2);
+                            if($row2 = $result2->fetch_assoc()) {
+                                echo $row2['NumberOfJobs'];
+                            }
+                            ?>
+                        </td>
                         <td class="submit-btn">
                             <form action="employee-view.php" method="POST">
                                 <input type="hidden" name="empID" value="<?php echo $row['empID'] ?>">

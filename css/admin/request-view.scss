@@ -4,12 +4,9 @@
     flex-direction: column;
     .row {
       display: grid;
+      row-gap: 8px;
       &.c4 {
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto auto;
-      }
-      &.c2 {
-        grid-template-columns: repeat(2, minmax(250px, max-content));
+        grid-template-columns: repeat(4, minmax(100px, 250px));
         grid-template-rows: auto auto;
       }
     }
@@ -23,8 +20,7 @@
       font-size: 16px;
       transition: 0.2s;
       &.editable {
-        margin: 5px 0 5px 0;
-        padding: 8px 0 8px 0;
+        padding: 0 0 8px 0;
         color: #222;
         border-bottom: 1px solid #ccc;
         &:focus {
@@ -38,13 +34,15 @@
         width: fit-content;
       }
     }
-    button {
+    button.submit {
+      height: 30px;
       width: max-content;
-      margin: 20px 0 20px 0;
+      margin-right: 32px;
       padding: 8px 12px 8px 12px;
-      border-radius: 4px;
+      align-self: flex-end;
       color: white;
       background: #3639a4;
+      border-radius: 4px;
       font-size: 12px;
     }
     .form-status {

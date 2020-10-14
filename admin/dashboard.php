@@ -69,7 +69,8 @@
         <div class="content new-requests">
             <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` WHERE status <> 'Pending' AND status <> 'Completed'";
+            $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
+            WHERE status <> 'Pending' AND status <> 'Completed'";
             $result = $db->query($query);
             if ($result->num_rows > 0) { ?>
                 <table>
@@ -77,7 +78,7 @@
                         <th>Request ID</th>
                         <th>Category</th>
                         <th>Date</th>
-                        <th>Time</th>
+                        <th>Employee</th>
                         <th>Status</th>
                         <th class="tr-button-heading"></th>
                     </tr>
@@ -88,7 +89,7 @@
                         <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
+                        <td><?php echo $row['empName'] ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
                             <form action="request-view.php" method="POST">
