@@ -19,7 +19,7 @@
     <div class="container">
         <div class="header">
             <h2>Employees</h2>
-            <button class="add">
+            <button class="add" onclick="location.href='employee-add.php'">
                 <i class="fas fa-plus"></i>
                 <span>Add employee</span>
             </button>
@@ -29,7 +29,8 @@
             include_once("../db_connect.php");
             $query = "SELECT * FROM `employee`";
             $result = $db->query($query);
-            if ($result->num_rows > 0) { ?>
+            if ($result->num_rows > 0) { 
+                ?>
                 <table>
                     <tr>
                         <th>Employee ID</th>

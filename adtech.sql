@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 12:23 PM
+-- Generation Time: Oct 15, 2020 at 10:02 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -46,17 +46,18 @@ CREATE TABLE `employee` (
   `empID` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `type` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `empName` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`empID`, `password`, `type`, `name`) VALUES
+INSERT INTO `employee` (`empID`, `password`, `type`, `empName`) VALUES
 ('1', 'poop', '1', 'Soo Yong Jie'),
 ('2', 'poop', '2', 'Project Manager'),
-('3', 'poop', '3', 'Cork');
+('3', 'poop', '3', 'Cork'),
+('4', 'poop', '3', 'Sum Ting Wong');
 
 -- --------------------------------------------------------
 
@@ -112,9 +113,9 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`reqID`, `uid`, `empID`, `category`, `status`, `description`, `dateOfCreation`, `dateOfCompletion`) VALUES
-(10001, 1, 3, 'Slowdown', 'Assigned', 'Slow like tortoise slow', '2020-10-12 13:17:06.000000', '0000-00-00 00:00:00.000000'),
-(10002, 1, NULL, 'Epic', 'Pending', 'No', '2020-10-13 18:00:36.000000', NULL),
-(10003, 1, NULL, 'General', 'Pending', 'Can\'t turn on', '2020-10-14 17:47:40.000000', NULL);
+(10001, 1, 3, 'Slowdown', 'Pending', 'Slow like tortoise slow', '2020-10-12 13:17:06.000000', '0000-00-00 00:00:00.000000'),
+(10002, 1, 4, 'Epic', 'Assigned', 'No', '2020-10-13 18:00:36.000000', NULL),
+(10003, 1, 3, 'General', 'Assigned', 'Can\'t turn on', '2020-10-14 17:47:40.000000', NULL);
 
 -- --------------------------------------------------------
 

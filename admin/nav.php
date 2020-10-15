@@ -73,7 +73,7 @@ session_start();
             <?php
         }
     // if CEO
-    if($_SESSION['userType'] == "1" && $file == "report.php") {
+    if($_SESSION['type'] == "1" && $file == "report.php") {
         ?>
         <div class="button active" onclick="location.href='report.php'">
             <div class="button-l">

@@ -37,17 +37,16 @@
                             <label for="">Name</label>
                             <label for="">Type</label>
                             <label for="">Current Jobs</label>
-                            <input type="text" name="" value="<?php echo $row['empID'] ?>" class="editable" />
+                            <input type="text" name="" value="<?php echo $row['empID'] ?>" class="readonly" readonly/>
                             <input type="text" name="" value="<?php echo $row['empName'] ?>" class="editable" />
                             <input type="text" name="" value="<?php echo $row['type'] ?>" class="editable" />
                             <?php
                             $query2 = "SELECT COUNT(`status`) AS CurrentJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
                             $result2 = $db->query($query2);
-                            if($row2 = $result2->fetch_assoc()) {
-                                echo $row2['CurrentJobs'];
+                            if($row2 = $result2->fetch_assoc()) { ?>
+                                <input type="text" name="" value="<?php echo $row2['CurrentJobs'] ?>" class="readonly" readonly/> <?php
                             }
                             ?>
-                            </p>
                         </form>
                         <button class="submit">Submit</button>
                     </div>
