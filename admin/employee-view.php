@@ -2,16 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <?php
+    include_once("../head.php");
+    ?>
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
-    <link rel="stylesheet" type="text/css" href="../css/admin/request-view.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/detail-view.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/employee-view.css" />
 </head>
 
 <body>
@@ -20,9 +17,7 @@
     include_once("nav.php");
     if(!isset($_SESSION['empID'])) {
         $_SESSION['empID'] = $_POST['empID'];
-    } else if(isset($_POST['empID'])) {
-        $_SESSION['empID'] = $_POST['empID'];
-    }
+    };
     ?>
     <div class="container">
         <div class="back" onclick="location.href='employees.php'">
@@ -37,15 +32,14 @@
                 if($row = $result->fetch_assoc()) { ?>
                     <div class="content">
                         <h3>Employee #<?php echo $row['empID'] ?></h3>
-                        <div class="row c4">
-                            <label for="">Request ID</label>
-                            <label for="">User ID</label>
-                            <label for="">Employee ID</label>
+                        <form class="row c4">
+                            <label for="">ID</label>
+                            <label for="">Name</label>
+                            <label for="">Type</label>
                             <label for="">Current Jobs</label>
-                            <p><?php echo $row['empID'] ?></p>
-                            <p><?php echo $row['empName'] ?></p>
-                            <p><?php echo $row['type'] ?></p>
-                            <p>
+                            <input type="text" name="" value="<?php echo $row['empID'] ?>" class="editable" />
+                            <input type="text" name="" value="<?php echo $row['empName'] ?>" class="editable" />
+                            <input type="text" name="" value="<?php echo $row['type'] ?>" class="editable" />
                             <?php
                             $query2 = "SELECT COUNT(`status`) AS CurrentJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
                             $result2 = $db->query($query2);
@@ -54,7 +48,8 @@
                             }
                             ?>
                             </p>
-                        </div>
+                        </form>
+                        <button class="submit">Submit</button>
                     </div>
                     <?php
                 }
@@ -64,5 +59,5 @@
     </div>
     </div>
 </body>
-
+<script src="js/replace-window-state.js"></script>
 </html>

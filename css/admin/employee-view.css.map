@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAGM,UAHI,CACR,QAAQ,CACN,IAAI,AACD,GAAG,CAAC;EACH,qBAAqB,EAAE,oBAAoB;EAC3C,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "employee-view.scss"
+    ],
+    "names": [],
+    "file": "employee-view.css"
+}

@@ -1,0 +1,30 @@
+.container .header {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+.container .header button.add {
+  padding: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  background: #ddd;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.container .header button.add:hover {
+  background: #eaeaea;
+  border: 1px solid #aaa;
+}
+
+.container .header button.add .fa-plus {
+  font-size: 10px;
+}
+/*# sourceMappingURL=employees.css.map */

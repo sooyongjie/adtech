@@ -1,0 +1,28 @@
+.container {
+    .header {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        button.add {
+            padding: 0 10px 0 10px;
+            display: flex;
+            align-items: center;
+            column-gap: 4px;
+            background: #ddd;
+            color: #444;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.1s;
+            cursor: pointer;
+            &:hover {
+                background: #eaeaea;
+                border: 1px solid #aaa;
+            }
+            .fa-plus {
+                font-size: 10px;
+            }
+        }
+    }
+}

@@ -2,29 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
+    <?php
+    include_once("../head.php");
+    ?>
 </head>
 
 <body>
     <?php
     $file = "dashboard.php";
     include_once("nav.php");
-    // unset($_SESSION['reqID']);
+    unset($_SESSION['reqID']);
     ?>
     <div class="container">
         <h2>Pending Requests</h2>
         <div class="content">
             <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` WHERE status = 'Pending'";
+            $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY reqID asc";
             $result = $db->query($query);
             if ($result->num_rows > 0) { ?>
                 <table>
@@ -70,7 +66,7 @@
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
-            WHERE status <> 'Pending' AND status <> 'Completed'";
+            WHERE status <> 'Pending' AND status <> 'Completed' ORDER BY reqID asc";
             $result = $db->query($query);
             if ($result->num_rows > 0) { ?>
                 <table>
@@ -115,7 +111,7 @@
         <div class="content new-requests">
             <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM `request`";
+            $query = "SELECT * FROM `request` ORDER BY reqID asc";
             $result = $db->query($query);
             if ($result->num_rows > 0) { ?>
                 <table>

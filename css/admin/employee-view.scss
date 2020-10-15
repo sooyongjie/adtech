@@ -1,0 +1,10 @@
+.container {
+  .content {
+    .row {
+      &.c4 {
+        grid-template-columns: 50px 200px 30px 80px;
+        column-gap: 50px;
+      }
+    }
+  }
+}

@@ -31,6 +31,7 @@ nav {
   color: white;
   overflow: hidden;
   position: fixed;
+  font-family: "Poppins", sans-serif;
 }
 
 nav h1 {

@@ -2,25 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
-    <link rel="stylesheet" type="text/css" href="../css/admin/request-view.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/detail-view.css" />
+    <?php
+    include_once("../head.php");
+    ?>
 </head>
 
 <body>
     <?php
     $file = "dashboard.php";
     include_once("nav.php");
-    if(!isset($_SESSION['reqID'])) {
-        $_SESSION['reqID'] = $_POST['reqID'];
-    } else if(isset($_POST['reqID'])) {
+    if(!isset($_SESSION['reqID']) && isset($_POST['reqID'])) {
         $_SESSION['reqID'] = $_POST['reqID'];
     }
     ?>
@@ -32,7 +26,7 @@
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
-            WHERE status <> 'Pending' AND status <> 'Completed'";
+            WHERE reqID = '".$_SESSION['reqID']."' ";
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 if($row = $result->fetch_assoc()) { ?>
@@ -89,5 +83,5 @@
     </div>
     </div>
 </body>
-
+<script src="js/replace-window-state.js"></script>
 </html>

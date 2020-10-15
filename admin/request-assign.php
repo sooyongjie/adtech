@@ -2,16 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/request-assign.css" />
+    <?php
+    include_once("../head.php");
+    ?>
 </head>
 
 <body>
@@ -59,4 +55,5 @@
     </div>
 </body>
 <script src="js/dashboard.js"></script>
+<script src="js/replace-window-state.js"></script>
 </html>

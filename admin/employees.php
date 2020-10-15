@@ -2,25 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/employees.css" />
+    <?php
+    include_once("../head.php");
+    ?>
 </head>
 
 <body>
     <?php
     $file = "employees.php";
     include_once("nav.php");
-    // unset($_SESSION['reqID']);
+    unset($_SESSION['empID']);
     ?>
     <div class="container">
-        <h2>Employees</h2>
+        <div class="header">
+            <h2>Employees</h2>
+            <button class="add">
+                <i class="fas fa-plus"></i>
+                <span>Add employee</span>
+            </button>
+        </div>
         <div class="content">
             <?php
             include_once("../db_connect.php");
@@ -31,7 +34,7 @@
                     <tr>
                         <th>Employee ID</th>
                         <th>Name</th>
-                        <th>Employee Type</th>
+                        <th>Position</th>
                         <th>Current Jobs</th>
                         <th class="tr-button-heading"></th>
                     </tr>
@@ -41,7 +44,17 @@
                     <tr class="<?php echo "pending-".$row['empID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['empID'] ?></td>
                         <td><?php echo $row['empName'] ?></td>
-                        <td><?php echo $row['type'] ?></td>
+                        <td>
+                            <?php
+                            if($row['type'] == 1) {
+                                echo "CEO";
+                            } else if($row['type'] == 2) {
+                                echo "Project Manager";
+                            } else {
+                                echo "Employee";
+                            }
+                            ?>
+                        </td>
                         <td>
                             <?php
                             $query2 = "SELECT COUNT(`status`) AS NumberOfJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
