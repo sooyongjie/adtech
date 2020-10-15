@@ -8,7 +8,6 @@
     ?>
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="../css/admin/detail-view.css" />
-    <link rel="stylesheet" type="text/css" href="../css/admin/employee-view.css" />
 </head>
 
 <body>
@@ -23,6 +22,17 @@
         </div>
             <div class="content">
                 <h3>Add employee</h3>
+                <form action="employee-insert.php" method="post" class="row c4">
+                    <label for="">Employee Name</label>
+                    <label for="">Employee Name</label>
+                    <label for="">Employee Name</label>
+                    <label for="">Employee Name</label>
+                    <input type="text" name="empName" placeholder="Name" class="editable" />
+                    <input type="text" name="empName" placeholder="Name" class="editable" />
+                    <input type="text" name="empName" placeholder="Name" class="editable" />
+                    <input type="text" name="empName" placeholder="Name" class="editable" />
+                </form>
+                <button class="submit">Submit</button>
             </div>
     </div>
     </div>

@@ -21,21 +21,30 @@
             <h2>Request <?php echo "#".$_SESSION['reqID'] ?></h2>
         </div>
         <div class="content">
-            <h3>Task Assignment</h3>
+            <h3>Assign Task</h3>
             <table>
                 <tr>
                     <th>Employee</th>
+                    <th>Current Jobs</th>
                     <th></th>
                 </tr>
                 <?php
                 include_once("../db_connect.php");
-                $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
-                WHERE status <> 'Pending' AND status <> 'Completed'";
+                $query = "SELECT * FROM `employee` WHERE `type` <> '1' AND `type` <> '2'";
                 $result = $db->query($query);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) { ?>
                     <tr class="<?php echo "pending-".$row['empID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo $row['empName'] ?></td>
+                        <td>
+                            <?php
+                            $query2 = "SELECT COUNT(`status`) AS NumberOfJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
+                            $result2 = $db->query($query2);
+                            if($row2 = $result2->fetch_assoc()) {
+                                echo $row2['NumberOfJobs'];
+                            }
+                            ?>
+                        </td>
                         <td class="submit-btn">
                             <form action="request-assign-update.php" method="post">
                                 <input type="hidden" name="empID" value="<?php echo $row['empID'] ?>">

@@ -22,6 +22,7 @@ td {
   }
 }
 
+// Navigation panel
 nav {
   min-height: 100vh;
   width: 15%;
@@ -62,6 +63,7 @@ nav {
   }
 }
 
+// Main content
 .container {
   width: 85%;
   margin: 40px 9% 0 25%;
@@ -77,7 +79,7 @@ nav {
     height: auto;
     width: 100%;
     margin: 20px 0 48px 0;
-    padding: 24px 32px 32px 32px;
+    padding: 24px 32px 28px 32px;
     background: white;
     border-radius: 12px;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.02);
