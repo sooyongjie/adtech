@@ -50,7 +50,7 @@ session_start();
         <?php
     }
     // Employee
-    if($file == "employees.php") {
+    if($_SESSION['type'] != "3" && $file == "employees.php") {
         ?>
         <div class="button active" onclick="location.href='employees.php'">
             <div class="button-l">
@@ -73,7 +73,7 @@ session_start();
             <?php
         }
     // if CEO
-    if($_SESSION['type'] == "1" && $file == "report.php") {
+    if($_SESSION['type'] == 1 && $file == "report.php") {
         ?>
         <div class="button active" onclick="location.href='report.php'">
             <div class="button-l">
@@ -85,35 +85,12 @@ session_start();
             </div>
         </div>
         <?php
-        } else if($_SESSION['userType'] == 1) {
+        } else if($_SESSION['type'] == 1) {
             ?>
             <div class="button" onclick="location.href='report.php'">
                 <div class="button-l">
                     <i class="fas fa-chart-bar"></i>
                     <p>Report</p>
-                </div>
-            </div>
-        <?php
-    }
-    // if Project Manager
-    if($_SESSION['type'] == "2" && $file == "report.php") {
-        ?>
-        <div class="button active" onclick="location.href='report.php'">
-            <div class="button-l">
-                <i class="fas fa-chart-bar"></i>
-                <p>Employee Status</p>
-            </div>
-            <div class="button-r">
-                <i class="fas fa-angle-right"></i>
-            </div>
-        </div>
-        <?php
-        } else if($_SESSION['type'] == 2) {
-            ?>
-            <div class="button" onclick="location.href='report.php'">
-                <div class="button-l">
-                    <i class="fas fa-chart-bar"></i>
-                    <p>Employee Status</p>
                 </div>
             </div>
         <?php
