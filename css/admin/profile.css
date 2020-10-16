@@ -1,0 +1,8 @@
+.row {
+  margin-right: 32px;
+}
+
+.row.c3 {
+  column-gap: 100px;
+}
+/*# sourceMappingURL=profile.css.map */

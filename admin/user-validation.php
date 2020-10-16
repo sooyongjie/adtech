@@ -12,11 +12,13 @@ if ($result->num_rows == 1)
 {
     $row = $result->fetch_assoc();
     $_SESSION["type"] = $row["type"];
+    $_SESSION["uid"] = $row["empID"];
+    $_SESSION["name"] = $row["empName"];
 
     header("Location: dashboard.php"); 
     exit();
     // use exit() to pause
 }
-else echo "Please try again."; //Fail
+else echo "MEGA EPICC FAIL LMAO. `$result->num_rows != 1`)"; //Fail
 
 ?>

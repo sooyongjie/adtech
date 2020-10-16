@@ -5,6 +5,10 @@
     .row {
       display: grid;
       row-gap: 8px;
+      &.c3 {
+        grid-template-columns: repeat(3, minmax(150px, 300px));
+        grid-template-rows: auto auto;
+      }
       &.c4 {
         grid-template-columns: repeat(4, minmax(100px, 250px));
         grid-template-rows: auto auto;
@@ -37,7 +41,7 @@
     button.submit {
       height: 30px;
       width: max-content;
-      margin-right: 32px;
+      margin: 20px 32px 0 0;
       padding: 8px 12px 8px 12px;
       align-self: flex-end;
       color: white;
