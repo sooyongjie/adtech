@@ -19,19 +19,20 @@
     <div class="container">
         <div class="back" onclick="location.href='employees.php'">
             <i class="fas fa-arrow-left"></i>
-            <h2>Employees</h2>
+            <h2>New Employee</h2>
         </div>
             <div class="content">
-                <h3>Add employee</h3>
-                <form action="employee-insert.php" method="post" class="row c3">
+                <h3>Employee</h3>
+                <form action="employee-insert.php" method="post" class="row c4">
                     <label for="">Employee Name</label>
-                    <label for="">Employee Position (Number)</label>
+                    <label for="">Employee Position</label>
                     <label for="">Temporary Password</label>
+                    <label></label>
                     <input type="text" name="empName" class="editable" />
-                    <input type="number" name="empType" class="editable" />
-                    <input type="password" name="EmpPassword" class="editable" />
+                    <input type="number" name="type" class="editable" />
+                    <input type="password" name="password" class="editable" />
+                    <button class="submit">Submit</button>
                 </form>
-                <button class="submit">Submit</button>
             </div>
     </div>
     </div>

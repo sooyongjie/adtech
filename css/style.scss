@@ -1,4 +1,3 @@
-
 body,
 h1,
 h2,
@@ -20,14 +19,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-form input {
-  border: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-
-form input:focus {
-  outline: none;
+form {
+  input {
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #ccc;
+    }
+  }
 }
 
 a {
@@ -36,8 +39,7 @@ a {
 
 button {
   border: none;
-}
-
-button:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }

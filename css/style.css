@@ -28,6 +28,10 @@ form input:focus {
   outline: none;
 }
 
+form input::placeholder {
+  color: #ccc;
+}
+
 a {
   text-decoration: none;
 }

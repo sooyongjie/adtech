@@ -19,9 +19,9 @@
     <div class="container">
         <div class="header">
             <h2>Employees</h2>
-            <button class="add" onclick="location.href='employee-add.php'">
+            <button class="heading-btn" onclick="location.href='employee-add.php'">
                 <i class="fas fa-plus"></i>
-                <span>Add employee</span>
+                <span>Add</span>
             </button>
         </div>
         <div class="content">

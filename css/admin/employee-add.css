@@ -1,8 +1,5 @@
-.row {
-  margin-right: 32px;
-}
-
-.row.c3 {
-  column-gap: 100px;
+.row.c4 {
+  grid-template-columns: 120px 120px 240px 120px !important;
+  column-gap: 50px;
 }
 /*# sourceMappingURL=employee-add.css.map */

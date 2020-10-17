@@ -33,6 +33,7 @@
       }
       &.readonly {
         padding: 6px 0 6px 0;
+        border-bottom: 1px solid #eee;
       }
       &[name="status"] {
         width: fit-content;
@@ -41,7 +42,6 @@
     button.submit {
       height: 30px;
       width: max-content;
-      margin: 20px 32px 0 0;
       padding: 8px 12px 8px 12px;
       align-self: flex-end;
       color: white;

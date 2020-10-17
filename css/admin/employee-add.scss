@@ -1,6 +1,6 @@
 .row {
-    margin-right: 32px;
-    &.c3 {
-        column-gap: 100px;
+    &.c4 {
+        grid-template-columns: 120px 120px 240px 120px !important;
+        column-gap: 50px;
     }
 }

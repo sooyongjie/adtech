@@ -13,4 +13,5 @@ if ($db->query($query) === TRUE) {
 } else {
     echo "Error updating record: " . $db->error;
 }
+
 ?>

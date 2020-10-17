@@ -36,7 +36,7 @@
                             <a onclick="document.getElementById('<?php echo $row['reqID'] ?>').submit()">
                                 <h3>Request #<?php echo $row['reqID'] ?></h3>
                             </a>
-                            <p>The request has been ongoing for <?php echo date_diff(new DateTime(date("Y/m/d",strtotime($row['dateOfCreation']))), new DateTime())-> format("%d") ?> days.</p>
+                            <p>This request has been ongoing for <?php echo date_diff(new DateTime(date("Y/m/d",strtotime($row['dateOfCreation']))), new DateTime())-> format("%d") ?> days.</p>
                         </div> <?php
                     }
                 }

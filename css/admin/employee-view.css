@@ -1,5 +1,20 @@
-.container .content .row.c4 {
-  grid-template-columns: 50px 200px 30px 80px;
+.container .content .row.c5 {
+  grid-template-columns: 50px 200px 30px 80px 80px;
+  grid-template-rows: repeat(2, auto);
   column-gap: 50px;
+}
+
+.container .content button.submit {
+  margin-left: auto;
+}
+
+.container .content.overtime-container .row.c3 {
+  grid-template-columns: 200px 50px 200px;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 50px;
+}
+
+.container .content.overtime-container .row.c3 button.submit {
+  margin: 0;
 }
 /*# sourceMappingURL=employee-view.css.map */
