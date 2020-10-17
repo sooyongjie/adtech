@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['uid'])) {
+    header("Location: index.php"); 
+}
+
 ?>
 
 <nav>
@@ -95,6 +100,44 @@ session_start();
             </div>
         <?php
     }
+    // Alert
+    include_once("../db_connect.php");
+    $query = "SELECT reqID, dateOfCreation FROM `request`";
+    $result = $db->query($query);
+    if ($result->num_rows > 0) { 
+        if($row = $result->fetch_assoc()) {
+            $dot = "<div class='dot'></div>";
+        }
+    }
+    if($file == "alerts.php") {
+        ?>
+        <div class="button active" onclick="location.href='alerts.php'">
+            <div class="button-l">
+                <i class="fas fa-bell"></i>
+                <p>Alerts</p> <?php
+                if(isset($dot)) {
+                    echo $dot;
+                } ?>
+            </div>
+            <div class="button-r">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+        <?php
+        } else {
+            ?>
+            <div class="button" onclick="location.href='alerts.php'">
+                <div class="button-l">
+                    <i class="fas fa-bell"></i>
+                    <p>Alerts</p> <?php
+                    if(isset($dot)) {
+                        echo $dot;
+                    } ?>
+                </div>
+            </div>
+        <?php
+    }
+    // Profile
     if($file == "report.php") {
         ?>
         <div class="profile button active" onclick="location.href='profile.php'">
@@ -107,7 +150,7 @@ session_start();
             </div>
         </div>
         <?php
-        } else if($_SESSION['type'] == 1) {
+        } else {
             ?>
             <div class="profile button" onclick="location.href='profile.php'">
                 <div class="button-l">

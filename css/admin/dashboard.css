@@ -2,6 +2,7 @@ body {
   min-height: 100vh;
   display: flex;
   background: #f5f5f5;
+  overflow-y: scroll;
 }
 
 h1,
@@ -37,7 +38,7 @@ nav {
 }
 
 nav h1 {
-  margin-bottom: 80px;
+  margin-bottom: 10vh;
   font-size: 32px;
 }
 
@@ -63,12 +64,23 @@ nav .button.active {
   color: white;
 }
 
+nav .button.active .dot {
+  background: white !important;
+}
+
 nav .button .button-l {
   display: flex;
   align-items: center;
   column-gap: 16px;
   font-size: 18px;
   font-weight: 300;
+}
+
+nav .button .button-l .dot {
+  height: 5px;
+  width: 5px;
+  background: #ccc;
+  border-radius: 50%;
 }
 
 nav .profile {
@@ -97,7 +109,7 @@ nav .profile {
   padding: 24px 32px 28px 32px;
   background: white;
   border-radius: 12px;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.02);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
 table {
@@ -140,5 +152,25 @@ table td button {
 
 table td button .fas {
   font-size: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
 }
 /*# sourceMappingURL=dashboard.css.map */

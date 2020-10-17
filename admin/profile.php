@@ -24,7 +24,7 @@
         if ($result->num_rows == 1) {
             if($row = $result->fetch_assoc()) {
                 ?>
-                <h2>User</h2>
+                <h2>Profile</h2>
                 <div class="content">
                 <h3><?php echo $row['empName'] ?></h3>
                     <form action="user-update.php" method="post" class="row c3">

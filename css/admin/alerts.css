@@ -1,0 +1,18 @@
+.alerts-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+
+.alerts-container .content {
+  width: max-content;
+  margin-bottom: 0px !important;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.alerts-container .content form {
+  position: absolute;
+}
+/*# sourceMappingURL=alerts.css.map */
