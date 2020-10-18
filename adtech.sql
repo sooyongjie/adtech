@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2020 at 10:02 AM
+-- Generation Time: Oct 18, 2020 at 02:49 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -43,7 +43,7 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `employee` (
-  `empID` varchar(100) NOT NULL,
+  `empID` int(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `type` varchar(100) NOT NULL,
   `empName` varchar(100) NOT NULL
@@ -54,10 +54,10 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`empID`, `password`, `type`, `empName`) VALUES
-('1', 'poop', '1', 'Soo Yong Jie'),
-('2', 'poop', '2', 'Project Manager'),
-('3', 'poop', '3', 'Cork'),
-('4', 'poop', '3', 'Sum Ting Wong');
+(1, 'poop', '1', 'Soo Yong Jie'),
+(2, 'poop', '2', 'Project Manager'),
+(3, 'poop', '3', 'Cork'),
+(4, 'poop', '3', 'Sum Ting Wong');
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,29 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedbackNo`, `feedbackComment`, `feedbackRating`, `reqID`) VALUES
-(10001, 'Doesn\'t smell like burnt plastic anymore', 5, 10001);
+(10001, 'Doesn\'t smell like burnt plastic anymore', 5, 10001),
+(2, 'Ok', 4, 10002),
+(3, 'Good !', 5, 10003);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `overtime`
+--
+
+CREATE TABLE `overtime` (
+  `id` int(100) NOT NULL,
+  `empID` int(100) NOT NULL,
+  `date` date NOT NULL,
+  `hours` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `overtime`
+--
+
+INSERT INTO `overtime` (`id`, `empID`, `date`, `hours`) VALUES
+(1, 1, '2020-10-17', 2);
 
 -- --------------------------------------------------------
 
@@ -113,9 +135,10 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`reqID`, `uid`, `empID`, `category`, `status`, `description`, `dateOfCreation`, `dateOfCompletion`) VALUES
-(10001, 1, 3, 'Slowdown', 'Pending', 'Slow like tortoise slow', '2020-10-12 13:17:06.000000', '0000-00-00 00:00:00.000000'),
-(10002, 1, 4, 'Epic', 'Assigned', 'No', '2020-10-13 18:00:36.000000', NULL),
-(10003, 1, 3, 'General', 'Assigned', 'Can\'t turn on', '2020-10-14 17:47:40.000000', NULL);
+(10001, 1, 4, 'Slowdown', 'Pending', 'Slow like tortoise slow', '2020-10-12 13:17:06.000000', '0000-00-00 00:00:00.000000'),
+(10002, 1, 3, 'Epic', 'Completed', 'No', '2020-10-13 18:00:36.000000', NULL),
+(10003, 1, 3, 'General', 'Assigned', 'Can\'t turn on', '2020-10-14 17:47:40.000000', NULL),
+(10000, 1, 3, 'General', 'Assigned', '不知道', '2020-09-30 15:38:02.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,6 +153,38 @@ CREATE TABLE `salary` (
   `totalWorkingHours` time(6) NOT NULL,
   `totalOvertimeHours` time(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`empID`);
+
+--
+-- Indexes for table `overtime`
+--
+ALTER TABLE `overtime`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `empID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `overtime`
+--
+ALTER TABLE `overtime`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
