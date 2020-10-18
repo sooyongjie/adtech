@@ -16,7 +16,7 @@
     ?>
     <div class="container">
         <h2>Feedback</h2>
-        <div class="content new-requests">
+        <div class="card new-requests">
             <table>
                 <tr>
                     <th>Feedback#</th>

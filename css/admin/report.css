@@ -1,0 +1,20 @@
+.container {
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 50px;
+  row-gap: 10px;
+}
+
+.container .card {
+  margin-bottom: 0px;
+}
+
+.container .content.overtime {
+  width: 100%;
+}
+
+.container .content .card.report-card {
+  min-width: 330px;
+  max-width: 400px;
+}
+/*# sourceMappingURL=report.css.map */

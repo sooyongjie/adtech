@@ -21,7 +21,7 @@
             <i class="fas fa-arrow-left"></i>
             <h2>New Employee</h2>
         </div>
-            <div class="content">
+            <div class="card">
                 <h3>Employee</h3>
                 <form action="employee-insert.php" method="post" class="row c4">
                     <label for="">Employee Name</label>

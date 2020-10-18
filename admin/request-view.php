@@ -30,7 +30,7 @@
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 if($row = $result->fetch_assoc()) { ?>
-                    <div action="request-assign.php" method="POST" class="content">
+                    <div action="request-assign.php" method="POST" class="card">
                         <h3>Request #<?php echo $row['reqID'] ?></h3>
                         <div class="row c4">
                             <label for="">Request ID</label>

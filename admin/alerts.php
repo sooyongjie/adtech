@@ -29,7 +29,7 @@
                 while($row = $result->fetch_assoc()) { 
                     if(date_diff(new DateTime(date("Y/m/d",strtotime($row['dateOfCreation']))), new DateTime())-> format("%d") >= 10) {
                         ?>
-                        <div class="content">
+                        <div class="card">
                             <form action="request-view.php" method="post" id="<?php echo $row['reqID'] ?>">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
                             </form>

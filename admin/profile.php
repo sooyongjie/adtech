@@ -13,7 +13,7 @@
 
 <body>
     <?php
-    $file = "feedback.php";
+    $file = "profile.php";
     include_once("nav.php");
     ?>
     <div class="container">
@@ -25,8 +25,8 @@
             if($row = $result->fetch_assoc()) {
                 ?>
                 <h2>Profile</h2>
-                <div class="content">
-                <h3><?php echo $row['empName'] ?></h3>
+                <div class="card">
+                    <h3><?php echo $row['empName'] ?></h3>
                     <form action="user-update.php" method="post" class="row c3">
                         <label for="">ID</label>
                         <label for="">Name</label>

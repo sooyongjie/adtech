@@ -1,55 +1,55 @@
-.container .content {
+.container .card {
   display: flex;
   flex-direction: column;
 }
 
-.container .content .row {
+.container .card .row {
   display: grid;
   row-gap: 8px;
 }
 
-.container .content .row.c3 {
+.container .card .row.c3 {
   grid-template-columns: repeat(3, minmax(150px, 300px));
   grid-template-rows: auto auto;
 }
 
-.container .content .row.c4 {
+.container .card .row.c4 {
   grid-template-columns: repeat(4, minmax(100px, 250px));
   grid-template-rows: auto auto;
 }
 
-.container .content label {
+.container .card label {
   margin-top: 15px;
   color: #888;
   font-size: 14px;
   font-weight: 300;
 }
 
-.container .content input {
+.container .card input {
   font-size: 16px;
   transition: 0.2s;
 }
 
-.container .content input.editable {
+.container .card input.editable {
   padding: 0 0 8px 0;
   color: #222;
   border-bottom: 1px solid #ccc;
 }
 
-.container .content input.editable:focus {
+.container .card input.editable:focus {
   border-color: #3639a4;
 }
 
-.container .content input.readonly {
+.container .card input.readonly {
   padding: 6px 0 6px 0;
   border-bottom: 1px solid #eee;
 }
 
-.container .content input[name="status"] {
+.container .card input[name="status"] {
   width: fit-content;
 }
 
-.container .content button.submit {
+.container .card button.submit {
   height: 30px;
   width: max-content;
   padding: 8px 12px 8px 12px;
@@ -60,7 +60,7 @@
   font-size: 12px;
 }
 
-.container .content .form-status {
+.container .card .form-status {
   display: flex;
   flex-direction: column;
 }

@@ -20,7 +20,7 @@
             <i class="fas fa-arrow-left"></i>
             <h2>Request <?php echo "#".$_SESSION['reqID'] ?></h2>
         </div>
-        <div class="content">
+        <div class="card">
             <h3>Assign Task</h3>
             <table>
                 <tr>

@@ -1,0 +1,18 @@
+.container {
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 50px;
+  row-gap: 10px;
+  .card {
+    margin-bottom: 0px;
+  }
+  .content.overtime {
+    width: 100%;
+  }
+  .content {
+    .card.report-card {
+      min-width: 330px;
+      max-width: 400px;
+    }
+  }
+}

@@ -38,7 +38,7 @@
                         <span>Delete</span>
                     </button>
                 </div>
-                <div class="content">
+                <div class="card">
                     <h3>Employee Details</h3>
                     <form class="row c5">
                         <label for="">ID</label>
@@ -68,7 +68,7 @@
         $query = "SELECT * FROM `overtime` WHERE `empID` = '".$_SESSION['empID']."'";
         $result = $db->query($query); ?>
         <h2>Overtime</h2>
-        <div class="content"> <?php
+        <div class="card"> <?php
             if ($result->num_rows > 0) { ?>
                 <table>
                     <tr>
@@ -92,7 +92,7 @@
             } 
         ?>
         </div>
-        <div class="content overtime-container">
+        <div class="card overtime-container">
             <h3>Add Overtime</h3>
             <form action="overtime-insert.php" method="post" class="row c3">
                 <label for="">Date</label>

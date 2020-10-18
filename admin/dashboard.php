@@ -17,7 +17,7 @@
     ?>
     <div class="container">
         <h2>Pending Requests</h2>
-        <div class="content">
+        <div class="card">
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY reqID asc";
@@ -62,7 +62,7 @@
         </div>
         <!-- Ongoing requests -->
         <h2>Ongoing Requests</h2>
-        <div class="content new-requests">
+        <div class="card new-requests">
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
@@ -108,7 +108,7 @@
         </div>
         <!-- All requests -->
         <h2>All Requests</h2>
-        <div class="content new-requests">
+        <div class="card new-requests">
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `request` ORDER BY reqID asc";

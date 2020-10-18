@@ -138,15 +138,12 @@ if(!isset($_SESSION['uid'])) {
         <?php
     }
     // Profile
-    if($file == "report.php") {
+    if($file == "profile.php") {
         ?>
         <div class="profile button active" onclick="location.href='profile.php'">
             <div class="button-l">
                 <i class="fad fa-user-circle"></i>
                 <p><?php echo $_SESSION['name'] ?></p>
-            </div>
-            <div class="button-r">
-                <i class="fas fa-angle-right"></i>
             </div>
         </div>
         <?php

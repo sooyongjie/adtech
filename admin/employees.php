@@ -24,7 +24,7 @@
                 <span>Add</span>
             </button>
         </div>
-        <div class="content">
+        <div class="card">
             <?php
             include_once("../db_connect.php");
             $query = "SELECT * FROM `employee`";
