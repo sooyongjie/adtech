@@ -24,15 +24,17 @@
                 <h2>Request Form</h2>
             </div> -->
             <h2>Request Form</h2>
-            <label for="">Summary of issue</label>
-            <input type="text" placeholder="Enter text">
-            <label for="">Priority</label>
+            <label for="">Category</label>
             <div class="radio">
-                <input type="radio" value="ok">
-                <span>Normal</span>
-                <input type="radio" value="ok">
-                <span>Urgent</span>
+                <input type="radio" name= "button" value="Hardware">
+                <span>Hardware</span>
+                <input type="radio" name= "button" value="Software">
+                <span>Software</span>
+                <input type="radio" name= "button" value="Others">
+                <span>Others</span>
             </div>
+            <label for="">Description of problem</label>
+            <input type="text" placeholder="Enter text">
             <button type="button">Submit</button>
         </form>
     </div>
