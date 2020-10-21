@@ -1,43 +1,67 @@
+body {
+  overflow-y: scroll;
+}
+
 nav {
-    height: 12vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  nav h1 span {
-    color: #3639A4;
-  }
-  
-  nav h1 {
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  nav .back {
-    width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    left: 100px;
-    cursor: pointer;
-  }
-  
-  nav .back span {
-    font-size: 16px;
-  }
-  
-  nav .user {
-    position: absolute;
-    right: 100px;
-  }
-  
-  .form-header {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-    cursor: pointer;
-  }
-  /*# sourceMappingURL=client.css.map */
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+nav h1 span {
+  color: #3639a4;
+}
+
+nav h1 {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+nav .back {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 100px;
+  cursor: pointer;
+}
+
+nav .back span {
+  font-size: 16px;
+}
+
+nav .user {
+  position: absolute;
+  right: 100px;
+}
+
+.form-header {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(54, 57, 164);
+}

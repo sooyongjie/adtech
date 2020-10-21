@@ -1,5 +1,4 @@
 .container {
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +20,7 @@
 }
 
 .container form label {
-  margin-top: 20px;
+  margin: 20px 0 4px 0;
   color: #888;
   font-size: 14px;
   font-weight: 300;

@@ -1,12 +1,17 @@
+body {
+  overflow-y: scroll;
+}
+
 nav {
   height: 12vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", sans-serif;
 }
 
 nav h1 span {
-  color: #3639A4;
+  color: #3639a4;
 }
 
 nav h1 {
@@ -39,5 +44,25 @@ nav .user {
   align-items: center;
   column-gap: 16px;
   cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3639a4;
 }
 /*# sourceMappingURL=client.css.map */
