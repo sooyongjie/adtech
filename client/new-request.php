@@ -18,7 +18,7 @@
 <body>
     <?php include_once("nav-back-button.php") ?>
     <div class="container">
-        <form action="">
+        <form action="request-insert.php">
             <!-- <div class="form-header" onclick="location.href='client.html'">
                 <i class="fas fa-arrow-left fa-md"></i>
                 <h2>Request Form</h2>
@@ -26,16 +26,16 @@
             <h2>Request Form</h2>
             <label for="">Category</label>
             <div class="radio">
-                <input type="radio" name= "button" value="Hardware">
+                <input type="radio" name= "select" value="Hardware">
                 <span>Hardware</span>
-                <input type="radio" name= "button" value="Software">
+                <input type="radio" name= "select" value="Software">
                 <span>Software</span>
-                <input type="radio" name= "button" value="Others">
+                <input type="radio" name= "select" value="Others">
                 <span>Others</span>
             </div>
             <label for="">Description of problem</label>
-            <input type="text" placeholder="Enter text">
-            <button type="button">Submit</button>
+            <input type="text" name="textinput" placeholder="Enter text">
+            <button type="button" onclick="location.href='request-insert.php'">Submit</button>
         </form>
     </div>
 </body>
