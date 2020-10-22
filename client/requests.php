@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/client/client.css" />
     <link rel="stylesheet" type="text/css" href="../css/client/client-requests.css" />
+</style>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             if ($result->num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
     ?>
-        <div class="request">
+        <div action="feedback.php" method="POST" class="request">
             <h2>Request <?php echo " #" . $row['reqID'] ?></h2>
             <label for="">Category of request</label>
             <p><?php echo $row['category'] ?></p>
@@ -37,7 +38,14 @@
             <?php
             if ($row['status'] == 'Completed'){
                 ?>
-                <span>Give Feedback</span>
+                <span>
+                <form action="feedback.php" method="POST">
+                    <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                    <button type="submit" background=none>
+                    Give Feedback
+                    </button>
+                </form> 
+                </span>
             <?php   }
             ?>
         </div>
