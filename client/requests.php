@@ -18,25 +18,31 @@
 <body>
     <?php include_once("nav-back-button.php") ?>
     <div class="container">
+    <?php
+            include_once("../db_connect.php");
+            $query = "SELECT * FROM request"; //WHERE uid == current user
+            $result = $db->query($query);
+            if ($result->num_rows > 0) { 
+                while($row = $result->fetch_assoc()) {
+    ?>
         <div class="request">
-            <h2>Request #77984</h2>
-            <label for="">Summary of issue</label>
-            <p>Epic</p>
-            <label for="">Priority</label>
-            <p>Normal</p>
+            <h2>Request <?php echo " #" . $row['reqID'] ?></h2>
+            <label for="">Category of request</label>
+            <p><?php echo $row['category'] ?></p>
+            <label for="">Description of request</label>
+            <p><?php echo $row['description'] ?></p>
             <label for="">Status</label>
-            <p>Pending Assignment</p>
+            <p><?php echo $row['status'] ?></p>
+
+            <?php
+            if ($row['status'] == 'Completed'){
+                ?>
+                <span>Give Feedback</span>
+            <?php   }
+            ?>
         </div>
-        <div class="request">
-            <h2>Request #78002</h2>
-            <label for="">Summary of issue</label>
-            <p>Epic</p>
-            <label for="">Priority</label>
-            <p>Normal</p>
-            <label for="">Status</label>
-            <p>Pending</p>
-            <span>Give feedback</span>
-        </div>
+        <?php  }
+        } ?>
     </div>
 </body>
 

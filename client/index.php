@@ -20,11 +20,11 @@
     <div class="container">
         <div class="button" onclick="location.href='new-request.php'">
             <i class="fal fa-sticky-note fa-2x"></i>
-            <p>Service Request</p>
+            <p>Send Service Request</p>
         </div>
         <div class="button" onclick="location.href='requests.php'">
             <i class="fal fa-history fa-2x"></i>
-            <p>Service Request</p>
+            <p>View Service Request</p>
         </div>
     </div>
 </body>
