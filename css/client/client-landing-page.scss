@@ -14,19 +14,17 @@
   justify-content: center;
   align-items: center;
   row-gap: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-radius: 12px;
   cursor: pointer;
-  animation: scale-down-center 0.3s ease-out both;
-}
-
-.container .button:hover {
-  animation: scale-up-center 0.3s ease-out both;
-}
-
-.container .button:active,
-.container .button:focus {
-  animation: scale-down-center 0.1s ease-out both;
+  transition: 0.3s;
+  animation: scale-down-center 0.1s ease-in both;
+  &:hover {
+    animation: scale-up-center 0.1s ease-out both;
+  }
+  i, p {
+    opacity: 0.05;
+  }
 }
 
 @keyframes scale-up-center {
@@ -34,13 +32,13 @@
     transform: scale(1);
   }
   100% {
-    transform: scale(1.033);
+    transform: scale(1.05);
   }
 }
 
 @keyframes scale-down-center {
   0% {
-    transform: scale(1.033);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
