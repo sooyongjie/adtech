@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Display all request -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,6 +38,7 @@
             <?php
             if ($row['status'] == 'Completed'){
                 ?>
+                <!-- Move the request ID to the form and prompt feedback only for "Completed" task -->
                 <span>
                 <form action="feedback.php" method="POST">
                     <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
