@@ -16,10 +16,10 @@
       <img src="../img/welcome.png" alt="" />
     </div>
     <div class="form">
-      <form action="user-validation.php" method="POST" class="login-form">
-        <h1>Login</h1>
-        <label for="">User ID</label>
-        <input type="text" name="empID" value="1"/>
+      <form action="register-validation.php" method="POST" class="login-form">
+        <h1>Register</h1>
+        <label for="">Username</label>
+        <input type="text" name="clientName" value="1"/>
         <div class="password">
           <label for="">Password</label>
         </div>
