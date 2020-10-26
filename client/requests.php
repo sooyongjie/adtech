@@ -21,7 +21,7 @@
     <div class="container">
     <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM request WHERE clientName = '".$_SESSION['cName']."'";
+            $query = "SELECT * FROM request WHERE `uid` = '".$_SESSION['cID']."'";
             $result = $db->query($query);
             if ($result->num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
@@ -42,7 +42,7 @@
                 <span>
                 <form action="feedback.php" method="POST">
                     <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                    <button type="submit" background=none>
+                    <button type="submit">
                     Give Feedback
                     </button>
                 </form> 
@@ -52,8 +52,11 @@
         </div>
         <?php  }
         }else{
-           echo "U got no request.";
-        } ?>
+            ?>
+            <p>No history on service request.</p>
+        <?php
+    }
+    ?>
     </div>
 </body>
 
