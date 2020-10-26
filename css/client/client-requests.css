@@ -1,9 +1,18 @@
 .container {
   padding-bottom: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   row-gap: 32px;
 }
 
@@ -11,8 +20,13 @@
   min-height: auto;
   width: 350px;
   padding: 32px 36px 40px 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 12px;
 }
@@ -36,17 +50,16 @@
 }
 
 .container div span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin-top: 12px;
   padding-bottom: 2px;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   border-bottom: 1px solid #666;
   color: #444;
   font-size: 14px;
-}
-
-/*button for give feedback*/
-button {
-  background: none;
 }
 /*# sourceMappingURL=client-requests.css.map */

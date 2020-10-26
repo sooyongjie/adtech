@@ -1,5 +1,7 @@
 .row.c4 {
-  grid-template-columns: 120px 120px 240px 120px !important;
-  column-gap: 50px;
+  -ms-grid-columns: 120px 120px 240px 120px !important;
+      grid-template-columns: 120px 120px 240px 120px !important;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
 }
 /*# sourceMappingURL=employee-add.css.map */

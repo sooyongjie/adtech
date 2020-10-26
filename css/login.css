@@ -6,9 +6,15 @@ body {
   height: 90vh;
   width: 80vw;
   margin: 0 10vw 0 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .welcome-img {
@@ -22,16 +28,25 @@ body {
 
 .form {
   width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   opacity: 0;
 }
 
 .form form {
   width: 70%;
   margin-right: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .form form h1 {
@@ -56,19 +71,17 @@ body {
   text-align: left;
 }
 
-/*client's index page for register user*/
-.form form .user {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .form form .password {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form form .password a {
@@ -85,6 +98,7 @@ body {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 

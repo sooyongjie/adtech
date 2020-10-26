@@ -1,21 +1,31 @@
 .container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container .card .row {
+  display: -ms-grid;
   display: grid;
   row-gap: 8px;
 }
 
 .container .card .row.c3 {
-  grid-template-columns: repeat(3, minmax(150px, 300px));
-  grid-template-rows: auto auto;
+  -ms-grid-columns: (minmax(150px, 300px))[3];
+      grid-template-columns: repeat(3, minmax(150px, 300px));
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
 }
 
 .container .card .row.c4 {
-  grid-template-columns: repeat(4, minmax(100px, 250px));
-  grid-template-rows: auto auto;
+  -ms-grid-columns: (minmax(100px, 250px))[4];
+      grid-template-columns: repeat(4, minmax(100px, 250px));
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
 }
 
 .container .card label {
@@ -27,6 +37,7 @@
 
 .container .card input {
   font-size: 16px;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -46,14 +57,19 @@
 }
 
 .container .card input[name="status"] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
 .container .card button.submit {
   height: 30px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   padding: 8px 12px 8px 12px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   color: white;
   background: #3639a4;
   border-radius: 4px;
@@ -61,7 +77,12 @@
 }
 
 .container .card .form-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=detail-view.css.map */

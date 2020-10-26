@@ -3,6 +3,7 @@
 }
 
 .row.c3 {
-  column-gap: 100px;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
 }
 /*# sourceMappingURL=profile.css.map */
