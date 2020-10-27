@@ -32,18 +32,6 @@ form input:focus {
   outline: none;
 }
 
-form input::-webkit-input-placeholder {
-  color: #ccc;
-}
-
-form input:-ms-input-placeholder {
-  color: #ccc;
-}
-
-form input::-ms-input-placeholder {
-  color: #ccc;
-}
-
 form input::placeholder {
   color: #ccc;
 }

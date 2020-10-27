@@ -4,15 +4,9 @@ body {
 
 nav {
   height: 12vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-family: "Poppins", sans-serif;
 }
 
@@ -27,14 +21,9 @@ nav h1 {
 
 nav .back {
   width: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
   position: absolute;
   left: 100px;
   cursor: pointer;
@@ -51,14 +40,9 @@ nav .user {
 
 .form-header {
   margin-bottom: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 16px;
-          column-gap: 16px;
+  align-items: center;
+  column-gap: 16px;
   cursor: pointer;
 }
 

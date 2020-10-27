@@ -1,10 +1,7 @@
 .container .card .row.c5 {
-  -ms-grid-columns: 50px 200px 30px 80px 80px;
-      grid-template-columns: 50px 200px 30px 80px 80px;
-  -ms-grid-rows: (auto)[2];
-      grid-template-rows: repeat(2, auto);
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
+  grid-template-columns: 50px 200px 30px 80px 80px;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 50px;
 }
 
 .container .card button.submit {
@@ -12,12 +9,9 @@
 }
 
 .container .card.overtime-container .row.c3 {
-  -ms-grid-columns: 200px 50px 200px;
-      grid-template-columns: 200px 50px 200px;
-  -ms-grid-rows: (auto)[2];
-      grid-template-rows: repeat(2, auto);
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
+  grid-template-columns: 200px 50px 200px;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 50px;
 }
 
 .container .card.overtime-container .row.c3 button.submit {

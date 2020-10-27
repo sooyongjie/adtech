@@ -1,94 +1,49 @@
 .container {
   height: 65vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
 }
 
 .container .button {
   height: 200px;
   width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 12px;
   border: 1px solid #fff;
   border-radius: 12px;
   cursor: pointer;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-animation: scale-down-center 0.1s ease-in both;
-          animation: scale-down-center 0.1s ease-in both;
+  animation: scale-down-center 0.1s ease-in both;
 }
 
 .container .button:hover {
-  -webkit-animation: scale-up-center 0.1s ease-out both;
-          animation: scale-up-center 0.1s ease-out both;
+  animation: scale-up-center 0.1s ease-out both;
 }
 
 .container .button i, .container .button p {
   opacity: 0.05;
 }
 
-@-webkit-keyframes scale-up-center {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-  }
-}
-
 @keyframes scale-up-center {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-  }
-}
-
-@-webkit-keyframes scale-down-center {
-  0% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1.05);
   }
 }
 
 @keyframes scale-down-center {
   0% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 /*# sourceMappingURL=client-landing-page.css.map */
