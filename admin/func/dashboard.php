@@ -5,11 +5,8 @@ if(!isset($_SESSION['order'])) {
     array_push($_SESSION['order'], "asc");
 }
 
-function getPendingRequests() {
+function runQuery($query) {
     require("../db_connect.php");
-    $arr = array();
-
-    $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
     $result = $db->query($query);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -22,22 +19,18 @@ function getPendingRequests() {
     }
 }
 
+function getPendingRequests() {
+    $arr = array();
+
+    $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
+    return runQuery($query);   
+}
+
 function getOngoingRequests() {
-    require("../db_connect.php");
     $arr = array();
 
     $query = "SELECT * FROM `request` WHERE status <> 'Pending' AND status <> 'Completed' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
-
-    $result = $db->query($query);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $arr[] = $row;
-        }
-        return $arr;
-    } else {
-        echo "Error: ".$query."<br>".$db->error;
-        return 0;
-    }
+    return runQuery($query);   
 }
 
 function getAllRequests() {
@@ -45,16 +38,7 @@ function getAllRequests() {
     $arr = array();
 
     $query = "SELECT * FROM `request` ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
-    $result = $db->query($query);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $arr[] = $row;
-        }
-        return $arr;
-    } else {
-        echo "Error: ".$query."<br>".$db->error;
-        return 0;
-    }
+    return runQuery($query);   
 }
 
 ?>
