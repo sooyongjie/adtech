@@ -20,24 +20,22 @@ function runQuery($query) {
 }
 
 function getPendingRequests() {
-    $arr = array();
-
-    $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
+    $query = "SELECT * FROM `request` WHERE status = 'Pending' 
+    ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
+    
     return runQuery($query);   
 }
 
 function getOngoingRequests() {
-    $arr = array();
-
     $query = "SELECT * FROM `request` WHERE status <> 'Pending' AND status <> 'Completed' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
+
     return runQuery($query);   
 }
 
 function getAllRequests() {
-    require("../db_connect.php");
-    $arr = array();
+    $query = "SELECT * FROM `request` 
+    ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
 
-    $query = "SELECT * FROM `request` ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
     return runQuery($query);   
 }
 
