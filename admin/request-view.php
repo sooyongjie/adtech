@@ -14,7 +14,7 @@
     <?php
     $file = "dashboard.php";
     include_once("nav.php");
-    if(!isset($_SESSION['reqID']) && isset($_POST['reqID'])) {
+    if(!isset($_SESSION['reqID'])) {
         $_SESSION['reqID'] = $_POST['reqID'];
     }
     ?>
@@ -25,8 +25,7 @@
         </div>
             <?php
             include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
-            WHERE reqID = '".$_SESSION['reqID']."' ";
+            $query = "SELECT * FROM `request` WHERE reqID = '".$_SESSION['reqID']."' ";
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 if($row = $result->fetch_assoc()) { ?>
@@ -39,7 +38,13 @@
                             <label for="">Category</label>
                             <p><?php echo $row['reqID'] ?></p>
                             <p><?php echo $row['uid'] ?></p>
-                            <p><?php echo $row['empName'] ?></p>
+                            <p>
+                                <?php
+                                if(!$row['empID']) {
+                                    echo "Unassigned";
+                                } else echo $row['empID'];
+                                ?>
+                            </p>
                             <p><?php echo $row['category'] ?></p>
                         </div>
                         <div class="row c4">
@@ -78,7 +83,7 @@
                     <?php
                 }
             } else {
-                ?> <p>No subjects are taught by you.</p> <?php
+                ?> <p>Error</p> <?php
             } ?>
     </div>
     </div>

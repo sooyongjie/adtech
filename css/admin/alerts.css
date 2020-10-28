@@ -1,25 +1,14 @@
 .alerts-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
+  flex-wrap: wrap;
+  column-gap: 20px;
 }
 
 .alerts-container .card {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin-bottom: 0px !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   row-gap: 10px;
 }
 

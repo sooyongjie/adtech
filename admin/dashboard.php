@@ -19,21 +19,20 @@
         <h2>Pending Requests</h2>
         <div class="card">
             <?php
-            include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` WHERE status = 'Pending' ORDER BY reqID asc";
-            $result = $db->query($query);
-            if ($result->num_rows > 0) { ?>
-                <table>
-                    <tr>
-                        <th>Request ID</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Status</th>
-                        <th class="tr-button-heading"></th>
-                    </tr>
+            include_once("func/dashboard.php");
+            $requests = getPendingRequests();
+            ?>
+            <table>
+                <tr>
+                    <th onclick="document.querySelector('#request').submit()">Request ID</th>
+                    <th onclick="document.querySelector('#category').submit()">Category</th>
+                    <th onclick="document.querySelector('#date').submit()">Date</th>
+                    <th onclick="document.querySelector('#date').submit()">Time</th>
+                    <th onclick="document.querySelector('#status').submit()">Status</th>
+                    <th class="tr-button-heading"></th>
+                </tr>
                 <?php
-                while($row = $result->fetch_assoc()) {
+                foreach($requests as $row) { 
                     ?>
                     <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
@@ -52,45 +51,37 @@
                     </tr>
                     <?php
                 }
-            } else {
                 ?>
-                    <p>There are no pending requests.</p>
-                <?php
-            }
-            ?>
             </table>
         </div>
         <!-- Ongoing requests -->
         <h2>Ongoing Requests</h2>
         <div class="card new-requests">
             <?php
-            include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` INNER JOIN `employee` on `request`.empID = `employee`.empID  
-            WHERE status <> 'Pending' AND status <> 'Completed' ORDER BY reqID asc";
-            $result = $db->query($query);
-            if ($result->num_rows > 0) { ?>
-                <table>
-                    <tr>
-                        <th>Request ID</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Employee</th>
-                        <th>Status</th>
-                        <th class="tr-button-heading"></th>
-                    </tr>
+            $requests = getOngoingRequests();
+            ?>
+            <table>
+                <tr>
+                    <th onclick="document.querySelector('#request').submit()">Request ID</th>
+                    <th onclick="document.querySelector('#category').submit()">Category</th>
+                    <th onclick="document.querySelector('#date').submit()">Date</th>
+                    <th onclick="document.querySelector('#date').submit()">Time</th>
+                    <th onclick="document.querySelector('#status').submit()">Status</th>
+                    <th class="tr-button-heading"></th>
+                </tr>
                 <?php
-                while($row = $result->fetch_assoc()) {
+                foreach($requests as $row) { 
                     ?>
-                    <tr class="<?php echo "ongoing-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
                         <td><?php echo $row['category'] ?></td>
                         <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo $row['empName'] ?></td>
+                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
                         <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
                             <form action="request-view.php" method="POST">
                                 <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "ongoing-".$row['reqID'] ?>">
+                                <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
                                     <i class="fas fa-arrow-circle-right "></i>
                                 </button>
                             </form> 
@@ -98,11 +89,6 @@
                     </tr>
                     <?php
                 }
-            } else {
-                ?>
-                    <p>There are no ongoing request.</p>
-                <?php
-            }
             ?>
             </table>
         </div>
@@ -110,21 +96,19 @@
         <h2>All Requests</h2>
         <div class="card new-requests">
             <?php
-            include_once("../db_connect.php");
-            $query = "SELECT * FROM `request` ORDER BY reqID asc";
-            $result = $db->query($query);
-            if ($result->num_rows > 0) { ?>
-                <table>
-                    <tr>
-                        <th>Request ID</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Status</th>
-                        <th class="tr-button-heading"></th>
-                    </tr>
+            $requests = getAllRequests();
+            ?>
+            <table>
+                <tr>
+                    <th onclick="document.querySelector('#request').submit()">Request ID</th>
+                    <th onclick="document.querySelector('#category').submit()">Category</th>
+                    <th onclick="document.querySelector('#date').submit()">Date</th>
+                    <th onclick="document.querySelector('#date').submit()">Time</th>
+                    <th onclick="document.querySelector('#status').submit()">Status</th>
+                    <th class="tr-button-heading"></th>
+                </tr>
                 <?php
-                while($row = $result->fetch_assoc()) {
+                foreach($requests as $row) { 
                     ?>
                     <tr class="<?php echo "all-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                         <td><?php echo '#'.$row['reqID'] ?></td>
@@ -143,16 +127,23 @@
                     </tr>
                     <?php
                 }
-            } else {
-                ?>
-                    <p>There are no request.</p>
-                <?php
-            }
             ?>
             </table>
         </div>
     </div>
     </div>
+    <form action="func/dashboard-sort.php" method="post" id="request">
+        <input type="hidden" name="sort" value="reqID">
+    </form>
+    <form action="func/dashboard-sort.php" method="post" id="category">
+        <input type="hidden" name="sort" value="category">
+    </form>
+    <form action="func/dashboard-sort.php" method="post" id="date">
+        <input type="hidden" name="sort" value="dateOfCreation">
+    </form>
+    <form action="func/dashboard-sort.php" method="post" id="status">
+        <input type="hidden" name="sort" value="status">
+    </form>
 </body>
 <script src="js/dashboard.js"></script>
 </html>
