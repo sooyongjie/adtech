@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=feedback.css.map */
+.star-widget {
+  color: #aaaaaa;
+}
+
+.star-widget:hover {
+  color: #caca4f;
+}
+/*# sourceMappingURL=feedback.css.map */
