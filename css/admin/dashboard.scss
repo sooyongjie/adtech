@@ -85,6 +85,32 @@ nav {
   margin: 40px 5vw 0 25vw;
   display: flex;
   flex-direction: column;
+  .heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .search-bar {
+      height: 100%;
+      width: fit-content;
+      padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      border-bottom: 1px solid #ccc;
+      input {
+        height: 100%;
+        width: 150px;
+        padding-left: 4px;
+        background: none;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
   .back {
     display: flex;
     align-items: center;

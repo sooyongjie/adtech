@@ -6,3 +6,7 @@ hideButton = (el) => {
     let btn = document.querySelector(`#${el.className}`)
     btn.style.opacity = '0'
 }
+
+setOffset = (num) => {
+
+}

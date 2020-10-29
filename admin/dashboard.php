@@ -16,7 +16,13 @@
     unset($_SESSION['reqID']);
     ?>
     <div class="container">
-        <h2>Pending Requests</h2>
+        <div class="heading">
+            <h2>Pending Requests</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <i class="far fa-search"></i>
+            </div>
+        </div>
         <div class="card">
             <?php
             include_once("func/dashboard.php");
@@ -34,22 +40,23 @@
                 <?php
                 foreach($requests as $row) { 
                     ?>
-                    <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
-                        <td><?php echo '#'.$row['reqID'] ?></td>
-                        <td><?php echo $row['category'] ?></td>
-                        <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo $row['status'] ?></td>
-                        <td class="submit-btn">
-                            <form action="request-view.php" method="POST">
-                                <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
-                                    <i class="fas fa-arrow-circle-right "></i>
-                                </button>
-                            </form> 
-                        </td>
-                    </tr>
-                    <?php
+                <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)"
+                    onmouseout="hideButton(this)">
+                    <td><?php echo '#'.$row['reqID'] ?></td>
+                    <td><?php echo $row['category'] ?></td>
+                    <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo $row['status'] ?></td>
+                    <td class="submit-btn">
+                        <form action="request-view.php" method="POST">
+                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                            <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
+                                <i class="fas fa-arrow-circle-right "></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <?php
                 }
                 ?>
             </table>
@@ -72,22 +79,23 @@
                 <?php
                 foreach($requests as $row) { 
                     ?>
-                    <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
-                        <td><?php echo '#'.$row['reqID'] ?></td>
-                        <td><?php echo $row['category'] ?></td>
-                        <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo $row['status'] ?></td>
-                        <td class="submit-btn">
-                            <form action="request-view.php" method="POST">
-                                <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
-                                    <i class="fas fa-arrow-circle-right "></i>
-                                </button>
-                            </form> 
-                        </td>
-                    </tr>
-                    <?php
+                <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)"
+                    onmouseout="hideButton(this)">
+                    <td><?php echo '#'.$row['reqID'] ?></td>
+                    <td><?php echo $row['category'] ?></td>
+                    <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo $row['status'] ?></td>
+                    <td class="submit-btn">
+                        <form action="request-view.php" method="POST">
+                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                            <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
+                                <i class="fas fa-arrow-circle-right "></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <?php
                 }
             ?>
             </table>
@@ -110,25 +118,27 @@
                 <?php
                 foreach($requests as $row) { 
                     ?>
-                    <tr class="<?php echo "all-".$row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
-                        <td><?php echo '#'.$row['reqID'] ?></td>
-                        <td><?php echo $row['category'] ?></td>
-                        <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
-                        <td><?php echo $row['status'] ?></td>
-                        <td class="submit-btn">
-                            <form action="request-view.php" method="POST">
-                                <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                                <button type="submit" id="<?php echo "all-".$row['reqID'] ?>">
-                                    <i class="fas fa-arrow-circle-right "></i>
-                                </button>
-                            </form> 
-                        </td>
-                    </tr>
-                    <?php
+                <tr class="<?php echo "all-".$row['reqID'] ?>" onmouseover="showButton(this)"
+                    onmouseout="hideButton(this)">
+                    <td><?php echo '#'.$row['reqID'] ?></td>
+                    <td><?php echo $row['category'] ?></td>
+                    <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
+                    <td><?php echo $row['status'] ?></td>
+                    <td class="submit-btn">
+                        <form action="request-view.php" method="POST">
+                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                            <button type="submit" id="<?php echo "all-".$row['reqID'] ?>">
+                                <i class="fas fa-arrow-circle-right "></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <?php
                 }
             ?>
             </table>
+        <?php countRows(); ?>
         </div>
     </div>
     </div>
@@ -144,6 +154,11 @@
     <form action="func/dashboard-sort.php" method="post" id="status">
         <input type="hidden" name="sort" value="status">
     </form>
+    <!-- offset -->
+    <form action="">
+        <input type="hidden" name="offset" value="0">
+    </form>
 </body>
 <script src="js/dashboard.js"></script>
+
 </html>
