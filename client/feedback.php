@@ -19,7 +19,7 @@
 <body>
     <?php include_once("nav-back-button.php") ?>
     <div class="container">
-        <form action=".php" method="post">
+        <form action="feedback-insert.php" method="post">
             <!-- <div class="form-header" onclick="location.href='client.html'">
                 <i class="fas fa-arrow-left fa-md"></i>
                 <h2>Request Form</h2>
@@ -37,7 +37,8 @@
                 <i id="5" class="fas fa-star" onclick="setRating(5)" onmouseover="hover(5)"></i>
             </div>
             <label for="">Feedback Comment</label>
-            <input type="text" name="textinput" placeholder="Enter comment">
+            <input type="text" name="comment" placeholder="Enter comment">
+            <input type="hidden" name="reqID" value="<?php echo $_POST['reqID'] ?>">
             <button type="submit">Submit</button>
         </form>
     </div>

@@ -43,7 +43,7 @@
                 <form action="feedback.php" method="POST">
                     <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
                     <button type="submit">
-                    Give Feedback
+                    Make Payment
                     </button>
                 </form> 
                 </span>
