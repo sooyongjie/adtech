@@ -12,6 +12,13 @@ else {
     $_SESSION['order'][1] = "asc";
 }
 
-header("Location: ../dashboard.php"); 
+if($_POST['page']=="requests.php") {
+    header("Location: ../requests.php"); 
+} else if($_POST['page']=="feedback.php") {
+    header("Location: ../feedback.php"); 
+}
+else if($_POST['page']=="employees.php") {
+    header("Location: ../employees.php"); 
+}
 
 ?>

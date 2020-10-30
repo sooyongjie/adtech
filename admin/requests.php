@@ -11,21 +11,22 @@
 
 <body>
     <?php
-    $file = "dashboard.php";
+    $file = "requests.php";
     include_once("nav.php");
     unset($_SESSION['reqID']);
+    unset($_SESSION['search']);
     ?>
     <div class="container">
         <div class="heading">
             <h2>Pending Requests</h2>
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-                <i class="far fa-search"></i>
-            </div>
+            <form action="request-search.php" method="post" class="search-bar" autocomplete="off">
+                <input type="number" name="search" placeholder="Search requests">
+                <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
+            </form>
         </div>
         <div class="card">
             <?php
-            include_once("func/dashboard.php");
+            include_once("func/requests.php");
             $requests = getPendingRequests();
             ?>
             <table>
@@ -138,25 +139,38 @@
                 }
             ?>
             </table>
-        <?php countRows(); ?>
+        <?php 
+        $count = countRows(); 
+        $num = round($count[0]['count']/5);
+        if ($num == 0) {
+            $num = 1;
+        }
+        for ($i = 0; $i < $num; $i++) {
+            ?>
+            <button>
+                <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
+            </button>
+            <?php
+        }
+        ?>
         </div>
     </div>
     </div>
-    <form action="func/dashboard-sort.php" method="post" id="request">
+    <form action="func/sort.php" method="post" id="request">
+        <input type="hidden" name="page" value="requests.php">
         <input type="hidden" name="sort" value="reqID">
     </form>
-    <form action="func/dashboard-sort.php" method="post" id="category">
+    <form action="func/sort.php" method="post" id="category">
+        <input type="hidden" name="page" value="requests.php">
         <input type="hidden" name="sort" value="category">
     </form>
-    <form action="func/dashboard-sort.php" method="post" id="date">
+    <form action="func/sort.php" method="post" id="date">
         <input type="hidden" name="sort" value="dateOfCreation">
+        <input type="hidden" name="page" value="requests.php">
     </form>
-    <form action="func/dashboard-sort.php" method="post" id="status">
+    <form action="func/sort.php" method="post" id="status">
+        <input type="hidden" name="page" value="requests.php">
         <input type="hidden" name="sort" value="status">
-    </form>
-    <!-- offset -->
-    <form action="">
-        <input type="hidden" name="offset" value="0">
     </form>
 </body>
 <script src="js/dashboard.js"></script>

@@ -10,9 +10,9 @@ if(!isset($_SESSION['uid'])) {
 <nav>
     <h1>Ad<span>tech</span></h1>
     <?php
-    if($file == "dashboard.php") {
+    if($file == "requests.php") {
         ?>
-        <div class="button active" onclick="location.href='dashboard.php'">
+        <div class="button active" onclick="location.href='requests.php'">
             <div class="button-l">
                 <i class="fas fa-clipboard-list fa-lg "></i>
                 <p>Requests</p>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['uid'])) {
         <?php
     } else {
         ?>
-        <div class="button" onclick="location.href='dashboard.php'">
+        <div class="button" onclick="location.href='requests.php'">
             <div class="button-l">
                 <i class="fas fa-clipboard-list fa-lg "></i>
                 <p>Requests</p>

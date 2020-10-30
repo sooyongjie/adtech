@@ -14,25 +14,28 @@
     <?php
     $file = "employees.php";
     include_once("nav.php");
+    if(isset($_POST['search'])) {
+        $_SESSION['search'] = $_POST['search'];
+    }
+    else if(!isset($_SESSION['search'])) {
+        $_SESSION['search'] = 0;
+    }
     ?>
     <div class="container">
-        <div class="heading">
-            <div class="header">
-                <h2>Employees</h2>
-                <button class="heading-btn" onclick="location.href='employee-add.php'">
-                    <i class="fas fa-plus"></i>
-                    <span>Add</span>
-                </button>
-            </div>
-            <form action="employees-search.php" method="post" class="search-bar" autocomplete="off">
-                <input type="number" name="search" placeholder="Search employee">
-                <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
-            </form>
+        <div class="header">
+            <h2>Employees</h2>
+            <button class="heading-btn" onclick="location.href='employee-add.php'">
+                <i class="fas fa-plus"></i>
+                <span>Add</span>
+            </button>
         </div>
         <div class="card">
             <?php
             include_once("func/employees.php");
-            $employees = getAllEmployees();
+            $employees = getEmployee($_SESSION['search']);
+            if($employees == 0) {
+                exit();
+            }
                 ?>
                 <table>
                     <tr>
@@ -87,18 +90,6 @@
             ?>
         </div>
     </div>
-    <form action="func/sort.php" method="post" id="empID">
-        <input type="hidden" name="sort" value="empID">
-        <input type="hidden" name="page" value="employees.php">
-    </form>
-    <form action="func/sort.php" method="post" id="empName">
-        <input type="hidden" name="sort" value="empName">
-        <input type="hidden" name="page" value="employees.php">
-    </form>
-    <form action="func/sort.php" method="post" id="type">
-        <input type="hidden" name="sort" value="type">
-        <input type="hidden" name="page" value="employees.php">
-    </form>
 </body>
 <script src="js/dashboard.js"></script>
 </html>

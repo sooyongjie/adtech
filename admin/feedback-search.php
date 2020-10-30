@@ -13,11 +13,19 @@
     <?php
     $file = "feedback.php";
     include_once("nav.php");
+    if(isset($_POST['search'])) {
+        $_SESSION['search'] = $_POST['search'];
+    }
+    else if(!isset($_SESSION['search'])) {
+        $_SESSION['search'] = 0;
+    }
     ?>
     <div class="container">
         <div class="heading">
-            <h2>Feedback</h2>
-            <form action="feedback-search.php" method="post" class="search-bar" autocomplete="off">
+            <div class="back" onclick="location.href='feedback.php'">
+                <i class="fas fa-arrow-left"></i>
+                <h2>Feedback</h2>
+            </div>            <form action="feedback-search.php" method="post" class="search-bar" autocomplete="off">
                 <input type="number" name="search" placeholder="Search requests">
                 <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
             </form>
@@ -25,7 +33,10 @@
         <div class="card new-requests">
             <?php
             include_once("func/feedback.php");
-            $feedback = getAllFeedback();
+            $feedback = getFeedback($_SESSION['search']);
+            if($feedback == 0) {
+                exit();
+            }
             ?>
             <table>
                 <tr>
@@ -36,9 +47,10 @@
                     <th class="tr-button-heading"></th>
                 </tr>
             <?php
+            
             foreach($feedback as $row) {
                 ?>
-                <tr id="<?php echo "row-".$row['feedbackNo'] ?>" class="<?php echo $row['feedbackNo'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                <tr id="<?php echo "row-".$row['reqID'] ?>" class="<?php echo $row['reqID'] ?>" onmouseover="showButton(this)" onmouseout="hideButton(this)">
                     <td><?php echo '#'.$row['feedbackNo'] ?></td>
                     <td>
                         <form action="request-view.php" method="post" id="<?php echo $row['reqID'] ?>">
@@ -49,8 +61,11 @@
                     <td><?php echo $row['feedbackComment'] ?></td>
                     <td><?php echo $row['feedbackRating'] ?></td>
                     <td class="submit-btn">
-                        <form action="" method="POST">
+                        <form action="request-edit.php" method="POST">
                             <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                            <button type="submit" id="<?php echo "btn-".$row['reqID'] ?>">
+                                <i class="fas fa-arrow-circle-right "></i>
+                            </button>
                         </form> 
                     </td>
                 </tr>
@@ -58,20 +73,6 @@
             }
             ?>
             </table>
-        <?php
-        $count = countRows(); 
-        $num = round($count[0]['count']/5);
-        if ($num == 0) {
-            $num = 1;
-        }
-        for ($i = 0; $i < $num; $i++) {
-            ?>
-            <button>
-                <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
-            </button>
-            <?php
-        }
-        ?>
         </div>
     <form action="func/sort.php" method="post" id="feedbackNo">
         <input type="hidden" name="sort" value="feedbackNo">
@@ -90,6 +91,5 @@
         <input type="hidden" name="page" value="feedback.php">
     </form>
 </body>
-<script src="js/dashboard.js"></script>
 
 </html>
