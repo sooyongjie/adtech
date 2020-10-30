@@ -24,7 +24,10 @@
           <label for="">Password</label>
         </div>
         <input type="password" name="password" value="poop"/>
+        <div class="password">
         <button type="submit">Submit</button>
+        <a href="index.php">Existing User</a>
+        </div>
         <!-- <button type="button" href="dashboard.html"><a href="dashboard.html">Login</a></button> -->
       </form>
     </div>

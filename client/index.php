@@ -21,7 +21,6 @@
         <h1>Login</h1>
         <div class="user">
         <label for="">User ID</label>
-        <a href="register.php">Register Here</a>
         </div>
         <input type="text" name="clientName" value="Alicia"/>
         <div class="password">
@@ -29,7 +28,10 @@
           <a href="">Forgot Password</a>
         </div>
         <input type="password" name="password" value="1234"/>
-        <button type="submit">Submit</button>
+        <div class="password">
+        <button type="submit">Submit</button> 
+        <a href="register.php">Register Here</a>
+        </div>
         <!-- <button type="button" href="dashboard.html"><a href="dashboard.html">Login</a></button> -->
       </form>
     </div>

@@ -24,10 +24,10 @@
                 <i class="fas fa-arrow-left fa-md"></i>
                 <h2>Request Form</h2>
             </div> -->
-            <h2>Feedback For Request <?php echo "#".$_POST['reqID'] ?></h2>
-            <label for="">Payment</label>
-            <input type="file">
-            <label for="">Service Request Rating</label>
+            <h2>Request <?php echo "#".$_POST['reqID'] ?></h2>
+            <label for="">Upload Payment</label>
+            <input type="file" name="payment">
+            <label for="">Service Rating</label>
             <div class="star-widget">
                 <input type="hidden" name="rate" value="0" id="rating">
                 <i id="1" class="fas fa-star" onclick="setRating(1)" onmouseover="hover(1)"></i>
