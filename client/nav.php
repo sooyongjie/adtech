@@ -1,8 +1,14 @@
 <?php
 session_start();
+include 'Singleton.php';
 ?>
 <nav>
-    <p class="user"><?php echo $_SESSION['cName'] ?></p>
+    <!--use singleton to display name-->
+    <p class="user"><?php 
+    $s2 = Account::getInstance();
+    $user = $s2->getwork(); 
+    echo $user;
+    ?></p>
     <div class="logout" onclick="location.href='index.php'">
     <p><span>Log Out</span></p>
     </div>
