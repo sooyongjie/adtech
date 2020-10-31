@@ -15,7 +15,7 @@ if ($result->num_rows == 1)
     $_SESSION["uid"] = $row["empID"];
     $_SESSION["name"] = $row["empName"];
 
-    header("Location: dashboard.php"); 
+    header("Location: requests.php"); 
     exit();
     // use exit() to pause
 }

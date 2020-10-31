@@ -1,11 +1,9 @@
 .container {
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: unset !important;
+  align-items: unset !important;
   column-gap: 50px;
-  row-gap: 10px;
-  .card {
-    margin-bottom: 0px;
-  }
   .content.overtime {
     width: 100%;
   }

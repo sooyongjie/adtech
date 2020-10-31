@@ -35,26 +35,9 @@ nav .back span {
 
 nav .user {
   position: absolute;
-  right: 200px;
+  right: 100px;
 }
 
-nav .logout {
-  position: absolute;
-  right: 100px;
-  border: 1px solid#3639a4;
-  background-color: #3639a4;
-  border-radius: 15px;
-  display: flex;
-  height: 30px;
-  width: 70px;
-  align-items: center;
-  padding: 2px;
-  padding-left: 10px;
-  padding-right: 2px;
-}
-nav .logout span{
-  color: white;
-}
 .form-header {
   margin-bottom: 12px;
   display: flex;
