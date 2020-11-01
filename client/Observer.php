@@ -2,21 +2,21 @@
 <link rel="stylesheet" type="text/css" href="../css/fontawesome/all.css">
 </head>
 <?php
-interface Sub{
+interface NotificationBell{
 
 // Attach an observer to the subject.
-public function attach(Ob $observer);
+public function attach(Observer $observer);
 
 // Notify all observers about an event.
 public function notify();
 }
 
-interface Ob{
-public function call(Sub $subject);
+interface Observer{
+public function call(NotificationBell $subject);
 }
 
 //Publisher
-class Subject implements Sub
+class Subject implements NotificationBell
 {
     public $num;
     private $observers;
@@ -26,7 +26,7 @@ class Subject implements Sub
         $this->observers = new SplObjectStorage();
     }
 
-    public function attach(Ob $observer): void
+    public function attach(Observer $observer): void
     {
         $this->observers->attach($observer);
     }
@@ -53,9 +53,9 @@ class Subject implements Sub
 }
 
 //Concrete Sub
-class ConcreteObserverA implements Ob
+class ConcreteObserverA implements Observer
 {
-    public function call(Sub $subject): void
+    public function call(NotificationBell $subject): void
     {
         if($subject->num > 0){
         ?>
