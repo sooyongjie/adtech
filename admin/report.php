@@ -32,13 +32,22 @@
     <div class="container">
         <div class="content overtime">
             <div class="heading">
-                <h2>Overtime; Temp: <?php echo $_SESSION['startDate'].", ".$_SESSION['endDate']; ?></h2>
+                <div class="generate-container">
+                    <h2><?php echo date("F")." Report" ?></h2>
+                    <a href="report-generate.php">
+                    <button>
+                        <i class="fas fa-file-export"></i>
+                        <span>Generate Report</span>
+                    </button>
+                    </a>
+                </div>
                 <form action="report.php" method="post" class="search-bar">
                     <input type="month" name="startDate" value="<?php echo date('Y-m', strtotime($_SESSION['startDate']."-01")) ?>">
                     <i class="far fa-search" onclick="document.querySelector('.search-bar').submit()"></i>
                 </form>
             </div>
             <div class="card">
+                <h3>Overtime</h3>
                 <?php 
                 include_once("func/report.php");
                 $overtime = getOvertime();
