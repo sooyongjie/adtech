@@ -58,20 +58,23 @@
             }
             ?>
             </table>
-        <?php
-        $count = countRows(); 
-        $num = round($count[0]['count']/5);
-        if ($num == 0) {
-            $num = 1;
-        }
-        for ($i = 0; $i < $num; $i++) {
-            ?>
-            <button>
-                <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
-            </button>
-            <?php
-        }
-        ?>
+            <div class="pagination">
+                <?php 
+                $count = countRows(); 
+                $num = round($count[0]['count']/5);
+                if ($num == 0) {
+                    $num = 1;
+                }
+                for ($i = 0; $i < $num; $i++) {
+                    ?>
+                    <button>
+                        <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
+                    </button>
+                    <?php
+                }
+                ?>
+                </div>
+            </div>
         </div>
     <form action="func/sort.php" method="post" id="feedbackNo">
         <input type="hidden" name="sort" value="feedbackNo">
