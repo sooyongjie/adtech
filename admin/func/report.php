@@ -1,10 +1,13 @@
 <?php
 
+// error_reporting(0);
+
 function getOvertime() {
     require("../db_connect.php");
     $arr = array();
 
-    $query = "SELECT * FROM `overtime` INNER JOIN `employee` on `overtime`.empID = `employee`.empID ";
+    $query = "SELECT * FROM `overtime` INNER JOIN `employee` on `overtime`.empID = `employee`.empID 
+    WHERE `date` >= '".$_SESSION['startDate']."' AND `date` <= '".$_SESSION['endDate']."' ";
     $result = $db->query($query);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -12,7 +15,8 @@ function getOvertime() {
         }
         return calculateOvertime($arr);
     } else {
-        echo "Error: ".$query."<br>".$db->error;
+        // echo "Error: ".$query."<br>".$db->error;
+        echo "There are no results.";
         return 0;
     }
 }
@@ -25,11 +29,41 @@ function calculateOvertime($arr) {
     return $overtime;
 }
 
+function getWorkload() {
+    require("../db_connect.php");
+    
+    $query = "SELECT empID, empName FROM `employee` WHERE `type` = 3";
+    $result = $db->query($query);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $query2 = "SELECT COUNT(reqID) AS NumberOfJobs FROM `request` WHERE `empID` = '".$row['empID']."' 
+            AND `dateOfCompletion` >= '".$_SESSION['startDate']."' AND `dateOfCompletion` <= '".$_SESSION['endDate']."' ";
+
+            $result2 = $db->query($query2);
+            if ($result2->num_rows > 0) {
+                while($row2 = $result2->fetch_assoc()) {
+                    $arr[] = $row + $row2;
+                }
+            } else {
+                echo "Error: ".$query2."<br>".$db->error;
+                echo "There are no results.";
+                return 0;
+            }
+        }
+        return $arr;
+    } else {
+        echo "Error: ".$query."<br>".$db->error;
+        echo "There are no results.";
+        return 0;
+    }
+}
+
 function getRatings() {
     require("../db_connect.php");
     $arr = array();
 
-    $query = "SELECT feedbackRating FROM `feedback`";
+    $query = "SELECT feedbackRating FROM `feedback` 
+    WHERE `date` >= '".$_SESSION['startDate']."' AND `date` <= '".$_SESSION['endDate']."' ";
     $result = $db->query($query);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -37,7 +71,8 @@ function getRatings() {
         }
         return countRatings($arr);
     } else {
-        echo "Error: ".$query."<br>".$db->error;
+        // echo "Error: ".$query."<br>".$db->error;
+        echo "There are no results.";
         return 0;
     }
 }
@@ -60,5 +95,7 @@ function countRatings($arr) {
     }
     return $ratings;
 }
+
+
 
 ?>
