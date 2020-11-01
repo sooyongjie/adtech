@@ -26,7 +26,7 @@
             if ($result->num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
     ?>
-        <div action="feedback.php" method="POST" class="request">
+        <div class="request">
             <h2>Request <?php echo " #" . $row['reqID'] ?></h2>
             <label for="">Category of request</label>
             <p><?php echo $row['category'] ?></p>
@@ -34,20 +34,25 @@
             <p><?php echo $row['description'] ?></p>
             <label for="">Status</label>
             <p><?php echo $row['status'] ?></p>
-
             <?php
-            if ($row['status'] == 'Completed'){
+            if ($row['status'] == 'Paid'){
                 ?>
                 <!-- Move the request ID to the form and prompt feedback only for "Completed" task -->
-                <span>
                 <form action="feedback.php" method="POST">
                     <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                    <button type="submit">
-                    Make Payment
-                    </button>
+                    <button type="submit">Feedback</button>
                 </form> 
-                </span>
-            <?php   }
+            <?php   
+            }
+            else if ($row['status'] == 'Completed'){
+                ?>
+                <!-- Move the request ID to the form and prompt feedback only for "Completed" task -->
+                <form action="payment.php" method="POST">
+                    <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                    <button type="submit">Make Payment</button>
+                </form> 
+            <?php   
+            }
             ?>
         </div>
         <?php  }

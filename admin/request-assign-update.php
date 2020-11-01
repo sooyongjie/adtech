@@ -9,7 +9,7 @@ $result = $db->query($query);
 
 if ($db->query($query) === TRUE) {
     echo "Record updated successfully.";
-    header( "refresh:1;url=dashboard.php" );
+    header( "refresh:1;url=requests.php" );
 } else {
     echo "Error updating record: " . $db->error;
 }
