@@ -39,11 +39,12 @@
                     if($row['category'] == "Epic") {
                         $rate = "50";
                         echo "RM".$rate;
-                        ?>
-                        <input type="hidden" name="rate" value="<?php echo $rate ?>">
-                        <?php
+                    } else if($row['category'] == "General") {
+                        $rate = "50";
+                        echo "RM".$rate;
                     }
                     ?>
+                    <input type="hidden" name="rate" value="<?php echo $rate ?>">
                 </p>
                 <input type="text" name="hours" class="editable" autocomplete="off">
             </div>

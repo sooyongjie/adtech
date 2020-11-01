@@ -1,0 +1,29 @@
+.container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.container table {
+  width: max-content;
+  margin-top: 4px;
+  display: flex;
+  column-gap: 10px;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.container table tr th {
+  padding: 0 20px 4px 0;
+  border-bottom: 1px solid #aaa;
+  column-gap: 10px;
+  font-weight: 400 !important;
+}
+
+.container table tr td {
+  padding: 4px 10px 4px 0;
+  border-bottom: 1px solid #ddd;
+  font-weight: 300 !important;
+}
+/*# sourceMappingURL=report-generate.css.map */

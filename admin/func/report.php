@@ -16,7 +16,7 @@ function getOvertime() {
         return calculateOvertime($arr);
     } else {
         // echo "Error: ".$query."<br>".$db->error;
-        echo "There are no results.";
+        echo "There is no overtime.";
         return 0;
     }
 }
@@ -37,7 +37,7 @@ function getWorkload() {
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $query2 = "SELECT COUNT(reqID) AS NumberOfJobs FROM `request` WHERE `empID` = '".$row['empID']."' 
-            AND `dateOfCompletion` >= '".$_SESSION['startDate']."' AND `dateOfCompletion` <= '".$_SESSION['endDate']."' ";
+            AND `dateOfCreation` >= '".$_SESSION['startDate']."' AND `dateOfCreation` <= '".$_SESSION['endDate']."' ";
 
             $result2 = $db->query($query2);
             if ($result2->num_rows > 0) {
@@ -53,7 +53,7 @@ function getWorkload() {
         return $arr;
     } else {
         // echo "Error: ".$query."<br>".$db->error;
-        echo "There are no results.";
+        echo "There are no ongoing jobs.";
         return 0;
     }
 }
@@ -72,7 +72,25 @@ function getRatings() {
         return countRatings($arr);
     } else {
         // echo "Error: ".$query."<br>".$db->error;
-        echo "There are no results.";
+        echo "There are no ratings.";
+        return 0;
+    }
+}
+
+function getComments() {
+    require("../db_connect.php");
+
+    $query = "SELECT feedbackNo, feedbackComment FROM `feedback` 
+    WHERE `date` >= '".$_SESSION['startDate']."' AND `date` <= '".$_SESSION['endDate']."' ";
+    $result = $db->query($query);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $arr[] = $row;
+        }
+        return $arr;
+    } else {
+        // echo "Error: ".$query."<br>".$db->error;
+        echo "There are no ratings.";
         return 0;
     }
 }
