@@ -20,7 +20,7 @@
     <?php include_once("nav-back-button.php") ?>
     <div class="container">
     <?php
-            include_once("../db_connect.php");
+            include("../db_connect.php");
             $query = "SELECT * FROM request WHERE `uid` = '".$_SESSION['cID']."' AND `status` = 'Completed'";
             $result = $db->query($query);
             if ($result->num_rows > 0) { 
