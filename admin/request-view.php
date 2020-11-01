@@ -60,7 +60,7 @@
                         </form>
                             <?php
                     }
-                    else if($row['status'] != "Pending" && $row['status'] != "Completed") { ?> 
+                    else if($row['status'] != "Pending") { ?> 
                         <form action="request-status-update.php" method="post" class="form-status">
                             <input type="text" name="status" value="<?php echo $row['status'] ?>" class="editable" autocomplete="off">
                         </form>
@@ -73,7 +73,7 @@
                 if($row['status'] == "Pending") { 
                     echo "Assign";
                 }
-                else if($row['status'] != "Pending" && $row['status'] !=  "Completed") {
+                else {
                     echo "Update";
                 }
                 ?>

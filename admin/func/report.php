@@ -52,7 +52,7 @@ function getWorkload() {
         }
         return $arr;
     } else {
-        echo "Error: ".$query."<br>".$db->error;
+        // echo "Error: ".$query."<br>".$db->error;
         echo "There are no results.";
         return 0;
     }

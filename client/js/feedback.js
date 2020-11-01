@@ -10,7 +10,6 @@ function hover(num) {
 }
 
 function setRating(num) {
-    console.log('num: ', num);
     const inputElement = document.querySelector('#rating')
     inputElement.value = num;
 }
