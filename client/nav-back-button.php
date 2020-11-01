@@ -13,9 +13,11 @@ function AccountSingleton() {
         <span>Back</span>
     </div>
     <!--use singleton to display name-->
-    <p class="user"><?php AccountSingleton() ?></p>
-    <div class="logout" onclick="location.href='index.php'">
-    <p><span>Log Out</span></p>
-    </div>
     <h1 onclick="location.href='dashboard.php'">Ad<span>tech</span></h1>
+    <div class="user">
+      <span><?php AccountSingleton() ?></span>
+      <div class="logout" onclick="location.href='index.php'">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
 </nav>

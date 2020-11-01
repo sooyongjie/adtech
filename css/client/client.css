@@ -34,8 +34,14 @@ nav .back span {
 }
 
 nav .user {
+  display: flex;
+  column-gap: 20px;
   position: absolute;
   right: 100px;
+}
+
+nav .user i {
+  cursor: pointer;
 }
 
 .form-header {

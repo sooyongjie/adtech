@@ -12,8 +12,15 @@ $query = "INSERT INTO feedback (`feedbackComment`, `feedbackRating`, `date`, `re
 VALUES ('$comment', '$rating','$date','$request')";
 
 if ($db->query($query) === TRUE) {
-    header("Location: requests.php"); 
-    exit();
+    $query = "UPDATE request SET `feedbackStatus` = 1 WHERE `reqID` = ".$request." ";
+
+    if ($db->query($query) === TRUE) {
+        header("Location: requests.php"); 
+        exit();
+    }
+    else {
+        echo "Error: ".$query."<br>".$db->error;
+    }
 }
 else {
     echo "Error: ".$query."<br>".$db->error;
