@@ -1,10 +1,18 @@
 <?php
 //Validate the client during login
 session_start();
-
+include 'Singleton.php';
 include_once("../db_connect.php");
 
-$query = "SELECT * FROM `client` WHERE `clientName` = '".$_POST['clientName']."'";
+//use singleton to compare
+$user1 = Account::getInstance();
+$name1 = $user1->getwork();
+
+//use singleton to insert
+$user2 = Account::getInstance();
+$name2 = $user2->getwork();
+
+$query = "SELECT * FROM `client` WHERE `clientName` = '$name1'";
 $result = $db->query($query);
 
 if ($result->num_rows == 1)
@@ -13,17 +21,17 @@ if ($result->num_rows == 1)
 }
 else{ 
 
-    $insertquery = "INSERT INTO client (`clientName`, `password`) VALUES ('".$_POST['clientName']."', '".$_POST[password]."')";
+    $insertquery = "INSERT INTO client (`clientName`, `password`) VALUES ('$name1', '".$_POST[password]."')";
 
     if ($db->query($insertquery) === TRUE) {
     
-    $queryentry = "SELECT * FROM `client` WHERE `clientName` = '".$_POST['clientName']."' AND password = '".$_POST[password]."'";
+    $queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name2' AND password = '".$_POST[password]."'";
     $result = $db->query($queryentry);
     
     if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
     $_SESSION["cID"] = $row["clientID"];
-    $_SESSION["cName"] = $_POST['clientName'];
+    $_SESSION["clientName"] = $name2;
 
     header("Location: dashboard.php"); 
     exit();

@@ -16,7 +16,7 @@ if ($result->num_rows == 1)
 {
     $row = $result->fetch_assoc();
     $_SESSION["cID"] = $row["clientID"];
-    $_SESSION["clientName"] = $row["clientName"];
+    $_SESSION["clientName"] = $user;
     header("Location: dashboard.php"); 
     exit();
     // use exit() to pause
