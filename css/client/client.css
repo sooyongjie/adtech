@@ -44,6 +44,17 @@ nav .user i {
   cursor: pointer;
 }
 
+nav .badge {
+  font-size: 10px;
+  position: absolute;
+  top: -5px;
+  right: 30px;
+  padding: 3px 6px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
 .form-header {
   margin-bottom: 12px;
   display: flex;

@@ -59,17 +59,12 @@ class ConcreteObserverA implements Ob
     {
         if($subject->num > 0){
         ?>
-        <i class="fas fa-bell" onclick="location.href='completed-request.php'"><span class="badge">new</span></i>
+        <div class="bell" onclick="location.href='completed-request.php'">
+        <i class="fas fa-bell"><span class="badge"><?php echo $subject->num ?></span></i>
+        </div>
         <?php
         }
     }
 }
 
-function Notification(){
-    $subject = new Subject();
-    $o1 = new ConcreteObserverA();
-    $subject->attach($o1);
-    $subject->CompletedService();
-  }
-  <p class = "bell"><?php Notification() ?></p>
 ?>

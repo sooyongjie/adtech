@@ -35,7 +35,7 @@
             <label for="">Status</label>
             <p><?php echo $row['status'] ?></p>
             <?php
-                if ($row['status'] == 'Completed'){
+            if ($row['status'] == 'Completed'){
                 ?>
                 <!-- Move the request ID to the form and prompt feedback only for "Completed" task -->
                 <form action="payment.php" method="POST">
