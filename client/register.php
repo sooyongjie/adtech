@@ -18,6 +18,12 @@
     <div class="form">
       <form action="register-validation.php" method="POST" class="login-form">
         <h1>Register</h1>
+        <span><?php 
+        if(isset($_SESSION['errMsg'])) {
+            echo $_SESSION['errMsg'];
+            unset($_SESSION['errMsg']);
+        }
+        ?></span>
         <label for="">Username</label>
         <input type="text" name="clientName" value="1"/>
         <div class="password">

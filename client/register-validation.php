@@ -2,42 +2,41 @@
 //Validate the client during login
 session_start();
 include 'Singleton.php';
-include_once("../db_connect.php");
+include 'Proxy.php';
 
-//use singleton to compare
+//use singleton to insert proxy
 $user1 = Account::getInstance();
 $name1 = $user1->getwork();
 
-//use singleton to insert
+//use singleton to compare
 $user2 = Account::getInstance();
-$name2 = $user2->getwork();
+$name2 = $user1->getwork();
 
-$query = "SELECT * FROM `client` WHERE `clientName` = '$name1'";
-$result = $db->query($query);
+//use singleton to put as session
+$user3 = Account::getInstance();
+$name3 = $user2->getwork();
 
-if ($result->num_rows == 1)
+//Proxy code
+$Insertname = $name1;
+$Insertpass = $_POST['password'];
+function ProxyFunction(Subject $subject, string $name, string $pass)
 {
-    echo "Username Taken. `$result->num_rows != 1`)"; //Fail
+    $subject->request($name, $pass);
 }
-else{ 
 
-    $insertquery = "INSERT INTO client (`clientName`, `password`) VALUES ('$name1', '".$_POST[password]."')";
+$realSubject = new RealInsert();
+$proxy = new Proxy($realSubject);
+ProxyFunction($proxy, $Insertname, $Insertpass);
 
-    if ($db->query($insertquery) === TRUE) {
-    
-    $queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name2' AND password = '".$_POST[password]."'";
-    $result = $db->query($queryentry);
-    
-    if ($result->num_rows == 1){
+include("../db_connect.php");
+$queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name2' AND password = '".$_POST[password]."'";
+$result = $db->query($queryentry);
+if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
     $_SESSION["cID"] = $row["clientID"];
-    $_SESSION["clientName"] = $name2;
+    $_SESSION["clientName"] = $name3;
 
     header("Location: dashboard.php"); 
     exit();
-        }
-    }
-    // use exit() to pause
 }
-
 ?>
