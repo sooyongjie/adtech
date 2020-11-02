@@ -16,8 +16,9 @@ if($_POST['page']=="requests.php") {
     header("Location: ../requests.php"); 
 } else if($_POST['page']=="feedback.php") {
     header("Location: ../feedback.php"); 
-}
-else if($_POST['page']=="employees.php") {
+} else if($_POST['page']=="billing.php") {
+    header("Location: ../billing.php"); 
+} else if($_POST['page']=="employees.php") {
     header("Location: ../employees.php"); 
 }
 

@@ -90,7 +90,7 @@ function getComments() {
         return $arr;
     } else {
         // echo "Error: ".$query."<br>".$db->error;
-        echo "There are no ratings.";
+        echo "There are no comments.";
         return 0;
     }
 }
