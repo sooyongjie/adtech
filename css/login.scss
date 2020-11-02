@@ -25,66 +25,65 @@ body {
   display: flex;
   justify-content: center;
   opacity: 0;
-}
-
-.form form {
-  width: 70%;
-  margin-right: 10%;
-  display: flex;
-  flex-direction: column;
-}
-
-.form form h1 {
-  margin-bottom: 40px;
-}
-
-.form form label,
-.form form a {
-  font-weight: 500;
-}
-
-.form form label {
-  color: #222222;
-}
-
-.form form input {
-  height: 40px;
-  margin: 12px 0 24px 0;
-  padding: 0 8px 0 8px;
-  border-radius: 8px;
-  background: #f5f6f8;
-  text-align: left;
-}
-
-.form form .password {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.form form .password a {
-  font-size: 12px;
-  color: #1b6fad;
-}
-
-.form form button {
-  height: 35px;
-  width: 80px;
-  border-radius: 4px;
-  background: #feea89;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.form form button:hover {
-  background: #ffe771;
-}
-
-.form form button:active,
-.form form button:focus {
-  background: #ffdc2b;
+  form {
+    width: 70%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    .header {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      margin-bottom: 30px;
+      & span {
+        font-size: 14px;
+        color: #666;
+        &.error {
+          color: maroon;
+        }
+      }
+    }
+    label, a {
+      font-weight: 500;
+    }
+    label {
+      color: #222222;
+    }
+    input {
+      height: 40px;
+      margin: 12px 0 24px 0;
+      padding: 0 8px 0 8px;
+      border-radius: 8px;
+      background: #f5f6f8;
+      text-align: left;
+    }
+    .password {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        font-size: 12px;
+        color: #1b6fad;
+      }
+    }
+    button {
+      height: 35px;
+      width: 80px;
+      border-radius: 4px;
+      background: #feea89;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background: #ffe771;
+      }
+      &:active, &:focus {
+        background: #ffdc2b;
+      }
+    }
+  }
 }

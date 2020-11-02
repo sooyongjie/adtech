@@ -18,7 +18,9 @@
     </div>
     <div class="form">
       <form action="user-validation.php" method="POST" class="login-form">
-        <h1>Login</h1>
+        <div class="header">
+          <h1>Register</h1>
+        </div>        
         <div class="user">
         <label for="">User ID</label>
         </div>

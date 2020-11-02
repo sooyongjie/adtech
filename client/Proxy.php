@@ -35,7 +35,7 @@ class Proxy implements Subject
         $result = $db->query($query);
 
         if ($result->num_rows == 1){
-            $_SESSION['errMsg'] = "Invalid Username! Please select again!";
+            $_SESSION['errMsg'] = "The username has been taken.";
             header("Location: register.php"); 
         }else{
             $this->realinsert->request($Newuser, $Newpass);

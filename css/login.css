@@ -34,12 +34,24 @@ body {
   flex-direction: column;
 }
 
-.form form h1 {
-  margin-bottom: 40px;
+.form form .header {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-bottom: 30px;
 }
 
-.form form label,
-.form form a {
+.form form .header span {
+  font-size: 14px;
+  color: #666;
+}
+
+.form form .header span.error {
+  color: maroon;
+}
+
+.form form label, .form form a {
   font-weight: 500;
 }
 
@@ -84,8 +96,7 @@ body {
   background: #ffe771;
 }
 
-.form form button:active,
-.form form button:focus {
+.form form button:active, .form form button:focus {
   background: #ffdc2b;
 }
 /*# sourceMappingURL=login.css.map */

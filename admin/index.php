@@ -17,8 +17,10 @@
     </div>
     <div class="form">
       <form action="user-validation.php" method="POST" class="login-form">
+      <div class="header">
         <h1>Login</h1>
-        <label for="">User ID</label>
+      </div>   
+      <label for="">User ID</label>
         <input type="text" name="empID" value="1"/>
         <div class="password">
           <label for="">Password</label>

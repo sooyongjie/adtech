@@ -17,22 +17,26 @@
     </div>
     <div class="form">
       <form action="register-validation.php" method="POST" class="login-form">
-        <h1>Register</h1>
-        <span><?php 
-        if(isset($_SESSION['errMsg'])) {
-            echo $_SESSION['errMsg'];
+        <div class="header">
+          <h1>Register</h1>
+          <?php 
+          if(isset($_SESSION['errMsg'])) {
+            echo "<span class='error'>".$_SESSION['errMsg']."</span>";
             unset($_SESSION['errMsg']);
-        }
-        ?></span>
+          } else {
+            echo "<span>Enter a safe password</span>";
+          }
+          ?>
+        </div>
         <label for="">Username</label>
-        <input type="text" name="clientName" value="1"/>
+        <input type="text" name="clientName" placeholder = "Enter username" required/>
         <div class="password">
           <label for="">Password</label>
         </div>
-        <input type="password" name="password" value="poop"/>
+        <input type="password" name="password" placeholder = "Enter password" required/>
         <div class="password">
         <button type="submit">Submit</button>
-        <a href="index.php">Existing User</a>
+        <a href="index.php">Already created an account? Click here</a>
         </div>
         <!-- <button type="button" href="dashboard.html"><a href="dashboard.html">Login</a></button> -->
       </form>
