@@ -106,6 +106,7 @@
         <div class="card new-requests">
             <?php
             $requests = getAllRequests();
+            if(!$requests) exit();
             ?>
             <table>
                 <tr>

@@ -11,7 +11,7 @@ function runQuery($query) {
         }
         return $arr;
     } else {
-        echo "Error: ".$query."<br>".$db->error;
+        // echo "Error: ".$query."<br>".$db->error;
         echo "No results were returned";
         return 0;
     }

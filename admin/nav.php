@@ -54,7 +54,30 @@ if(!isset($_SESSION['uid'])) {
         </div>
         <?php
     }
-    // Employee
+    // Project Manager
+    if($_SESSION['type'] != "3" && $file == "billing.php") {
+        ?>
+        <div class="button active" onclick="location.href='billing.php'">
+            <div class="button-l">
+                <i class="fas fa-money-check-alt"></i>
+                <p>Billing</p>
+            </div>
+            <div class="button-r">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="button" onclick="location.href='billing.php'">
+            <div class="button-l">
+                <i class="fas fa-money-check-alt"></i>
+                <p>Billing</p>
+            </div>
+        </div>
+        <?php
+    }
+    // Project Manager
     if($_SESSION['type'] != "3" && $file == "employees.php") {
         ?>
         <div class="button active" onclick="location.href='employees.php'">

@@ -31,8 +31,11 @@ function getOngoingRequests() {
 function getAllRequests() {
     $query = "SELECT reqID, category, dateOfCreation, `status` FROM `request` 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
-    checkSort($query);
-    return runQuery($query);   
+    if(runQuery($query) == 0) {
+        $_SESSION['order'][0] = "reqID";
+        $_SESSION['order'][1] = "asc";
+        header("Location: requests.php"); 
+    } else return runQuery($query);
 }
 
 function getRequest($search) {
