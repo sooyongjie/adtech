@@ -23,6 +23,7 @@ class Subject implements NotificationBell
 
     public function __construct()
     {
+        //SplObjectStorage is a built-in function which stores list of subscribers
         $this->observers = new SplObjectStorage();
     }
 
