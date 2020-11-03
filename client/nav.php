@@ -4,7 +4,7 @@ include 'Singleton.php';
 include 'Observer.php';
 function AccountSingleton() {
     $s2 = Account::getInstance();
-    $user = $s2->getwork(); 
+    $user = $s2->getUserName(); 
     echo $user;
   }
 

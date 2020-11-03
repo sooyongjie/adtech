@@ -6,15 +6,7 @@ include 'Proxy.php';
 
 //use singleton to insert proxy
 $user1 = Account::getInstance();
-$name1 = $user1->getwork();
-
-//use singleton to compare
-$user2 = Account::getInstance();
-$name2 = $user1->getwork();
-
-//use singleton to put as session
-$user3 = Account::getInstance();
-$name3 = $user2->getwork();
+$name1 = $user1->getUserName();
 
 //Proxy code
 $Insertname = $name1;
@@ -29,12 +21,12 @@ $proxy = new Proxy($realSubject);
 ProxyFunction($proxy, $Insertname, $Insertpass);
 
 include("../db_connect.php");
-$queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name2' AND password = '".$_POST[password]."'";
+$queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name1' AND password = '".$_POST[password]."'";
 $result = $db->query($queryentry);
 if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
     $_SESSION["cID"] = $row["clientID"];
-    $_SESSION["clientName"] = $name3;
+    $_SESSION["clientName"] = $name1;
 
     header("Location: dashboard.php"); 
     exit();

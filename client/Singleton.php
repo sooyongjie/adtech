@@ -10,7 +10,6 @@ class Account
 {
     private static $instances = [];
     private $a;
-    //private $c;
 
     protected function __construct() {
         $this->a = $_POST['clientName'];
@@ -26,7 +25,7 @@ class Account
         return self::$instances[$OwnClass];
     }
 
-    public function getwork(){
+    public function getUserName(){
         return $this->a;
     }
 }

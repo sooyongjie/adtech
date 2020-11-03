@@ -5,7 +5,7 @@ include 'Singleton.php';
 
     //use singleton to compare
     $s1 = Account::getInstance();
-    $user = $s1->getwork();
+    $user = $s1->getUserName();
 
     include_once("../db_connect.php");
 
