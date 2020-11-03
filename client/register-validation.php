@@ -11,7 +11,7 @@ $name1 = $user1->getUserName();
 //Proxy code
 $Insertname = $name1;
 $Insertpass = $_POST['password'];
-function ProxyFunction(Subject $subject, string $name, string $pass)
+function ProxyFunction(RegisterCheck $subject, string $name, string $pass)
 {
     $subject->request($name, $pass);
 }

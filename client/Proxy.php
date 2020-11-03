@@ -1,13 +1,13 @@
 <?php
 
 //The Subject interface
-interface Subject
+interface RegisterCheck
 {
     public function request(string $name, string $pass): void;
 }
 
 //The RealSubject, the final output / execution
-class RealInsert implements Subject
+class RealInsert implements RegisterCheck
 {
     public function request(string $name, string $pass): void
     {
@@ -18,7 +18,7 @@ class RealInsert implements Subject
 }
 
 //The Proxy has an interface identical to the RealSubject.
-class CheckingInformation implements Subject
+class CheckingInformation implements RegisterCheck
 {
     private $realinsert;
 
