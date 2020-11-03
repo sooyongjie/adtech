@@ -19,10 +19,10 @@
     <div class="form">
       <form action="user-validation.php" method="POST" class="login-form">
         <div class="header">
-          <h1>Register</h1>
+          <h1>Login</h1>
         </div>        
         <div class="user">
-        <label for="">User ID</label>
+        <label for="">Username</label>
         </div>
         <input type="text" name="clientName" value="Alicia"/>
         <div class="password">
