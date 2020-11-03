@@ -17,7 +17,7 @@ function ProxyFunction(Subject $subject, string $name, string $pass)
 }
 
 $realSubject = new RealInsert();
-$proxy = new Proxy($realSubject);
+$proxy = new CheckingInformation($realSubject);
 ProxyFunction($proxy, $Insertname, $Insertpass);
 
 include("../db_connect.php");

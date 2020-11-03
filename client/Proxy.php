@@ -18,7 +18,7 @@ class RealInsert implements Subject
 }
 
 //The Proxy has an interface identical to the RealSubject.
-class Proxy implements Subject
+class CheckingInformation implements Subject
 {
     private $realinsert;
 
