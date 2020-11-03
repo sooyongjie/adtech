@@ -18,26 +18,16 @@ class Account
 
     public static function getInstance(): Account
     {
-        $cls = static::class;
-        if (!isset(self::$instances[$cls])) {
-            self::$instances[$cls] = new static();
+        $OwnClass = static::class;
+        if (!isset(self::$instances[$OwnClass])) {
+            self::$instances[$OwnClass] = new static();
         }
 
-        return self::$instances[$cls];
+        return self::$instances[$OwnClass];
     }
-/*
-    public function setwork($id){
-        $this->c = $id;
-    }
-*/
+
     public function getwork(){
         return $this->a;
     }
-
-/*
-    public function getwork2(){
-        return $this->c;
-    }
-*/
 }
 ?>
