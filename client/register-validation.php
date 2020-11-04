@@ -20,15 +20,17 @@ $realSubject = new RealInsert();
 $proxy = new CheckingInformation($realSubject);
 ProxyFunction($proxy, $Insertname, $Insertpass);
 
-include("../db_connect.php");
-$queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name1' AND password = '".$_POST[password]."'";
-$result = $db->query($queryentry);
-if ($result->num_rows == 1){
+if(!isset($_SESSION['errMsg'])) {
+    include("../db_connect.php");
+    $queryentry = "SELECT * FROM `client` WHERE `clientName` = '$name1' AND password = '".$_POST[password]."'";
+    $result = $db->query($queryentry);
+    if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
     $_SESSION["cID"] = $row["clientID"];
     $_SESSION["clientName"] = $name1;
 
     header("Location: dashboard.php"); 
     exit();
+}
 }
 ?>
