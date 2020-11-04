@@ -5,8 +5,6 @@
   <title>Login</title>
   <?php
   include_once("../head.php");
-  session_start();
-  unset($_SESSION['clientID']);
   ?>
   <link rel="stylesheet" type="text/css" href="../css/login.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
@@ -17,30 +15,17 @@
       <img src="../img/welcome.png" alt="" />
     </div>
     <div class="form">
-      <form action="user-validation.php" method="POST" class="login-form">
+      <form action="forgot-password-update.php" method="POST" class="login-form">
         <div class="header">
-          <h1>Login</h1>
-          <?php 
-          if(isset($_SESSION['errMsg'])) {
-            echo "<span class='error'>".$_SESSION['errMsg']."</span>";
-            unset($_SESSION['errMsg']);
-          } else {
-            echo "<span>Welcome to Adtech.</span>";
-          }
-          ?>
-        </div>       
+          <h1>Forgot Password</h1>
+        </div>        
         <div class="user">
-          <label for="">Username</label>
+          <label label for="">Employee ID</label>
         </div>
-        <input type="text" name="clientName" value="Alicia"/>
+        <input type="text" name="empID" placeholder="Enter employee ID"/>
         <div class="password">
-          <label for="">Password</label>
-          <a href="forgot-password.php">Forgot Password</a>
-        </div>
-        <input type="password" name="password" value="1234"/>
-        <div class="password">
-        <button type="submit">Submit</button> 
-          <a href="register.php">Register Here</a>
+          <button type="submit">Submit</button> 
+          <a href="index.php">Login Here</a>
         </div>
         <!-- <button type="button" href="dashboard.html"><a href="dashboard.html">Login</a></button> -->
       </form>

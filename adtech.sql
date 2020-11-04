@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2020 at 02:49 PM
+-- Generation Time: Nov 04, 2020 at 03:13 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -57,7 +57,8 @@ INSERT INTO `employee` (`empID`, `password`, `type`, `empName`) VALUES
 (1, 'poop', '1', 'Soo Yong Jie'),
 (2, 'poop', '2', 'Project Manager'),
 (3, 'poop', '3', 'Cork'),
-(4, 'poop', '3', 'Sum Ting Wong');
+(4, 'poop', '3', 'Sum Ting Wong'),
+(11, 'poop', '3', 'Shrek');
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,7 @@ CREATE TABLE `feedback` (
   `feedbackNo` int(100) NOT NULL,
   `feedbackComment` varchar(100) NOT NULL,
   `feedbackRating` int(1) NOT NULL,
+  `date` date DEFAULT NULL,
   `reqID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -76,10 +78,11 @@ CREATE TABLE `feedback` (
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`feedbackNo`, `feedbackComment`, `feedbackRating`, `reqID`) VALUES
-(10001, 'Doesn\'t smell like burnt plastic anymore', 5, 10001),
-(2, 'Ok', 4, 10002),
-(3, 'Good !', 5, 10003);
+INSERT INTO `feedback` (`feedbackNo`, `feedbackComment`, `feedbackRating`, `date`, `reqID`) VALUES
+(10001, 'Doesn\'t smell like burnt plastic anymore', 5, NULL, 10001),
+(2, 'Ok', 4, NULL, 10002),
+(3, 'Good !', 5, NULL, 10003),
+(10002, 'Wow, amazing, good job', 5, '2020-10-31', 10007);
 
 -- --------------------------------------------------------
 
@@ -178,7 +181,7 @@ ALTER TABLE `overtime`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `empID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `empID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `overtime`

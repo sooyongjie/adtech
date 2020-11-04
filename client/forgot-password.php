@@ -17,30 +17,17 @@
       <img src="../img/welcome.png" alt="" />
     </div>
     <div class="form">
-      <form action="user-validation.php" method="POST" class="login-form">
+      <form action="forgot-password-update.php" method="POST" class="login-form">
         <div class="header">
-          <h1>Login</h1>
-          <?php 
-          if(isset($_SESSION['errMsg'])) {
-            echo "<span class='error'>".$_SESSION['errMsg']."</span>";
-            unset($_SESSION['errMsg']);
-          } else {
-            echo "<span>Welcome to Adtech.</span>";
-          }
-          ?>
-        </div>       
+          <h1>Forgot Password</h1>
+        </div>        
         <div class="user">
-          <label for="">Username</label>
+          <label label for="">Username</label>
         </div>
-        <input type="text" name="clientName" value="Alicia"/>
+        <input type="text" name="username" placeholder="Enter username"/>
         <div class="password">
-          <label for="">Password</label>
-          <a href="forgot-password.php">Forgot Password</a>
-        </div>
-        <input type="password" name="password" value="1234"/>
-        <div class="password">
-        <button type="submit">Submit</button> 
-          <a href="register.php">Register Here</a>
+          <button type="submit">Submit</button> 
+          <a href="index.php">Login Here</a>
         </div>
         <!-- <button type="button" href="dashboard.html"><a href="dashboard.html">Login</a></button> -->
       </form>

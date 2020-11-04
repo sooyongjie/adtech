@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['uid'])) {
-    header("Location: index.php"); 
-}
+// if(!isset($_SESSION['uid'])) {
+//     header("Location: index.php"); 
+// }
 
 ?>
 
@@ -160,22 +160,41 @@ if(!isset($_SESSION['uid'])) {
             </div>
         <?php
     }
-    // Profile
-    if($file == "profile.php") {
+    // 
+    if($file == "clients.php") {
         ?>
-        <div class="profile button active" onclick="location.href='profile.php'">
+        <div class="button active" onclick="location.href='clients.php'">
             <div class="button-l">
-                <i class="fad fa-user-circle"></i>
-                <p><?php echo $_SESSION['name'] ?></p>
+                <i class="fas fa-user-circle"></i>
+                <p>Clients</p>
             </div>
         </div>
         <?php
         } else {
             ?>
-            <div class="profile button" onclick="location.href='profile.php'">
+            <div class="button" onclick="location.href='clients.php'">
+                <div class="button-l">
+                    <i class="fas fa-user-circle"></i>
+                    <p>Clients</p>
+                </div>
+            </div>
+        <?php
+    }
+    if($file == "clients.php") {
+        ?>
+        <div class="button profile active" onclick="location.href='profile.php'">
+            <div class="button-l">
+                <i class="fad fa-user-circle"></i>
+                <p>Profile</p>
+            </div>
+        </div>
+        <?php
+        } else {
+            ?>
+            <div class="button profile" onclick="location.href='profile.php'">
                 <div class="button-l">
                     <i class="fad fa-user-circle"></i>
-                    <p><?php echo $_SESSION['name'] ?></p>
+                    <p>Profile</p>
                 </div>
             </div>
         <?php

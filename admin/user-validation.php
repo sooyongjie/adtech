@@ -3,13 +3,11 @@ session_start();
 
 include_once("../db_connect.php");
 
-unset($_SESSION["type"]);
 
 $query = "SELECT * FROM employee WHERE empID = '".$_POST['empID']."' AND password = '".$_POST['password']."'";
 $result = $db->query($query);
 
-if ($result->num_rows == 1)
-{
+if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $_SESSION["type"] = $row["type"];
     $_SESSION["uid"] = $row["empID"];
@@ -18,7 +16,9 @@ if ($result->num_rows == 1)
     header("Location: requests.php"); 
     exit();
     // use exit() to pause
+} else {
+    $_SESSION['errMsg'] = "Please try again.";
+    header("Location: index.php"); 
 }
-else echo "MEGA EPICC FAIL LMAO. `$result->num_rows != 1`)"; //Fail
 
 ?>

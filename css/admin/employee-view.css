@@ -1,5 +1,5 @@
-.container .card .row.c5 {
-  grid-template-columns: 50px 200px 30px 80px 80px;
+.container .card .row.c6 {
+  grid-template-columns: 50px 200px 30px 80px 80px 80px;
   grid-template-rows: repeat(2, auto);
   column-gap: 50px;
 }

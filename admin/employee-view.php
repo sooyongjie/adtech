@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    $file = "dashboard.php";
+    $file = "employees.php";
     include_once("nav.php");
     if(!isset($_SESSION['empID'])) {
         $_SESSION['empID'] = $_POST['empID'];
@@ -31,24 +31,28 @@
                 if($row = $result->fetch_assoc()) { ?>
                         <i class="fas fa-arrow-left"></i>
                         <h2><?php echo $row['empName'] ?></h2>
-                        
                     </div>
                     <button class="heading-btn" onclick="location.href='employee-delete.php'" type="button">
                         <i class="fas fa-trash"></i>
                         <span>Delete</span>
                     </button>
+                    <button class="heading-btn" onclick="location.href='employee-reset-password.php'" type="button">
+                        <i class="fas fa-times"></i>
+                        <span>Reset Password</span>
+                    </button>
                 </div>
                 <div class="card">
                     <h3>Employee Details</h3>
-                    <form class="row c5">
+                    <form action="employee-update.php" method="post" class="row c6">
                         <label for="">ID</label>
                         <label for="">Name</label>
                         <label for="">Type</label>
                         <label for="">Current Jobs</label>
+                        <label for="">Status</label>
                         <label></label>
-                        <input type="text" name="" value="<?php echo $row['empID'] ?>" class="readonly" readonly/>
-                        <input type="text" name="" value="<?php echo $row['empName'] ?>" class="editable" />
-                        <input type="text" name="" value="<?php echo $row['type'] ?>" class="editable" />
+                        <input type="text" name="empID" value="<?php echo $row['empID'] ?>" class="readonly" readonly/>
+                        <input type="text" name="empName" value="<?php echo $row['empName'] ?>" class="editable" />
+                        <input type="text" name="type" value="<?php echo $row['type'] ?>" class="editable" />
                         <?php
                         $query2 = "SELECT COUNT(`status`) AS CurrentJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
                         $result2 = $db->query($query2);
@@ -56,6 +60,7 @@
                             <input type="text" name="" value="<?php echo $row2['CurrentJobs'] ?>" class="readonly" readonly/> <?php
                         }
                         ?>
+                        <input type="text" name="status" value="<?php echo $row['status'] ?>" class="readonly" readonly/>
                         <button class="submit">Submit</button>
                     </form>
                 </div>
