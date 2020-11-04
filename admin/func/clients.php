@@ -36,7 +36,7 @@ function checkClientSort($query) {
     if(runQuery($query)==0) {
         $_SESSION['order'][0] = "clientID";
         $_SESSION['order'][1] = "asc";
-        header("Location: users.php"); 
+        header("Location: clients.php"); 
     }
 }
 
