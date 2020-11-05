@@ -1,4 +1,10 @@
 <?php
+if(isset($_POST['clientName'])) {
+    $_POST['clientName'] = $_POST['clientName'];
+}
+else if(isset($_SESSION['clientName'])) {
+    $_POST['clientName'] = $_SESSION['clientName'];
+}
 
 class Account
 {
@@ -6,7 +12,7 @@ class Account
     private $a;
 
     protected function __construct() {
-        $this->a = $_SESSION['clientName'];
+        $this->a = $_POST['clientName'];
     }
 
     public static function getInstance(): Account
