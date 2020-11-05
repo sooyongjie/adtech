@@ -32,6 +32,12 @@ nav {
     column-gap: 20px;
     position: absolute;
     right: 100px;
+    a {
+      color: black;
+      &:visited {
+        color: black;
+      }
+    }
     i {
       cursor: pointer;
     }

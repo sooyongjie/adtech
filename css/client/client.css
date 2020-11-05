@@ -40,6 +40,14 @@ nav .user {
   right: 100px;
 }
 
+nav .user a {
+  color: black;
+}
+
+nav .user a:visited {
+  color: black;
+}
+
 nav .user i {
   cursor: pointer;
 }

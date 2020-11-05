@@ -12,7 +12,7 @@ class RealInsert implements RegisterCheck
     public function request(string $name, string $pass): void
     {
         include("../db_connect.php");
-        $insertquery = "INSERT INTO client (`clientName`, `password`) VALUES ('$name', '$pass')";
+        $insertquery = "INSERT INTO client (`clientName`, `password`, `status`) VALUES ('$name', '$pass', 1)";
         $db->query($insertquery);
     }
 }

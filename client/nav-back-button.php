@@ -24,7 +24,7 @@ function Notification(){
     <!--use singleton to display name-->
     <h1 onclick="location.href='dashboard.php'">Ad<span>tech</span></h1>
     <div class="user">
-      <span><?php AccountSingleton() ?></span>
+      <a href="profile.php"><?php AccountSingleton() ?></a>
       <?php Notification() ?>
       <div class="logout" onclick="location.href='index.php'">
         <i class="fas fa-sign-out-alt"></i>
