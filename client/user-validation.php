@@ -9,9 +9,9 @@ $user = $s1->getUserName();
 
 include_once("../db_connect.php");
 
-$hash = $_POST['password'];
+$hash = md5($_POST['password']);
 
-$query = "SELECT * FROM `client` WHERE `clientName` = '$user' AND `password` = '".$_POST['password']."'";
+$query = "SELECT * FROM `client` WHERE `clientName` = '$user' AND `password` = '$hash' ";
 $result = $db->query($query);
 
 if ($result->num_rows == 1)
