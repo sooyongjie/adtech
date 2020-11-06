@@ -18,7 +18,7 @@ function Notification(){
 ?>
 <nav>
     
-    <h1 onclick="location.href='dashboard.php'">Ad<span>tech</span></h1>
+    <img src="../img/logo-dark.svg" alt="Adtech" onclick="location.href='dashboard.php'">
     <!--use singleton to display name-->
     <div class="user">
       <a href="profile.php"><?php AccountSingleton() ?></a>

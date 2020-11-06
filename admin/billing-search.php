@@ -90,5 +90,6 @@
     </form>
 </body>
 <script src="js/dashboard.js"></script>
+<script src="js/replace-window-state.js"></script>
 
 </html>
