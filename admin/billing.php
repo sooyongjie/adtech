@@ -27,7 +27,7 @@
             <?php
             include_once("func/billing.php");
             $billings = getAllBillings();
-            ?>
+            if($billings != 0) { ?>
             <table>
                 <tr>
                     <th onclick="document.querySelector('#billID').submit()">Bill ID</th>
@@ -75,7 +75,8 @@
                     <?php
                 }
                 ?>
-                </div>
+            </div> <?php
+            } ?>
             </div>
         </div>
     <form action="func/sort.php" method="post" id="billID">

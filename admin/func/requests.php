@@ -14,33 +14,25 @@ if(isset($_GET['offset'])) {
 require("runQuery.php");
 
 function getPendingRequests() {
+    checkSort();
     $query = "SELECT reqID, category, dateOfCreation, `status` FROM `request` WHERE status = 'Pending' 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
-    checkSort($query);
-    
     return runQuery($query);   
 }
 
 function getOngoingRequests() {
     $query = "SELECT reqID, category, dateOfCreation, `status` FROM `request` WHERE status <> 'Pending' AND status <> 'Completed' ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
-    checkSort($query);
-
     return runQuery($query);   
 }
 
 function getAllRequests() {
     $query = "SELECT reqID, category, dateOfCreation, `status` FROM `request` 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
-    if(runQuery($query) == 0) {
-        $_SESSION['order'][0] = "reqID";
-        $_SESSION['order'][1] = "asc";
-        header("Location: requests.php"); 
-    } else return runQuery($query);
+    return runQuery($query);
 }
 
 function getRequest($search) {
     $query = "SELECT * FROM `request` WHERE `reqID` = $search ";
-
     return runQuery($query); 
 }
 
@@ -49,11 +41,12 @@ function countRows() {
     return runQuery($query);
 }
 
-function checkSort($query) {
-    if(runQuery($query)==0) {
+function checkSort() {
+    if($_SESSION['order'][0] != "reqID" && $_SESSION['order'][0] != "category" && $_SESSION['order'][0] != "date" && $_SESSION['order'][0] != "status") {
         $_SESSION['order'][0] = "reqID";
         $_SESSION['order'][1] = "asc";
         header("Location: requests.php"); 
+        exit();
     }
 }
 

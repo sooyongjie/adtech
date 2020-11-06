@@ -16,7 +16,7 @@
     <?php
     $file = "employees.php";
     include_once("nav.php");
-    if(!isset($_SESSION['empID'])) {
+    if(isset($_POST['empID'])) {
         $_SESSION['empID'] = $_POST['empID'];
     };
     ?>

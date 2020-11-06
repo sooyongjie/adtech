@@ -124,32 +124,19 @@ session_start();
         <?php
     }
     // Alert
-    include_once("../db_connect.php");
-    $query = "SELECT reqID, dateOfCreation FROM `request`";
-    $result = $db->query($query);
-    if ($result->num_rows > 0) { 
-        if($row = $result->fetch_assoc()) {
-            $dot = "<div class='dot'></div>";
+    if($_SESSION['type'] != 3) {
+        include_once("../db_connect.php");
+        $query = "SELECT reqID, dateOfCreation FROM `request` 
+        WHERE dateOfCreation <= subdate(current_date, '7') AND dateOfCompletion IS NULL";
+        $result = $db->query($query);
+        if ($result->num_rows > 0) { 
+            if($row = $result->fetch_assoc()) {
+                $dot = "<div class='dot'></div>";
+            }
         }
-    }
-    if($file == "alerts.php") {
-        ?>
-        <div class="button active" onclick="location.href='alerts.php'">
-            <div class="button-l">
-                <i class="fas fa-bell"></i>
-                <p>Alerts</p> <?php
-                if(isset($dot)) {
-                    echo $dot;
-                } ?>
-            </div>
-            <div class="button-r">
-                <i class="fas fa-angle-right"></i>
-            </div>
-        </div>
-        <?php
-        } else {
+        if($file == "alerts.php") {
             ?>
-            <div class="button" onclick="location.href='alerts.php'">
+            <div class="button active" onclick="location.href='alerts.php'">
                 <div class="button-l">
                     <i class="fas fa-bell"></i>
                     <p>Alerts</p> <?php
@@ -157,11 +144,27 @@ session_start();
                         echo $dot;
                     } ?>
                 </div>
+                <div class="button-r">
+                    <i class="fas fa-angle-right"></i>
+                </div>
             </div>
-        <?php
+            <?php
+            } else {
+                ?>
+                <div class="button" onclick="location.href='alerts.php'">
+                    <div class="button-l">
+                        <i class="fas fa-bell"></i>
+                        <p>Alerts</p> <?php
+                        if(isset($dot)) {
+                            echo $dot;
+                        } ?>
+                    </div>
+                </div>
+            <?php
+        }
     }
-    // 
-    if($file == "clients.php") {
+    // Not IT Technician
+    if($_SESSION['type'] != 3 && $file == "clients.php") {
         ?>
         <div class="button active" onclick="location.href='clients.php'">
             <div class="button-l">

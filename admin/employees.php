@@ -39,6 +39,7 @@
                         <th onclick="document.querySelector('#empID').submit()">Employee ID</th>
                         <th onclick="document.querySelector('#empName').submit()">Name</th>
                         <th onclick="document.querySelector('#type').submit()">Type</th>
+                        <th onclick="document.querySelector('#status').submit()">Status</th>
                         <th class="tr-button-heading"></th>
                     </tr>
                 <?php
@@ -58,6 +59,7 @@
                             }
                             ?>
                         </td>
+                        <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
                             <form action="employee-view.php" method="POST">
                                 <input type="hidden" name="empID" value="<?php echo $row['empID'] ?>">
@@ -100,6 +102,10 @@
     </form>
     <form action="func/sort.php" method="post" id="type">
         <input type="hidden" name="sort" value="type">
+        <input type="hidden" name="page" value="employees.php">
+    </form>
+    <form action="func/sort.php" method="post" id="status">
+        <input type="hidden" name="sort" value="status">
         <input type="hidden" name="page" value="employees.php">
     </form>
 </body>

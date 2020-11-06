@@ -9,7 +9,7 @@ $query = "INSERT INTO request (`uid`, `category`, `status`,`description`)
 VALUES ('".$_SESSION['cID']."', '$radio', 'Pending','$text')";
 if ($db->query($query) === TRUE) {
     echo "New service request created successfully.";
-    header("Location: dashboard.php"); 
+    header("Location: requests.php"); 
     exit();
 }
 else {

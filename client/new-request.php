@@ -26,12 +26,12 @@
             <h2>Request Form</h2>
             <label for="">Category</label>
             <div class="radio">
+                <input type="radio" name= "select" value="General">
+                <span>General</span>
                 <input type="radio" name= "select" value="Hardware">
                 <span>Hardware</span>
                 <input type="radio" name= "select" value="Software">
                 <span>Software</span>
-                <input type="radio" name= "select" value="Others">
-                <span>Others</span>
             </div>
             <label for="">Description of problem</label>
             <input type="text" name="textinput" placeholder="Enter text">

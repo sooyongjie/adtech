@@ -8,7 +8,7 @@ $query = "INSERT INTO employee (`empName`, `type`, `password`, `status`)
 VALUES ('".$_POST['empName']."', '".$_POST['type']."', '$hash', 1)";
 if ($db->query($query) === TRUE) {
     echo "Added ".$_POST['empName'];
-    header( "Location: employee-view.php" );
+    header( "Location: employees.php" );
 }
 else {
     echo "Error: ".$query."<br>".$db->error;

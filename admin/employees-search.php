@@ -39,9 +39,10 @@
                 ?>
                 <table>
                     <tr>
-                        <th onclick="document.querySelector('#empID').submit()">Employee ID</th>
-                        <th onclick="document.querySelector('#empName').submit()">Name</th>
-                        <th onclick="document.querySelector('#type').submit()">Type</th>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Status</th>
                         <th class="tr-button-heading"></th>
                     </tr>
                 <?php
@@ -61,6 +62,7 @@
                             }
                             ?>
                         </td>
+                        <td><?php echo $row['status'] ?></td>
                         <td class="submit-btn">
                             <form action="employee-view.php" method="POST">
                                 <input type="hidden" name="empID" value="<?php echo $row['empID'] ?>">
@@ -74,20 +76,22 @@
                 }
             ?>
             </table>
-            <?php
-            $count = countRows(); 
-            $num = round($count[0]['count']/5);
-            if ($num == 0) {
-                $num = 1;
-            }
-            for ($i = 0; $i < $num; $i++) {
-                ?>
-                <button>
-                    <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
-                </button>
+            <div class="pagination">
                 <?php
-            }
-            ?>
+                $count = countRows(); 
+                $num = round($count[0]['count']/5);
+                if ($num == 0) {
+                    $num = 1;
+                }
+                for ($i = 0; $i < $num; $i++) {
+                    ?>
+                    <button>
+                        <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
+                    </button>
+                    <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
 </body>

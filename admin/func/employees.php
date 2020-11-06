@@ -10,7 +10,7 @@ if(isset($_GET['offset'])) {
 require("runQuery.php");
 
 function getAllEmployees() {
-    $query = "SELECT empID, empName, `type` FROM `employee` 
+    $query = "SELECT empID, empName, `type`, `status` FROM `employee` 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
     if(runQuery($query) == 0) {
         $_SESSION['order'][0] = "empID";
@@ -21,7 +21,7 @@ function getAllEmployees() {
 }
 
 function countJobs() {
-    $query = "SELECT employee.empID, empName, `type`, COUNT(`status`) AS NumberOfJobs FROM `employee` 
+    $query = "SELECT employee.empID, empName, `type`, COUNT(request.status) AS NumberOfJobs FROM `employee` 
     INNER JOIN request on employee.empID = request.empID 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
     if(runQuery($query) == 0) {
@@ -33,13 +33,22 @@ function countJobs() {
 }
 
 function getEmployee($search) {
-    $query = "SELECT empID, empName, `type` FROM `employee` WHERE empID = $search";
+    $query = "SELECT empID, empName, `type`, `status` FROM `employee` WHERE empID = $search";
     return runQuery($query);   
 }
 
 function countRows() {
     $query = "SELECT COUNT(`empID`) AS `count` FROM `employee`";
     return runQuery($query);
+}
+
+function checkSort() {
+    if($_SESSION['order'][0] != "empID" && $_SESSION['order'][0] != "empName" && $_SESSION['order'][0] != "type" && $_SESSION['order'][0] != "status") {
+        $_SESSION['order'][0] = "empID";
+        $_SESSION['order'][1] = "asc";
+        header("Location: employees.php"); 
+        exit();
+    }
 }
 
 ?>

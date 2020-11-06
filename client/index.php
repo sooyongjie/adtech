@@ -32,12 +32,12 @@
         <div class="user">
           <label for="">Username</label>
         </div>
-        <input type="text" name="clientName" value="Alicia"/>
+        <input type="text" name="clientName" value="sooyongjie"/>
         <div class="password">
           <label for="">Password</label>
           <a href="forgot-password.php">Forgot Password</a>
         </div>
-        <input type="password" name="password" value="1234"/>
+        <input type="password" name="password" value="poopandpee"/>
         <div class="password">
         <button type="submit">Submit</button> 
           <a href="register.php">Register Here</a>

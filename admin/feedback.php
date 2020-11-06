@@ -26,7 +26,7 @@
             <?php
             include_once("func/feedback.php");
             $feedback = getAllFeedback();
-            ?>
+            if($feedback != 0) { ?>
             <table>
                 <tr>
                     <th onclick="document.querySelector('#feedbackNo').submit()">Feedback#</th>
@@ -73,9 +73,10 @@
                     <?php
                 }
                 ?>
-                </div>
-            </div>
+            </div> <?php
+        } ?>
         </div>
+    </div>
     <form action="func/sort.php" method="post" id="feedbackNo">
         <input type="hidden" name="sort" value="feedbackNo">
         <input type="hidden" name="page" value="feedback.php">
