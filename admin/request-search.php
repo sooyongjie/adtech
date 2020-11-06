@@ -34,7 +34,10 @@
         <div class="card">
             <?php
             include_once("func/requests.php");
-            $requests = getRequest($_SESSION['search']);
+            if($_SESSION['type'] != 3) {
+                $requests = getRequest($_SESSION['search']);
+            } else $requests = getTechnicianRequest($_SESSION['search'])    ;
+           
             if($requests == 0) {
                 exit();
             }

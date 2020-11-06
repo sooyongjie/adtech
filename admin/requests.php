@@ -27,46 +27,55 @@
         <div class="card">
             <?php
             include_once("func/requests.php");
-            $requests = getPendingRequests();
-            ?>
-            <table>
-                <tr>
-                    <th onclick="document.querySelector('#request').submit()">Request ID</th>
-                    <th onclick="document.querySelector('#category').submit()">Category</th>
-                    <th onclick="document.querySelector('#date').submit()">Date</th>
-                    <th onclick="document.querySelector('#date').submit()">Time</th>
-                    <th onclick="document.querySelector('#status').submit()">Status</th>
-                    <th class="tr-button-heading"></th>
-                </tr>
-                <?php
-                foreach($requests as $row) { 
-                    ?>
-                <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)"
-                    onmouseout="hideButton(this)">
-                    <td><?php echo '#'.$row['reqID'] ?></td>
-                    <td><?php echo $row['category'] ?></td>
-                    <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
-                    <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
-                    <td><?php echo $row['status'] ?></td>
-                    <td class="submit-btn">
-                        <form action="request-view.php" method="POST">
-                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                            <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
-                                <i class="fas fa-arrow-circle-right "></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                <?php
-                }
+            if($_SESSION['type'] != 3) {
+                $requests = getPendingRequests();
+            } else $requests = getTechnicianPendingRequests();
+
+            if($requests != 0) {
                 ?>
-            </table>
+                <table>
+                    <tr>
+                        <th onclick="document.querySelector('#request').submit()">Request ID</th>
+                        <th onclick="document.querySelector('#category').submit()">Category</th>
+                        <th onclick="document.querySelector('#date').submit()">Date</th>
+                        <th onclick="document.querySelector('#date').submit()">Time</th>
+                        <th onclick="document.querySelector('#status').submit()">Status</th>
+                        <th class="tr-button-heading"></th>
+                    </tr>
+                    <?php
+                    foreach($requests as $row) { 
+                        ?>
+                    <tr class="<?php echo "pending-".$row['reqID'] ?>" onmouseover="showButton(this)"
+                        onmouseout="hideButton(this)">
+                        <td><?php echo '#'.$row['reqID'] ?></td>
+                        <td><?php echo $row['category'] ?></td>
+                        <td><?php echo date("Y/m/d",strtotime($row['dateOfCreation'])) ?></td>
+                        <td><?php echo date("g:ia",strtotime($row['dateOfCreation'])) ?></td>
+                        <td><?php echo $row['status'] ?></td>
+                        <td class="submit-btn">
+                            <form action="request-view.php" method="POST">
+                                <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
+                                <button type="submit" id="<?php echo "pending-".$row['reqID'] ?>">
+                                    <i class="fas fa-arrow-circle-right "></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                </table><?php
+            }
+            ?>
         </div>
         <!-- Ongoing requests -->
         <h2>Ongoing Requests</h2>
         <div class="card new-requests">
             <?php
-            $requests = getOngoingRequests();
+            if($_SESSION['type'] != 3) {
+                $requests = getOngoingRequests();
+            } else $requests = getTechnicianOngoingRequests();
+
             if($requests != 0) {
                 ?>
                 <table>
@@ -107,7 +116,10 @@
         <h2>All Requests</h2>
         <div class="card new-requests">
             <?php
-            $requests = getAllRequests();
+            if($_SESSION['type'] != 3) {
+                $requests = getAllRequests();
+            } else $requests = getAllTechnicianRequests();
+
             if($requests == 0) {
                 echo "Major failure detected.";
                 exit();
