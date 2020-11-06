@@ -10,7 +10,7 @@ if(isset($_GET['offset'])) {
 require_once("runQuery.php");
 
 function getAllBillings() {
-    checkSort();
+    checkBillingSort();
     $query = "SELECT billID, reqID, total, `status`, `url` FROM `bill` 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
     return runQuery($query);   
@@ -37,7 +37,7 @@ function countBillingRows() {
     return runQuery($query);
 }
 
-function checkSort() {
+function checkBillingSort() {
     if($_SESSION['order'][0] != "billID" && $_SESSION['order'][0] != "reqID" && $_SESSION['order'][0] != "total" && $_SESSION['order'][0] != "status") {
         $_SESSION['order'][0] = "billID";
         $_SESSION['order'][1] = "asc";
