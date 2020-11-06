@@ -33,12 +33,12 @@
         <div class="user">
           <label for="">Employee ID</label>
         </div>
-        <input type="text" name="empID" value="80001"/>
+        <input type="text" name="empID" placeholder="Enter username" value="80001"/>
         <div class="password">
           <label for="">Password</label>
           <a href="forgot-password.php">Forgot Password</a>
         </div>
-        <input type="password" name="password" value="poopandpee"/>
+        <input type="password" name="password" placeholder="Enter password" value="poopandpee"/>
         <div class="password">
           <button type="submit">Submit</button> 
         </div>
