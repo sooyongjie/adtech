@@ -19,29 +19,19 @@ if ($db->query($query) === TRUE) {
 }
 
 // update request status
-$query = "UPDATE request SET `status` = 'Paid'  
- WHERE reqID = '".$_POST['reqID']."' ";
+$query = "SELECT billID FROM bill WHERE `reqID` = '".$_POST['reqID']."'";
+$result = $db->query($query);
+if ($result->num_rows == 1) { 
+    $row = $result->fetch_assoc();
 
-$result = mysqli_query($db,$query);
-
-if ($db->query($query) === TRUE) {
-    header( "Location: requests.php" );
-} else {
-    echo "Error updating record: " . $db->error;
+    $query = "UPDATE request SET `status` = 'Paid', `billID` = '".$row['billID']."'
+    WHERE reqID = '".$_POST['reqID']."' ";
+    $result = mysqli_query($db,$query);
+    if ($db->query($query) === TRUE) {
+        header( "Location: requests.php" );
+    } else {
+        echo "Error updating record: " . $db->error;
+    }
 }
-
-// $uploadOk = 1;
-// $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// echo $target_file ;
-// if(isset($_POST["submit"])) {
-//   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//   if($check !== false) {
-//     echo "File is an image - " . $check["mime"] . ".";
-//     $uploadOk = 1;
-//   } else {
-//     echo "File is not an image.";
-//     $uploadOk = 0;
-//   }
-// }
 
 ?>

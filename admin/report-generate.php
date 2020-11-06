@@ -129,4 +129,14 @@
     </div>
 </body>
 <script src="js/replace-window-state.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        promptPrint()
+    })
+    promptPrint = () => {
+        if (confirm("Do you want to print the report?")) {
+            window.print()
+        }
+    }
+</script>
 </html>

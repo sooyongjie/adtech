@@ -38,7 +38,8 @@
                         <td><?php echo $row['empName'] ?></td>
                         <td>
                             <?php
-                            $query2 = "SELECT COUNT(`status`) AS NumberOfJobs FROM request WHERE status <> 'Completed' AND empID = '".$row['empID']."'";
+                            $query2 = "SELECT COUNT(`status`) AS NumberOfJobs FROM request 
+                            WHERE status <> 'Completed' AND status <> 'Paid' AND empID = '".$row['empID']."'";
                             $result2 = $db->query($query2);
                             if($row2 = $result2->fetch_assoc()) {
                                 echo $row2['NumberOfJobs'];

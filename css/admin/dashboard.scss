@@ -78,6 +78,9 @@ nav {
     }
   }
   .profile {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
     position: absolute;
     bottom: 65px;
   }
@@ -178,7 +181,12 @@ table {
     border-radius: 50%;
     cursor: pointer;
     a {
-      padding: 4px 8px 4px 8px;
+      height: max-content;
+      width: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px 1px 2px 1px;
       color: #222;
       font-size: 12px;
       :visited {

@@ -49,11 +49,15 @@
                     </td>
                     <td><?php echo $row['total'] ?></td>
                     <td><?php echo $row['status'] ?></td>
-                    <td>
-                        <a href="../img/receipt/<?php echo $row['url'] ?>" class="receipt-url">
-                            <i class="far fa-file-image"></i>
-                            <span><?php echo $row['url'] ?></span>
-                        </a>
+                    <td> <?php
+                        if($row['status'] != "Pending") { ?>
+                            <a href="../img/receipt/<?php echo $row['url'] ?>" class="receipt-url">
+                                <i class="far fa-file-image"></i>
+                                <span><?php echo $row['url'] ?></span>
+                            </a> <?php
+                        } else {
+                            echo "N/A";
+                        } ?>
                     </td>
                 </tr>
                 <?php

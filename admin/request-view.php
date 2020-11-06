@@ -61,23 +61,30 @@
                             <?php
                     }
                     else if($row['status'] != "Pending") { ?> 
-                        <form action="request-status-update.php" method="post" class="form-status">
-                            <input type="text" name="status" value="<?php echo $row['status'] ?>" class="editable" autocomplete="off">
+                        <form action="request-status-update.php" method="post" class="form-status"><?php
+                            if($_SESSION['type'] != 1) { ?>
+                                <input type="text" name="status" value="<?php echo $row['status'] ?>" class="editable" autocomplete="off"> <?php
+                            } else {
+                                ?>
+                                <input type="text" name="status" value="<?php echo $row['status'] ?>" class="readonly" autocomplete="off" readonly> <?php
+                            }
+                        ?>
                         </form>
                         <?php
                     } 
                     ?>
-                </div>
-                <button class="submit" onclick="document.querySelector('.form-status').submit()">
-                <?php
-                if($row['status'] == "Pending") { 
-                    echo "Assign";
-                }
-                else {
-                    echo "Update";
+                </div> <?php
+                if($_SESSION['type'] != 1) { ?>
+                    <button class="submit" onclick="document.querySelector('.form-status').submit()"> <?php
+                    if($row['status'] == "Pending") { 
+                        echo "Assign";
+                    }
+                    else {
+                        echo "Update";
+                    } ?>
+                    </button> <?php
                 }
                 ?>
-                </button>
             </div>
         <?php
         }
