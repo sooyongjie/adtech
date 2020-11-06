@@ -61,7 +61,9 @@ class ConcreteObserverA implements Observer
         if($subject->num > 0){
         ?>
         <div class="bell" onclick="location.href='completed-request.php'">
-        <i class="fas fa-bell"><span class="badge"><?php echo $subject->num ?></span></i>
+            <i class="fas fa-bell">
+                <span class="badge"><?php echo $subject->num ?></span>
+            </i>
         </div>
         <?php
         }

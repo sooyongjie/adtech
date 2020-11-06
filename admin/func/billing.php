@@ -7,7 +7,7 @@ if(isset($_GET['offset'])) {
     $_SESSION['offset'] = 0;
 }
 
-require("runQuery.php");
+require_once("runQuery.php");
 
 function getAllBillings() {
     $query = "SELECT billID, reqID, total, `status` FROM `bill` 
@@ -25,7 +25,18 @@ function getBilling($search) {
     return runQuery($query);   
 }
 
-function countRows() {
+function calculateRate($category) {
+    if($category == "General") {
+        $rate = "50";
+    } else if($category == "Software") {
+        $rate = "80";
+    } else if($category == "Hardware") {
+        $rate = "60";
+    }
+    return "RM".$rate;
+}
+
+function countBillingRows() {
     $query = "SELECT COUNT(`billID`) AS `count` FROM `bill`";
     return runQuery($query);
 }

@@ -36,13 +36,8 @@
                 <p><?php echo $row['category'] ?></p>
                 <p>
                     <?php 
-                    if($row['category'] == "Epic") {
-                        $rate = "50";
-                        echo "RM".$rate;
-                    } else if($row['category'] == "General") {
-                        $rate = "50";
-                        echo "RM".$rate;
-                    }
+                    include_once("func/billing.php");
+                    echo calculateRate($row['category']);
                     ?>
                     <input type="hidden" name="rate" value="<?php echo $rate ?>">
                 </p>

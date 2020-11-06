@@ -60,7 +60,7 @@
             </table>
             <div class="pagination">
                 <?php 
-                $count = countRows(); 
+                $count = countBillingRows(); 
                 $num = round($count[0]['count']/5);
                 if ($num == 0) {
                     $num = 1;
