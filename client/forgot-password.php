@@ -24,7 +24,7 @@
         <div class="user">
           <label label for="">Username</label>
         </div>
-        <input type="text" name="username" placeholder="Enter username"/>
+        <input type="text" name="username" placeholder="Enter username" required/>
         <div class="password">
           <button type="submit">Submit</button> 
           <a href="index.php">Login Here</a>

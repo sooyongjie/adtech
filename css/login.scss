@@ -44,7 +44,8 @@ body {
         }
       }
     }
-    label, a {
+    label,
+    a {
       font-weight: 500;
     }
     label {
@@ -57,6 +58,14 @@ body {
       border-radius: 8px;
       background: #f5f6f8;
       text-align: left;
+      transition: 0.1s;
+      &:hover {
+        background: #eeeeee;
+      }
+      &:active,
+      &:focus {
+        background: #eaeaeb;
+      }
     }
     .password {
       width: 100%;
@@ -81,7 +90,8 @@ body {
       &:hover {
         background: #ffe771;
       }
-      &:active, &:focus {
+      &:active,
+      &:focus {
         background: #ffdc2b;
       }
     }

@@ -22,7 +22,7 @@
         <div class="user">
           <label label for="">Employee ID</label>
         </div>
-        <input type="text" name="empID" placeholder="Enter employee ID"/>
+        <input type="text" name="empID" placeholder="Enter employee ID" required/>
         <div class="password">
           <button type="submit">Submit</button> 
           <a href="index.php">Login Here</a>

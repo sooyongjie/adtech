@@ -36,7 +36,7 @@
 <script>
     var gsap = gsap.timeline();
     gsap.to(".button", {border: "1px solid #cccccc", duration: 0.1, stagger: 0.05}); //wait 2 seconds
-    gsap.to("i", {opacity: 1, duration: 0.2, delay: 0}); //wait 2 seconds
-    gsap.to("p", {opacity: 1, duration: 0.2}, "-=0.2"); //wait 2 seconds
+    gsap.to("i", {opacity: 1, duration: 0.35, delay: 0}); //wait 2 seconds
+    gsap.to("p", {opacity: 1, duration: 0.35}, "-=0.4"); //wait 2 seconds
 </script>
 </html>

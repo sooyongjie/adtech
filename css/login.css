@@ -51,7 +51,8 @@ body {
   color: maroon;
 }
 
-.form form label, .form form a {
+.form form label,
+.form form a {
   font-weight: 500;
 }
 
@@ -66,6 +67,15 @@ body {
   border-radius: 8px;
   background: #f5f6f8;
   text-align: left;
+  transition: 0.1s;
+}
+
+.form form input:hover {
+  background: #eeeeee;
+}
+
+.form form input:active, .form form input:focus {
+  background: #eaeaeb;
 }
 
 .form form .password {
