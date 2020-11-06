@@ -26,7 +26,7 @@
                 <i class="fas fa-arrow-left"></i>
                 <h2>Clients</h2>
             </div>            <form action="clients-search.php" method="post" class="search-bar" autocomplete="off">
-                <input type="number" name="search" placeholder="Search requests">
+                <input type="number" name="search" placeholder="Search clients">
                 <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
             </form>
         </div>

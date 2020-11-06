@@ -14,7 +14,7 @@ if(isset($_GET['offset'])) {
 require("runQuery.php");
 
 function getAllClients() {
-    $query = "SELECT clientID, clientName, `status` FROM client  
+    $query = "SELECT clientID, clientName, `status` FROM client 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
     checkClientSort();
     

@@ -37,7 +37,8 @@
                 <p>
                     <?php 
                     include_once("func/billing.php");
-                    echo calculateRate($row['category']);
+                    $rate = calculateRate($row['category']);
+                    echo "RM".$rate;
                     ?>
                     <input type="hidden" name="rate" value="<?php echo $rate ?>">
                 </p>

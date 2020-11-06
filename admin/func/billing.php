@@ -29,7 +29,7 @@ function calculateRate($category) {
     } else if($category == "Hardware") {
         $rate = "60";
     }
-    return "RM".$rate;
+    return $rate;
 }
 
 function countBillingRows() {
