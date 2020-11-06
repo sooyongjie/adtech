@@ -8,7 +8,7 @@ session_start();
 ?>
 
 <nav>
-    <h1>Ad<span>tech</span></h1>
+    <img src="../img/logo.svg" alt="">
     <?php
     if($file == "requests.php") {
         ?>

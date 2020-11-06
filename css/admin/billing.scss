@@ -1,0 +1,10 @@
+.receipt-url {
+    border-bottom: none;
+    color: black;
+    &:visited {
+        color: black !important;
+    }
+    span {
+        border-bottom: 1px solid black;
+    }
+}

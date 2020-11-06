@@ -7,7 +7,7 @@ include_once("../db_connect.php");
 $target_dir = "";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 
-$query = "UPDATE bill SET billDetails = 'Many details', paymentMethod = 'Bank Transfer', `status` = 'Paid', `url` = '".$target_file."'  
+$query = "UPDATE bill SET billDetails = '".$_POST['refNo']."', paymentMethod = 'Bank Transfer', `status` = 'Paid', `url` = '".$target_file."'  
  WHERE reqID = '".$_POST['reqID']."' ";
 
 $result = mysqli_query($db,$query);

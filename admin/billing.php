@@ -4,6 +4,7 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="../css/admin/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="../css/admin/billing.css" />
     <?php
     include_once("../head.php");
     ?>
@@ -33,7 +34,7 @@
                     <th onclick="document.querySelector('#reqID').submit()">Request ID</th>
                     <th onclick="document.querySelector('#total').submit()">Total</th>
                     <th onclick="document.querySelector('#status').submit()">Status</th>
-                    <th class="tr-button-heading"></th>
+                    <th>File</th>
                 </tr>
             <?php
             foreach($billings as $row) {
@@ -48,10 +49,11 @@
                     </td>
                     <td><?php echo $row['total'] ?></td>
                     <td><?php echo $row['status'] ?></td>
-                    <td class="submit-btn">
-                        <form action="" method="POST">
-                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                        </form> 
+                    <td>
+                        <a href="../img/receipt/<?php echo $row['url'] ?>" class="receipt-url">
+                            <i class="far fa-file-image"></i>
+                            <span><?php echo $row['url'] ?></span>
+                        </a>
                     </td>
                 </tr>
                 <?php

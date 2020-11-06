@@ -45,7 +45,7 @@
                     <th onclick="document.querySelector('#reqID').submit()">Request ID</th>
                     <th onclick="document.querySelector('#total').submit()">Total</th>
                     <th onclick="document.querySelector('#status').submit()">Status</th>
-                    <th class="tr-button-heading"></th>
+                    <th>File</th>
                 </tr>
             <?php
             foreach($billings as $row) {
@@ -60,33 +60,17 @@
                     </td>
                     <td><?php echo $row['total'] ?></td>
                     <td><?php echo $row['status'] ?></td>
-                    <td class="submit-btn">
-                        <form action="" method="POST">
-                            <input type="hidden" name="reqID" value="<?php echo $row['reqID'] ?>">
-                        </form> 
+                    <td>
+                        <a href="../img/receipt/<?php echo $row['url'] ?>" class="receipt-url">
+                            <i class="far fa-file-image"></i>
+                            <span><?php echo $row['url'] ?></span>
+                        </a>
                     </td>
                 </tr>
                 <?php
             }
             ?>
             </table>
-            <div class="pagination">
-                <?php 
-                $count = countBillingRows(); 
-                $num = round($count[0]['count']/5);
-                if ($num == 0) {
-                    $num = 1;
-                }
-                for ($i = 0; $i < $num; $i++) {
-                    ?>
-                    <button>
-                        <a href="?offset=<?php echo $i ?>"><?php echo $i+1 ?></a>
-                    </button>
-                    <?php
-                }
-                ?>
-                </div>
-            </div>
         </div>
     <form action="func/sort.php" method="post" id="billID">
         <input type="hidden" name="sort" value="billID">

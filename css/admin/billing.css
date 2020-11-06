@@ -1,0 +1,13 @@
+.receipt-url {
+  border-bottom: none;
+  color: black;
+}
+
+.receipt-url:visited {
+  color: black !important;
+}
+
+.receipt-url span {
+  border-bottom: 1px solid black;
+}
+/*# sourceMappingURL=billing.css.map */

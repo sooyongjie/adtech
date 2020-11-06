@@ -10,7 +10,7 @@ if(isset($_GET['offset'])) {
 require_once("runQuery.php");
 
 function getAllBillings() {
-    $query = "SELECT billID, reqID, total, `status` FROM `bill` 
+    $query = "SELECT billID, reqID, total, `status`, `url` FROM `bill` 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]." LIMIT 5 OFFSET ".$_SESSION['offset']." ";
     if(runQuery($query) == 0) {
         $_SESSION['order'][0] = "billID";
@@ -21,7 +21,7 @@ function getAllBillings() {
 }
 
 function getBilling($search) {
-    $query = "SELECT billID, reqID, total, `status` FROM `bill` WHERE billID = $search";
+    $query = "SELECT billID, reqID, total, `status`, `url` FROM `bill` WHERE billID = $search";
     return runQuery($query);   
 }
 

@@ -22,8 +22,10 @@
         <form action="payment-insert.php" method="post" enctype="multipart/form-data">
             <h2>Request <?php echo "#".$_POST['reqID'] ?></h2>
             <label for="">Upload Payment</label>
-            <input type="file" name="image">
-            <input type="hidden" name="reqID" value="<?php echo $_POST['reqID'] ?>">
+            <input type="file" name="image" required>
+            <label for="">Reference No</label>
+            <input type="text" name="refNo" required>
+            <input type="hidden" name="reqID" value="<?php echo $_POST['reqID'] ?>" required>
             <button type="submit">Submit</button>
         </form>
     </div>
