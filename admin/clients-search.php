@@ -25,8 +25,9 @@
             <div class="back" onclick="location.href='clients.php'">
                 <i class="fas fa-arrow-left"></i>
                 <h2>Clients</h2>
-            </div>            <form action="clients-search.php" method="post" class="search-bar" autocomplete="off">
-                <input type="number" name="search" placeholder="Search clients">
+            </div>            
+            <form action="clients-search.php" method="post" class="search-bar" autocomplete="off">
+                <input type="text" name="search" placeholder="Search clients">
                 <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
             </form>
         </div>
@@ -34,6 +35,7 @@
             <?php
             include_once("func/clients.php");
             $clients = getClient($_SESSION['search']);
+            if($clients == 0) exit();
             ?>
             <table>
                 <tr>
@@ -48,7 +50,7 @@
                 <tr class="<?php echo "pending-".$row['clientID'] ?>" onmouseover="showButton(this)"
                     onmouseout="hideButton(this)">
                     <td><?php echo '#'.$row['clientID'] ?></td>
-                    <td></td>
+                    <td><?php echo '#'.$row['clientName'] ?></td>
                     <td><?php echo $row['status'] ?></td>
                     
                 </tr>
@@ -72,5 +74,5 @@
     </form>
 </body>
 <script src="js/dashboard.js"></script>
-
+<script src="js/replace-window-state.js"></script>
 </html>

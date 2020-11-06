@@ -37,9 +37,10 @@ nav {
   font-family: "Poppins", sans-serif;
 }
 
-nav img {
+nav .logo {
   width: 120px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 nav h1 {

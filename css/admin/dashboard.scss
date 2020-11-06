@@ -35,9 +35,10 @@ nav {
   overflow: hidden;
   position: fixed;
   font-family: "Poppins", sans-serif;
-  img {
+  .logo {
     width: 120px;
     margin-bottom: 30px;
+    cursor: pointer;
   }
   h1 {
     margin-bottom: 20%;

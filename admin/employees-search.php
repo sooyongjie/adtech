@@ -22,12 +22,21 @@
     }
     ?>
     <div class="container">
-        <div class="header">
-            <h2>Employees</h2>
-            <button class="heading-btn" onclick="location.href='employee-add.php'">
-                <i class="fas fa-plus"></i>
-                <span>Add</span>
-            </button>
+        <div class="heading">
+            <div class="header">
+                <div class="back" onclick="location.href='employees.php'">
+                    <i class="fas fa-arrow-left"></i>
+                    <h2>Employees</h2>
+                </div>
+                <button class="heading-btn" onclick="location.href='employee-add.php'">
+                    <i class="fas fa-plus"></i>
+                    <span>Add</span>
+                </button>
+            </div>
+            <form action="employees-search.php" method="post" class="search-bar" autocomplete="off">
+                <input type="text" name="search" placeholder="Search employee">
+                <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
+            </form>
         </div>
         <div class="card">
             <?php
@@ -96,4 +105,5 @@
     </div>
 </body>
 <script src="js/dashboard.js"></script>
+<script src="js/replace-window-state.js"></script>
 </html>

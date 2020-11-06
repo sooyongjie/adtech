@@ -8,7 +8,7 @@ session_start();
 ?>
 
 <nav>
-    <img src="../img/logo.svg" alt="">
+    <img src="../img/logo.svg" alt="Adtech" class="logo">
     <?php
     if($file == "requests.php") {
         ?>

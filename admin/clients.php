@@ -20,7 +20,7 @@
         <div class="heading">
             <h2>Clients</h2>
             <form action="clients-search.php" method="post" class="search-bar" autocomplete="off">
-                <input type="number" name="search" placeholder="Search clients">
+                <input type="text" name="search" placeholder="Search clients">
                 <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
             </form>
         </div>

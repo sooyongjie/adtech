@@ -22,7 +22,7 @@ function getAllClients() {
 }
 
 function getClient($search) {
-    $query = "SELECT * FROM client WHERE clientID = $search ";
+    $query = "SELECT * FROM client WHERE clientName LIKE '%{$search}%'";
 
     return runQuery($query); 
 }

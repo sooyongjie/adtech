@@ -25,7 +25,7 @@
                 </button>
             </div>
             <form action="employees-search.php" method="post" class="search-bar" autocomplete="off">
-                <input type="number" name="search" placeholder="Search employee">
+                <input type="text" name="search" placeholder="Search employee">
                 <i class="far fa-search" onclick="document.getElementById('.search-bar').submit()"></i>
             </form>
         </div>
