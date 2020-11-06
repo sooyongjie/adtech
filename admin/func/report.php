@@ -115,7 +115,7 @@ function countRatings($arr) {
 }
 
 function getDateTime() {
-    return date("Y-m-d h:i:sa");
+    return date("Y-m-d H:i:s");
 }
 
 function insertToDatabase() {
@@ -123,7 +123,7 @@ function insertToDatabase() {
 
     $date = getDateTime();
 
-    $query = "INSERT INTO report (`date`) VALUES ($total)";
+    $query = "INSERT INTO report (`date`) VALUES ('$date')";
     if ($db->query($query) === FALSE) {
         echo "Error: ".$query."<br>".$db->error;
         exit();

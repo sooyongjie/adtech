@@ -34,7 +34,7 @@
             <div class="heading">
                 <div class="generate-container">
                     <h2><?php echo date("F")." Report" ?></h2>
-                    <a href="report-generate.php">
+                    <a href="report-generate.php" target="_blank">
                     <button>
                         <i class="fas fa-file-export"></i>
                         <span>Generate Report</span>
