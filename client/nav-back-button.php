@@ -22,7 +22,7 @@ function Notification(){
         <span>Back</span>
     </div>
     <!--use singleton to display name-->
-    <h1 onclick="location.href='dashboard.php'">Ad<span>tech</span></h1>
+    <img src="../img/logo-dark.svg" alt="Adtech" onclick="location.href='dashboard.php'">
     <div class="user">
       <a href="profile.php"><?php AccountSingleton() ?></a>
       <?php Notification() ?>
