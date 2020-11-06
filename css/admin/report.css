@@ -6,6 +6,10 @@
   column-gap: 50px;
 }
 
+.container .search-bar input {
+  width: fit-content !important;
+}
+
 .container .content.overtime {
   width: 100%;
 }

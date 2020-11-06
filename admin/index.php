@@ -38,7 +38,7 @@
           <label for="">Password</label>
           <a href="forgot-password.php">Forgot Password</a>
         </div>
-        <input type="password" name="password" value="1234"/>
+        <input type="password" name="password" value="poopandpee"/>
         <div class="password">
           <button type="submit">Submit</button> 
         </div>

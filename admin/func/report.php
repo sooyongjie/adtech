@@ -114,6 +114,22 @@ function countRatings($arr) {
     return $ratings;
 }
 
+function getDateTime() {
+    return date("Y-m-d h:i:sa");
+}
+
+function insertToDatabase() {
+    require("../db_connect.php");
+
+    $date = getDateTime();
+
+    $query = "INSERT INTO report (`date`) VALUES ($total)";
+    if ($db->query($query) === FALSE) {
+        echo "Error: ".$query."<br>".$db->error;
+        exit();
+    }
+}
+
 
 
 ?>

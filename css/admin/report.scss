@@ -4,6 +4,11 @@
   justify-content: unset !important;
   align-items: unset !important;
   column-gap: 50px;
+  .search-bar {
+    input {
+      width: fit-content !important;
+    }
+  }
   .content.overtime {
     width: 100%;
   }

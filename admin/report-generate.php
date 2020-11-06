@@ -125,6 +125,7 @@
             }
             ?>
         </div>
+        <?php insertToDatabase(); ?>
     </div>
 </body>
 <script src="js/replace-window-state.js"></script>

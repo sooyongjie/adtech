@@ -42,8 +42,8 @@
                     </a>
                 </div>
                 <form action="report.php" method="post" class="search-bar">
-                    <input type="month" name="startDate" value="<?php echo date('Y-m', strtotime($_SESSION['startDate']."-01")) ?>">
-                    <i class="far fa-search" onclick="document.querySelector('.search-bar').submit()"></i>
+                    <input type="month" name="startDate" value="<?php echo date('Y-m', strtotime($_SESSION['startDate']."-01")) ?>"
+                    onchange="document.querySelector('.search-bar').submit()">
                 </form>
             </div>
             <div class="card">
