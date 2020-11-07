@@ -3,7 +3,7 @@ session_start();
 
 include_once("../db_connect.php");
 
-$hash = md5($_POST['confirmPassword']);
+$hash = md5($_POST['password']);
 
 $query = "UPDATE client SET `password` = '$hash', `status` = 1 WHERE clientID = '".$_SESSION['empID']."' ";
 

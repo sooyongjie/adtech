@@ -26,10 +26,8 @@
             <h2>Profile</h2>
             <label for="">Name</label>
             <input type="text" name="clientName" value="<?php echo $_SESSION['clientName'] ?>">
-            <label for="">New Password</label>
-            <input type="password" name="newPassword" placeholder="Enter new password">
-            <label for="">Confirm Password</label>
-            <input type="password" name="confirmPassword" placeholder="Re-enter password">
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="Enter new password">
             <button type="submit">Submit</button>
         </form>
     </div>
