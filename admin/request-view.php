@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    $file = "dashboard.php";
+    $file = "requests.php";
     include_once("nav.php");
     if(isset($_POST['reqID'])) {
         $_SESSION['reqID'] = $_POST['reqID'];
