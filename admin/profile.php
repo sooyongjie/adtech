@@ -37,8 +37,8 @@
                         <label for="">New password</label>
                         <label for="">Confirm password</label>
                         <label></label>
-                        <input type="password" name="newPassword" value="" class="editable" />
-                        <input type="password" name="confirmPassword" value="" class="editable" />
+                        <input type="password" name="newPassword" value="" class="editable" required/>
+                        <input type="password" name="confirmPassword" value="" class="editable" required/>
                         <p><?php
                             if(isset($_SESSION['errMsg'])) {
                                 echo $_SESSION['errMsg'];

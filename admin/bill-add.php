@@ -18,7 +18,7 @@
     <div class="container">
         <div class="back" onclick="location.href='requests.php'">
             <i class="fas fa-arrow-left"></i>
-            <h2>Requests</h2>
+            <h2>Bill</h2>
         </div>
         <?php
         include_once("func/requests.php");
@@ -42,7 +42,7 @@
                     ?>
                     <input type="hidden" name="rate" value="<?php echo $rate ?>">
                 </p>
-                <input type="text" name="hours" class="editable" autocomplete="off">
+                <input type="text" name="hours" class="editable" autocomplete="off" required>
             </div>
             <button class="submit" onclick="document.querySelector('.form-status').submit()">Submit</button>
         </form>
