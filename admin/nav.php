@@ -147,7 +147,7 @@ if(!isset($_SESSION['uid'])) {
     if($_SESSION['type'] != 3) {
         include_once("../db_connect.php");
         $query = "SELECT reqID, dateOfCreation FROM `request` 
-        WHERE dateOfCreation <= subdate(current_date, '7') AND dateOfCompletion IS NULL";
+        WHERE dateOfCreation <= subdate(current_date, '6') AND dateOfCompletion IS NULL";
         $result = $db->query($query);
         if ($result->num_rows > 0) { 
             if($row = $result->fetch_assoc()) {

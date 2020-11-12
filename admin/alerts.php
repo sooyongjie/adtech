@@ -26,7 +26,7 @@
             include_once("../db_connect.php");
             error_reporting(0);
             $query = "SELECT reqID, dateOfCreation FROM `request` 
-            WHERE dateOfCreation <= subdate(current_date, '7') AND dateOfCompletion IS NULL";
+            WHERE dateOfCreation <= subdate(current_date, '6') AND dateOfCompletion IS NULL";
             $result = $db->query($query);
         
             if ($result->num_rows > 0) { 

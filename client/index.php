@@ -32,12 +32,12 @@
         <div class="user">
           <label for="">Username</label>
         </div>
-        <input type="text" name="clientName" placeholder="Enter username" value="sooyongjie" required/>
+        <input type="text" name="clientName" placeholder="Enter username" value="" required/>
         <div class="password">
           <label for="">Password</label>
           <a href="forgot-password.php">Forgot Password</a>
         </div>
-        <input type="password" name="password" placeholder="Enter password" value="poopandpee" required/>
+        <input type="password" name="password" placeholder="Enter password" value="" required/>
         <div class="password">
         <button type="submit">Submit</button> 
           <a href="register.php">Register Here</a>
