@@ -121,7 +121,6 @@
             } else $requests = getAllTechnicianRequests();
 
             if($requests == 0) {
-                echo "Major failure detected.";
                 exit();
             }
             ?>
@@ -161,9 +160,9 @@
             <?php 
             $count = countRows(); 
             $num = round($count[0]['count']/5);
-            if ($num == 0) {
-                $num = 1;
-            }
+
+            if($num == 0) $num++;
+            if(($count[0]['count']/5) - $num >= 0) $num++;
             for ($i = 0; $i < $num; $i++) {
                 ?>
                 <button>

@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['clientName'])) {
     $_POST['clientName'] = $_POST['clientName'];
 }
@@ -29,4 +30,5 @@ class Account
         return $this->a;
     }
 }
+
 ?>

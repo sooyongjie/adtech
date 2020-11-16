@@ -17,7 +17,6 @@ function Notification(){
 
 ?>
 <nav>
-    
     <img src="../img/logo-dark.svg" alt="Adtech" onclick="location.href='dashboard.php'">
     <!--use singleton to display name-->
     <div class="user">

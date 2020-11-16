@@ -3,7 +3,8 @@ session_start();
 
 include_once("../db_connect.php");
 
-$query = "UPDATE client SET `password` = 12345678, `status` = 1 WHERE clientID = '".$_POST['clientID']."' ";
+$hash = md5("12345678");
+$query = "UPDATE client SET `password` = '$hash', `status` = 1 WHERE clientID = '".$_POST['clientID']."' ";
 
 $result = mysqli_query($db,$query);
 

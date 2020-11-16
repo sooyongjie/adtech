@@ -31,7 +31,7 @@ function getTechnicianPendingRequests() {
 
 function getOngoingRequests() {
     $query = "SELECT reqID, category, dateOfCreation, `status` FROM `request` 
-    WHERE `status` <> 'Pending' AND status <> 'Completed' 
+    WHERE `status` <> 'Pending' AND `status` <> 'Completed' AND `status` <> 'Paid' 
     ORDER BY ".$_SESSION['order'][0]." ".$_SESSION['order'][1]."";
     return runQuery($query);   
 }

@@ -131,6 +131,9 @@ if(!isset($_SESSION['uid'])) {
                 <i class="fas fa-user-circle"></i>
                 <p>Clients</p>
             </div>
+            <div class="button-r">
+                <i class="fas fa-angle-right"></i>
+            </div>
         </div>
         <?php
         } else if($_SESSION['type'] != "3"){

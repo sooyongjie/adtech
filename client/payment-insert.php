@@ -12,10 +12,9 @@ $query = "UPDATE bill SET billDetails = '".$_POST['refNo']."', paymentMethod = '
 
 $result = mysqli_query($db,$query);
 
-if ($db->query($query) === TRUE) {
-    header( "Location: requests.php" );
-} else {
+if ($db->query($query) === FALSE) {
     echo "Error updating record: " . $db->error;
+    exit();
 }
 
 // update request status
