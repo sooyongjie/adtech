@@ -20,4 +20,6 @@ The default databse is hosted on [remotemysql](https://remotemysql.com/). Expect
 You can find the local SQL file here: [adtech.sql](https://github.com/sooyongjie/adtech/blob/main/adtech.sql)
 
 #### Screenshots
-![Login Screenshot](https://github.com/sooyongjie/adtech/blob/main/screenshots/login.png "Login Screenshot")
+![Login](https://github.com/sooyongjie/adtech/blob/main/screenshots/login.png "Login Screenshot")
+![Client Dashboard](https://github.com/sooyongjie/adtech/blob/main/screenshots/client_dashboard.png "Client Dashboard")
+![Admin Dashboard](https://github.com/sooyongjie/adtech/blob/main/screenshots/admin_dashboard.png "Admin Dashboard")
