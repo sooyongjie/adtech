@@ -15,7 +15,7 @@ The CEO, Mr. Peter Lim wants to develop a system that is both more responsive to
 | Project Manager | 80002 | poopandpee |
 | Technician | 80003 | poopandpee |
 
-The default databse is hosted on [remotemysql](https://remotemysql.com/). Expect slower performance.
+The default database is hosted on [remotemysql](https://remotemysql.com/). Expect longer loading times.
 
 You can find the local SQL file here: [adtech.sql](https://github.com/sooyongjie/adtech/blob/main/adtech.sql)
 
