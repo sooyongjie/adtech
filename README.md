@@ -18,3 +18,6 @@ The CEO, Mr. Peter Lim wants to develop a system that is both more responsive to
 The default databse is hosted on [remotemysql](https://remotemysql.com/). Expect slower performance.
 
 You can find the local SQL file here: [adtech.sql](https://github.com/sooyongjie/adtech/blob/main/adtech.sql)
+
+#### Screenshots
+![Login Screenshot] (https://github.com/sooyongjie/adtech/blob/main/screenshots/login.png?raw=true)
