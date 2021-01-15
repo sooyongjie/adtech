@@ -25,10 +25,10 @@ if ($result->num_rows == 1) {
     }
     header("Location: requests.php"); 
     exit();
-    // use exit() to pause
 } else {
     $_SESSION['errMsg'] = "Please try again.";
     header("Location: index.php"); 
 }
 
 ?>
+
