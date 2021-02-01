@@ -1,4 +1,4 @@
-## CSCI334 Software Design Group 7
+## CSCI334 Software Design
 This is an assignment for a software design subject. The goal of this project is to implement design patterns and refactoring techniques.
 
 ### Case Study
